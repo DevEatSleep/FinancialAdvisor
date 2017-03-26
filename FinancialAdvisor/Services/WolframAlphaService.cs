@@ -12,12 +12,15 @@ namespace FinancialAdvisor.Services
     [Serializable]
     public class WolframAlphaService : IWolframAlphaService
     {
-        private TelemetryClient telemetry = new TelemetryClient();
+        //private TelemetryClient telemetry = new TelemetryClient();
         private string _appId = string.Empty;        
         public string AppId { get => _appId; set => _appId = value; }
        
         public string ExecQuery(string query)
         {
+            if (string.IsNullOrEmpty(query))
+                return "Empty query ?";
+
             WolframAlpha wolfram = new WolframAlpha(_appId);
             //wolfram.ScanTimeout = 0.1f; //We set ScanTimeout really low to get a quick answer. See RecalculateResults() below.
             wolfram.UseTLS = true; //Use encryption
