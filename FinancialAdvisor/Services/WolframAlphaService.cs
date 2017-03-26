@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.ApplicationInsights;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,7 @@ namespace FinancialAdvisor.Services
     [Serializable]
     public class WolframAlphaService : IWolframAlphaService
     {
+        private TelemetryClient telemetry = new TelemetryClient();
         private string _appId = string.Empty;        
         public string AppId { get => _appId; set => _appId = value; }
        
@@ -19,8 +21,22 @@ namespace FinancialAdvisor.Services
             WolframAlpha wolfram = new WolframAlpha(_appId);
             //wolfram.ScanTimeout = 0.1f; //We set ScanTimeout really low to get a quick answer. See RecalculateResults() below.
             wolfram.UseTLS = true; //Use encryption
+                                   // wolfram.Scanners.Add("identity");                     
 
             QueryResult results = wolfram.Query(query);
+
+            //if (results.Success)
+            //{
+            //    telemetry.TrackPageView();
+            //}
+
+            var source = string.Empty;
+            if (results.Sources != null)
+                if (results.Sources.Count > 0)
+                    source = results.Sources[0].Text;
+
+            if (source != "Financial data")
+                return "Your question is off topic :-(";
 
             if (results.Error != null)
                 return "Woops, where was an error: " + results.Error.Message;

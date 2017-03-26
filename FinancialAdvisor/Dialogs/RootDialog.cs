@@ -20,12 +20,15 @@ namespace FinancialAdvisor.Dialogs
         private async Task MessageReceivedAsync(IDialogContext context, IAwaitable<object> result)
         {
             var activity = await result as Activity;
-            
+                       
             if(activity.Text.ToLower() != "help")
-            {
-                _iwolframAlphaService.AppId = WebConfigurationManager.AppSettings["WolframAlphaAppId"];
-                var queryResult = _iwolframAlphaService.ExecQuery(activity.Text);
-                await context.PostAsync(queryResult.ToString());
+            { 
+                if(!String.IsNullOrEmpty(activity.Text))
+                {
+                    _iwolframAlphaService.AppId = WebConfigurationManager.AppSettings["WolframAlphaAppId"];
+                    var queryResult = _iwolframAlphaService.ExecQuery(activity.Text);
+                    await context.PostAsync(queryResult.ToString());
+                }               
             }
             else
             {
