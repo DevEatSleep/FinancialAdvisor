@@ -9,8 +9,9 @@ namespace FinancialAdvisor.Dialogs
 {
     [Serializable]
     public class RootDialog : IDialog<object>
-    {
+    {    
         private IWolframAlphaService _iwolframAlphaService = new WolframAlphaService();
+
         public Task StartAsync(IDialogContext context)
         {
             context.Wait(MessageReceivedAsync);
