@@ -1,4 +1,5 @@
-﻿using Microsoft.ApplicationInsights;
+﻿using FinancialAdvisor.Entity;
+using Microsoft.ApplicationInsights;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,51 +13,39 @@ namespace FinancialAdvisor.Services
     [Serializable]
     public class WolframAlphaService : IWolframAlphaService
     {
-        //private TelemetryClient telemetry = new TelemetryClient();
+        private RequestLimiter requestLimiter = new RequestLimiter();
         private string _appId = string.Empty;        
         public string AppId { get => _appId; set => _appId = value; }
        
         public string ExecQuery(string query)
         {
+            RequestLimitEntity entity = requestLimiter.Read();
+
+            if (entity.LastQueryDate.Month == DateTime.Now.Month && entity.QueriesNumber == 2000)
+                return "No more queries available for this month, sorry";
+                           
             if (string.IsNullOrEmpty(query))
                 return "Empty query ?";
 
             WolframAlpha wolfram = new WolframAlpha(_appId);
-            //wolfram.ScanTimeout = 0.1f; //We set ScanTimeout really low to get a quick answer. See RecalculateResults() below.
+            wolfram.ScanTimeout = 1; //We set ScanTimeout really low to get a quick answer. See RecalculateResults() below.
             wolfram.UseTLS = true; //Use encryption
-                                   // wolfram.Scanners.Add("identity");                     
+            wolfram.Scanners.Add("Money");
+            wolfram.Scanners.Add("Data");
+
+            requestLimiter.Update(entity, DateTime.Now, entity.QueriesNumber + 1);
 
             QueryResult results = wolfram.Query(query);
-
-            //if (results.Success)
-            //{
-            //    telemetry.TrackPageView();
-            //}
-
-            var source = string.Empty;
-            if (results.Sources != null)
-                if (results.Sources.Count > 0)
-                    source = results.Sources[0].Text;
-
-            if (source != "Financial data")
-                return "Your question is off topic :-(";
-
+            
             if (results.Error != null)
                 return "Woops, where was an error: " + results.Error.Message;
 
             if (results.Warnings != null)
-            {
-                if (results.Warnings.Translation != null)
-                {
-                    ExecQuery(results.Warnings.Translation.Text);
-                }
-                    //return "Translation warning: " + results.Warnings.Translation.Text;
-
+            {          
                 if (results.Warnings.SpellCheck != null)
                 {
                     ExecQuery(results.Warnings.SpellCheck.Text);
-                }
-                    //return "Spellcheck warning: " + results.Warnings.SpellCheck.Text;
+                }                   
             }
 
             if (results.DidYouMean.HasElements())

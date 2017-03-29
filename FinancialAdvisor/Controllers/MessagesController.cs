@@ -7,6 +7,10 @@ using Microsoft.Bot.Connector;
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using Microsoft.Azure; // Namespace for CloudConfigurationManager
+using Microsoft.WindowsAzure.Storage; // Namespace for CloudStorageAccount
+using Microsoft.WindowsAzure.Storage.Table; // Namespace for Tab
+using FinancialAdvisor.Entity;
 
 namespace FinancialAdvisor
 {
@@ -17,8 +21,10 @@ namespace FinancialAdvisor
         /// POST: api/Messages
         /// Receive a message from a user and reply to it
         /// </summary>
+        /// 
+       
         public async Task<HttpResponseMessage> Post([FromBody]Activity activity)
-        {
+        {          
             if (activity.Type == ActivityTypes.Message)
             {
                 await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
@@ -27,9 +33,7 @@ namespace FinancialAdvisor
             {
                 HandleSystemMessageAsync(activity);
             }
-            return new HttpResponseMessage(System.Net.HttpStatusCode.Accepted);
-            //var response = Request.CreateResponse(HttpStatusCode.OK);
-            //return response;
+            return new HttpResponseMessage(System.Net.HttpStatusCode.OK);           
         }
 
         private async Task<Activity> HandleSystemMessageAsync(Activity message)

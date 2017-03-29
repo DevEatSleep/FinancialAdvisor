@@ -4,6 +4,7 @@ using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
 using FinancialAdvisor.Services;
 using System.Web.Configuration;
+using FinancialAdvisor.Entity;
 
 namespace FinancialAdvisor.Dialogs
 {
@@ -12,6 +13,7 @@ namespace FinancialAdvisor.Dialogs
     {    
         private IWolframAlphaService _iwolframAlphaService = new WolframAlphaService();
 
+               
         public Task StartAsync(IDialogContext context)
         {
             context.Wait(MessageReceivedAsync);
