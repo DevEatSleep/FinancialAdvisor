@@ -13,17 +13,17 @@ namespace FinancialAdvisor.Services
     [Serializable]
     public class WolframAlphaService : IWolframAlphaService
     {
-        private RequestLimiter requestLimiter = new RequestLimiter();
-        private string _appId = string.Empty;        
+        private string _appId = string.Empty;
         public string AppId { get => _appId; set => _appId = value; }
-       
+
         public string ExecQuery(string query)
         {
-            RequestLimitEntity entity = requestLimiter.Read();
+            IRequestLimiter _requestLimiter = ServiceResolver.Get<IRequestLimiter>();
+                RequestLimitEntity entity = _requestLimiter.Read();
 
             if (entity.LastQueryDate.Month == DateTime.Now.Month && entity.QueriesNumber == 2000)
                 return "No more queries available for this month, sorry";
-                           
+
             if (string.IsNullOrEmpty(query))
                 return "Empty query ?";
 
@@ -33,19 +33,19 @@ namespace FinancialAdvisor.Services
             wolfram.Scanners.Add("Money");
             wolfram.Scanners.Add("Data");
 
-            requestLimiter.Update(entity, DateTime.Now, entity.QueriesNumber + 1);
+            _requestLimiter.Update(entity, DateTime.Now, entity.QueriesNumber + 1);
 
             QueryResult results = wolfram.Query(query);
-            
+
             if (results.Error != null)
                 return "Woops, where was an error: " + results.Error.Message;
 
             if (results.Warnings != null)
-            {          
+            {
                 if (results.Warnings.SpellCheck != null)
                 {
                     ExecQuery(results.Warnings.SpellCheck.Text);
-                }                   
+                }
             }
 
             if (results.DidYouMean.HasElements())
@@ -58,7 +58,7 @@ namespace FinancialAdvisor.Services
                 {
                     meanList.Add(didYouMean.Value);
                 }
-                return meanList.Aggregate((i, j) => i + "," + j).ToString();            
+                return meanList.Aggregate((i, j) => i + "," + j).ToString();
             }
             else
             {
@@ -70,7 +70,7 @@ namespace FinancialAdvisor.Services
                         List<string> resultList = new List<string>();
                         foreach (SubPod subPod in primaryPod.SubPods)
                         {
-                            resultList.Add(subPod.Plaintext);                            
+                            resultList.Add(subPod.Plaintext);
                         }
                         return resultList.Aggregate((i, j) => i + "," + j).ToString();
                     }
@@ -82,7 +82,3 @@ namespace FinancialAdvisor.Services
         }
     }
 }
-//Results are split into "pods" that contain information. Those pods can also have subpods.
-
-
-

@@ -164,6 +164,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Dialogs\RootDialog.cs" />
+    <Compile Include="Entity\IRequestLimiter.cs" />
     <Compile Include="Entity\RequestLimitEntity.cs" />
     <Compile Include="Entity\RequestLimiter.cs" />
     <Compile Include="Global.asax.cs">
@@ -171,6 +172,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IWolframAlphaService.cs" />
+    <Compile Include="Services\ServiceResolver.cs" />
     <Compile Include="Services\WolframAlphaService.cs" />
   </ItemGroup>
   <ItemGroup>

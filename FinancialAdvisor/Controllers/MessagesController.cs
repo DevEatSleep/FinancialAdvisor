@@ -27,13 +27,27 @@ namespace FinancialAdvisor
         {          
             if (activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
+                if (activity.Text.ToLower() == "hi")
+                    await WelcomeMessage(activity);
+                else
+                    await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
             }
             else
             {
+#pragma warning disable CS4014 // Dans la mesure où cet appel n'est pas attendu, l'exécution de la méthode actuelle continue avant la fin de l'appel
                 HandleSystemMessageAsync(activity);
+#pragma warning restore CS4014 // Dans la mesure où cet appel n'est pas attendu, l'exécution de la méthode actuelle continue avant la fin de l'appel
             }
             return new HttpResponseMessage(System.Net.HttpStatusCode.OK);           
+        }
+
+        private async Task WelcomeMessage(Activity message)
+        {
+            var reply = message.CreateReply(string.Format("Welcome {0}, I'm Bob, your financial advisor." +
+                           Environment.NewLine + "type 'Help' to know what I can do for you", message.From.Name));
+
+            ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
+            await connector.Conversations.ReplyToActivityAsync(reply);
         }
 
         private async Task<Activity> HandleSystemMessageAsync(Activity message)
@@ -51,11 +65,13 @@ namespace FinancialAdvisor
 
                 if (message.MembersAdded.Any(o => o.Id == message.Recipient.Id))
                 {
-                    var reply = message.CreateReply(string.Format("Welcome {0}, I'm Bob, your financial advisor." +
-                            Environment.NewLine + "type 'Help' to know what I can do for you", message.From.Name));
+                    await WelcomeMessage(message);
 
-                    ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
-                    await connector.Conversations.ReplyToActivityAsync(reply);
+                    //var reply = message.CreateReply(string.Format("Welcome {0}, I'm Bob, your financial advisor." +
+                    //        Environment.NewLine + "type 'Help' to know what I can do for you", message.From.Name));
+
+                    //ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
+                    //await connector.Conversations.ReplyToActivityAsync(reply);
                 }
             }
             else if (message.Type == ActivityTypes.ContactRelationUpdate)
@@ -65,11 +81,12 @@ namespace FinancialAdvisor
                 // For Skype and Messenger ?
                 if (message.Action == "add")
                 {
-                    var reply = message.CreateReply(string.Format("Welcome {0}, I'm Bob, your financial advisor." +
-                        Environment.NewLine + "type 'Help' to know what I can do for you", message.From.Name));
+                    await WelcomeMessage(message);
+                    //var reply = message.CreateReply(string.Format("Welcome {0}, I'm Bob, your financial advisor." +
+                    //    Environment.NewLine + "type 'Help' to know what I can do for you", message.From.Name));
 
-                    ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
-                    await connector.Conversations.ReplyToActivityAsync(reply);
+                    //ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
+                    //await connector.Conversations.ReplyToActivityAsync(reply);
                 }
             }
             else if (message.Type == ActivityTypes.Typing)

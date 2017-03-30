@@ -8,7 +8,7 @@ using System.Web;
 
 namespace FinancialAdvisor.Entity
 {
-    public class RequestLimiter
+    public class RequestLimiter : IRequestLimiter
     {       
         private CloudTableClient tableClient;
         private CloudTable table;
@@ -24,7 +24,7 @@ namespace FinancialAdvisor.Entity
 
         public RequestLimitEntity Read()
         {
-            table = TableClient.GetTableReference("WolphramRequestLimit");
+            table = TableClient.GetTableReference("RequestLimit");
             TableOperation tableOperation = TableOperation.Retrieve<RequestLimitEntity>("Wolfram", "FinancialAdvisor");
             TableResult retrievedResult = table.Execute(tableOperation);
             return (RequestLimitEntity)retrievedResult.Result;
@@ -33,7 +33,9 @@ namespace FinancialAdvisor.Entity
         public void Update(RequestLimitEntity entity, DateTime RequestDatetime, Int32 QueriesNumber)
         {
             if (entity != null)
-            {                              
+            {
+                entity.LastQueryDate = RequestDatetime;
+                entity.QueriesNumber = QueriesNumber;
                 TableOperation updateOperation = TableOperation.Replace(entity);               
                 table.Execute(updateOperation);
             }
