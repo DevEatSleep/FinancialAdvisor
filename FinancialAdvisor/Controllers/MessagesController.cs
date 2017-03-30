@@ -44,7 +44,7 @@ namespace FinancialAdvisor
         private async Task WelcomeMessage(Activity message)
         {
             var reply = message.CreateReply(string.Format("Welcome {0}, I'm Bob, your financial advisor." +
-                           Environment.NewLine + "type 'Help' to know what I can do for you", message.From.Name));
+                           Environment.NewLine + "say 'Help' to know what I can do for you", message.From.Name));
 
             ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
             await connector.Conversations.ReplyToActivityAsync(reply);
@@ -66,12 +66,6 @@ namespace FinancialAdvisor
                 if (message.MembersAdded.Any(o => o.Id == message.Recipient.Id))
                 {
                     await WelcomeMessage(message);
-
-                    //var reply = message.CreateReply(string.Format("Welcome {0}, I'm Bob, your financial advisor." +
-                    //        Environment.NewLine + "type 'Help' to know what I can do for you", message.From.Name));
-
-                    //ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
-                    //await connector.Conversations.ReplyToActivityAsync(reply);
                 }
             }
             else if (message.Type == ActivityTypes.ContactRelationUpdate)
@@ -81,12 +75,7 @@ namespace FinancialAdvisor
                 // For Skype and Messenger ?
                 if (message.Action == "add")
                 {
-                    await WelcomeMessage(message);
-                    //var reply = message.CreateReply(string.Format("Welcome {0}, I'm Bob, your financial advisor." +
-                    //    Environment.NewLine + "type 'Help' to know what I can do for you", message.From.Name));
-
-                    //ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
-                    //await connector.Conversations.ReplyToActivityAsync(reply);
+                    await WelcomeMessage(message);                   
                 }
             }
             else if (message.Type == ActivityTypes.Typing)

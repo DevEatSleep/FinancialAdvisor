@@ -27,9 +27,7 @@ namespace FinancialAdvisor.Dialogs
             {
                 await context.PostAsync("I can make conversions or calculations between currencies." + "\n\n" +
                   "like 'convert 100 USD in JPY' or 'add 100 USD and 10 JPY in EUR'" + "\n\n" +
-                  "or '10 USD + 10 JPY - 10 CAD in EUR'" + "\n\n" +
-                  "I can get stock quotes like 'Get Microsoft price' " + "\n\n" +
-                  "Don't use often, I've a limitation in request to the API web server." + "\n\n" +
+                  "I can get stock quotes like 'get Microsoft price' " + "\n\n" +                  
                   "Be kind, I'm under development ;-)");
             }
             else

@@ -24,6 +24,9 @@ namespace FinancialAdvisor.Services
             if (entity.LastQueryDate.Month == DateTime.Now.Month && entity.QueriesNumber == 2000)
                 return "No more queries available for this month, sorry";
 
+            if (DateTime.Now.Month > entity.LastQueryDate.Month)
+                _requestLimiter.Update(entity, DateTime.Now, 1);
+
             if (string.IsNullOrEmpty(query))
                 return "Empty query ?";
 
@@ -36,6 +39,9 @@ namespace FinancialAdvisor.Services
             _requestLimiter.Update(entity, DateTime.Now, entity.QueriesNumber + 1);
 
             QueryResult results = wolfram.Query(query);
+
+            if (results.ParseTimedout)
+                results.RecalculateResults();
 
             if (results.Error != null)
                 return "Woops, where was an error: " + results.Error.Message;
