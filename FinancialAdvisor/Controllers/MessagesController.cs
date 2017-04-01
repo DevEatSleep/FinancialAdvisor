@@ -22,13 +22,19 @@ namespace FinancialAdvisor
         /// Receive a message from a user and reply to it
         /// </summary>
         /// 
-       
+        private bool _welcomeDone;
         public async Task<HttpResponseMessage> Post([FromBody]Activity activity)
         {          
             if (activity.Type == ActivityTypes.Message)
             {
                 if (activity.Text.ToLower() == "hi")
-                    await WelcomeMessage(activity);
+                {
+                    if (!_welcomeDone)
+                    {
+                        await WelcomeMessage(activity);
+                        _welcomeDone = true;
+                    }                        
+                }
                 else
                     await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
             }
@@ -65,7 +71,11 @@ namespace FinancialAdvisor
 
                 if (message.MembersAdded.Any(o => o.Id == message.Recipient.Id))
                 {
-                    await WelcomeMessage(message);
+                    if (!_welcomeDone)
+                    {
+                        await WelcomeMessage(message);
+                        _welcomeDone = true;
+                    }                        
                 }
             }
             else if (message.Type == ActivityTypes.ContactRelationUpdate)
@@ -75,7 +85,11 @@ namespace FinancialAdvisor
                 // For Skype and Messenger ?
                 if (message.Action == "add")
                 {
-                    await WelcomeMessage(message);                   
+                    if (!_welcomeDone)
+                    {
+                        await WelcomeMessage(message);
+                        _welcomeDone = true;
+                    }                                         
                 }
             }
             else if (message.Type == ActivityTypes.Typing)
