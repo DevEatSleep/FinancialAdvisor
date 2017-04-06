@@ -11,6 +11,7 @@ using Microsoft.Azure; // Namespace for CloudConfigurationManager
 using Microsoft.WindowsAzure.Storage; // Namespace for CloudStorageAccount
 using Microsoft.WindowsAzure.Storage.Table; // Namespace for Tab
 using FinancialAdvisor.Entity;
+using System.Resources;
 
 namespace FinancialAdvisor
 {
@@ -24,16 +25,16 @@ namespace FinancialAdvisor
         /// 
         private bool _welcomeDone;
         public async Task<HttpResponseMessage> Post([FromBody]Activity activity)
-        {          
+        {
             if (activity.Type == ActivityTypes.Message)
             {
-                if (activity.Text.ToLower() == "hi")
+                if (activity.Text.ToLower() == Resources.Resource.HiString)
                 {
                     if (!_welcomeDone)
                     {
                         await WelcomeMessage(activity);
                         _welcomeDone = true;
-                    }                        
+                    }
                 }
                 else
                     await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
@@ -44,13 +45,13 @@ namespace FinancialAdvisor
                 HandleSystemMessageAsync(activity);
 #pragma warning restore CS4014 // Dans la mesure où cet appel n'est pas attendu, l'exécution de la méthode actuelle continue avant la fin de l'appel
             }
-            return new HttpResponseMessage(System.Net.HttpStatusCode.OK);           
+            return new HttpResponseMessage(System.Net.HttpStatusCode.OK);
         }
 
         private async Task WelcomeMessage(Activity message)
         {
-            var reply = message.CreateReply(string.Format("Welcome {0}, I'm Bob, your financial advisor." +
-                           Environment.NewLine + "say 'Help' to know what I can do for you", message.From.Name));
+            var reply = message.CreateReply(string.Format(Resources.Resource.WelcomeStringFirstLine, message.From.Name)
+                + Environment.NewLine + Resources.Resource.WelcomeStringSecondLine);
 
             ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
             await connector.Conversations.ReplyToActivityAsync(reply);
@@ -69,14 +70,23 @@ namespace FinancialAdvisor
                 // Use Activity.MembersAdded and Activity.MembersRemoved and Activity.Action for info
                 // Not available in all channelsc
 
-                if (message.MembersAdded.Any(o => o.Id == message.Recipient.Id))
-                {
+                //if (message.MembersAdded.Any(o => o.Id == message.Recipient.Id))
+                //{
                     if (!_welcomeDone)
                     {
                         await WelcomeMessage(message);
                         _welcomeDone = true;
-                    }                        
-                }
+                    }
+                //}
+                //// pour Bot emulator only
+                //else if(message.From.Name == "User")
+                //{
+                //    if (!_welcomeDone)
+                //    {
+                //        await WelcomeMessage(message);
+                //        _welcomeDone = true;
+                //    }
+                //}
             }
             else if (message.Type == ActivityTypes.ContactRelationUpdate)
             {
@@ -89,7 +99,7 @@ namespace FinancialAdvisor
                     {
                         await WelcomeMessage(message);
                         _welcomeDone = true;
-                    }                                         
+                    }
                 }
             }
             else if (message.Type == ActivityTypes.Typing)

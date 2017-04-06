@@ -22,13 +22,13 @@ namespace FinancialAdvisor.Services
                 RequestLimitEntity entity = _requestLimiter.Read();
 
             if (entity.LastQueryDate.Month == DateTime.Now.Month && entity.QueriesNumber == 2000)
-                return "No more queries available for this month, sorry";
+                return Resources.Resource.NoMoreQueriesString;
 
             if (DateTime.Now.Month > entity.LastQueryDate.Month)
                 _requestLimiter.Update(entity, DateTime.Now, 1);
 
             if (string.IsNullOrEmpty(query))
-                return "Empty query ?";
+                return Resources.Resource.EmptyQueryString;
 
             WolframAlpha wolfram = new WolframAlpha(_appId);
             wolfram.ScanTimeout = 1; //We set ScanTimeout really low to get a quick answer. See RecalculateResults() below.
@@ -44,7 +44,7 @@ namespace FinancialAdvisor.Services
                 results.RecalculateResults();
 
             if (results.Error != null)
-                return "Woops, where was an error: " + results.Error.Message;
+                return Resources.Resource.ErrorString + results.Error.Message;
 
             if (results.Warnings != null)
             {
@@ -58,7 +58,7 @@ namespace FinancialAdvisor.Services
             {
                 List<string> meanList = new List<string>
                 {
-                    "Did you mean: "
+                    Resources.Resource.MeanString
                 };
                 foreach (DidYouMean didYouMean in results.DidYouMean)
                 {
@@ -82,9 +82,9 @@ namespace FinancialAdvisor.Services
                     }
                 }
                 else
-                    return "Sorry, I didn't understand, please type 'Help' to see examples";
+                    return Resources.Resource.UnknownQuery;
             }
-            return "Sorry, I didn't understand, please type 'Help' to see examples";
+            return Resources.Resource.UnknownQuery;
         }
     }
 }

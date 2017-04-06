@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en" target-language="fr" original="FINANCIALADVISOR/RESOURCES/RESOURCE.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.6799.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="FINANCIALADVISOR/RESOURCES/RESOURCE.RESX">
+        <trans-unit id="HiString" translate="yes" xml:space="preserve">
+          <source>Hi</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Salut</target>
+        </trans-unit>
+        <trans-unit id="WelcomeStringFirstLine" translate="yes" xml:space="preserve">
+          <source>Welcome {0}, I'm Bob, your financial advisor.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bienvenue {0}, je suis Bob, votre conseiller financier.</target>
+        </trans-unit>
+        <trans-unit id="WelcomeStringSecondLine" translate="yes" xml:space="preserve">
+          <source>say 'Help' to know what I can do for you</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">dire « Aide » pour savoir ce que je peux faire pour vous</target>
+        </trans-unit>
+        <trans-unit id="EmptyQueryString" translate="yes" xml:space="preserve">
+          <source>Empty query ?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Requête vide ?</target>
+        </trans-unit>
+        <trans-unit id="ErrorString" translate="yes" xml:space="preserve">
+          <source>Woops, there is an error:</source>
+        </trans-unit>
+        <trans-unit id="HelpString" translate="yes" xml:space="preserve">
+          <source>help</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">aide</target>
+        </trans-unit>
+        <trans-unit id="MeanString" translate="yes" xml:space="preserve">
+          <source>Did you mean:</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Vouliez-vous dire :</target>
+        </trans-unit>
+        <trans-unit id="NoMoreQueriesString" translate="yes" xml:space="preserve">
+          <source>No more queries available for this month, sorry</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Pas plus de requêtes disponibles pour ce mois-ci, Désolé</target>
+        </trans-unit>
+        <trans-unit id="UnknownQuery" translate="yes" xml:space="preserve">
+          <source>Sorry, I don't understand, please type 'Help' to see examples</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Désolé, je ne comprenais pas, s’il vous plaît tapez « Help » pour voir des exemples</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="UsageFirstLine" translate="yes" xml:space="preserve">
+          <source>I can make conversions or calculations between currencies.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Je peux faire des conversions ou calculs entre monnaies.</target>
+        </trans-unit>
+        <trans-unit id="UsageFourthLine" translate="yes" xml:space="preserve">
+          <source>Be kind, I'm under development ;-)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Soyez indulgent, je suis en cours d’élaboration  ;-)</target>
+        </trans-unit>
+        <trans-unit id="UsageSecondLine" translate="yes" xml:space="preserve">
+          <source>like 'convert 100 USD in JPY' or 'add 100 USD and 10 JPY in EUR'</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">comme « convertir 100 USD en JPY » ou « additionner 100 USD et 10 JPY en euros »</target>
+        </trans-unit>
+        <trans-unit id="UsageThirdLine" translate="yes" xml:space="preserve">
+          <source>I can get stock quotes like 'get Microsoft price'</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Je peux obtenir des quotations comme « quel est le prix de Microsoft »</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

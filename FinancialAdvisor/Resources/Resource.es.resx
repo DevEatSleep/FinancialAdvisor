@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="HiString" xml:space="preserve">
+    <value>Hola</value>
+  </data>
+  <data name="WelcomeStringFirstLine" xml:space="preserve">
+    <value>Bienvenida {0}, soy Bob, su asesor financiero.</value>
+  </data>
+  <data name="WelcomeStringSecondLine" xml:space="preserve">
+    <value>decir 'Ayuda' para saber lo que puedo hacer para usted</value>
+  </data>
+  <data name="EmptyQueryString" xml:space="preserve">
+    <value>¿Consulta vacía?</value>
+  </data>
+  <data name="ErrorString" xml:space="preserve">
+    <value>Woops, hubo un error:</value>
+  </data>
+  <data name="HelpString" xml:space="preserve">
+    <value>ayuda</value>
+  </data>
+  <data name="MeanString" xml:space="preserve">
+    <value>Quiso decir:</value>
+  </data>
+  <data name="NoMoreQueriesString" xml:space="preserve">
+    <value>No más consultas disponibles para este mes, lo siento</value>
+  </data>
+  <data name="UnknownQuery" xml:space="preserve">
+    <value>Lo sentimos, no entiendo, por favor, escriba 'Ayuda' para ver ejemplos</value>
+  </data>
+  <data name="UsageFirstLine" xml:space="preserve">
+    <value>Puedo hacer conversiones o cálculos entre monedas.</value>
+  </data>
+  <data name="UsageFourthLine" xml:space="preserve">
+    <value>Bueno, estoy en fase de desarrollo ;-)</value>
+  </data>
+  <data name="UsageSecondLine" xml:space="preserve">
+    <value>como 'convertir 100 USD en JPY' o 'Añadir 100 USD y el JPY 10 en euros'</value>
+  </data>
+  <data name="UsageThirdLine" xml:space="preserve">
+    <value>Puedo conseguir acciones frases como 'get precio Microsoft'</value>
+  </data>
+</root>
