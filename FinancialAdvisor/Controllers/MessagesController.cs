@@ -72,11 +72,11 @@ namespace FinancialAdvisor
 
                 //if (message.MembersAdded.Any(o => o.Id == message.Recipient.Id))
                 //{
-                    if (!_welcomeDone)
-                    {
-                        await WelcomeMessage(message);
+                if (!_welcomeDone)
+                {
+                    await WelcomeMessage(message);
                         _welcomeDone = true;
-                    }
+                }
                 //}
                 //// pour Bot emulator only
                 //else if(message.From.Name == "User")

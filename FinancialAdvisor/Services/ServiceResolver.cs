@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Autofac.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,12 @@ namespace FinancialAdvisor.Services
         {
             using (var scope = Container.BeginLifetimeScope())
                 return scope.Resolve<T>();
+        }
+       
+        public static T GetWithParameters<T>(NamedParameter namedParameter)
+        {
+            using (var scope = Container.BeginLifetimeScope())
+                return scope.Resolve<T>(namedParameter);
         }
     }
 }

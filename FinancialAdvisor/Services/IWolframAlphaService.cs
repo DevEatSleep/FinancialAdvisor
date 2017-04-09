@@ -1,8 +1,10 @@
-﻿namespace FinancialAdvisor.Services
+﻿using System.Threading.Tasks;
+
+namespace FinancialAdvisor.Services
 {
     public interface IWolframAlphaService
     {
         string AppId { get; set; }
-        string ExecQuery(string query);
+        Task<string> ExecQueryAsync(string query);
     }
 }

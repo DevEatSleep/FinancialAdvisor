@@ -33,7 +33,7 @@ namespace FinancialAdvisor.Dialogs
             else
             {
                 _iwolframAlphaService.AppId = WebConfigurationManager.AppSettings["WolframAlphaAppId"];
-                var queryResult = _iwolframAlphaService.ExecQuery(activity.Text);
+                var queryResult = await _iwolframAlphaService.ExecQueryAsync(activity.Text);
                 await context.PostAsync(queryResult.ToString());
             }
             context.Wait(MessageReceivedAsync);

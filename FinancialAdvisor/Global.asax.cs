@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Http;
 using System.Web.Routing;
+using TranslatorService;
 
 namespace FinancialAdvisor
 {
@@ -17,6 +18,7 @@ namespace FinancialAdvisor
             GlobalConfiguration.Configure(WebApiConfig.Register);
             var builder = new ContainerBuilder();
             builder.RegisterType<RequestLimiter>().As<IRequestLimiter>();
+            builder.RegisterType<TranslatorServiceClient>().As<ITranslatorServiceClient>();
             var container = builder.Build();
             ServiceResolver.Container = container;
         }

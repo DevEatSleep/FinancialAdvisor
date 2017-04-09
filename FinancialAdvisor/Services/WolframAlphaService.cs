@@ -2,11 +2,16 @@
 using Microsoft.ApplicationInsights;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
+using System.Web.Configuration;
+using TranslatorService;
 using WolframAlphaNET;
 using WolframAlphaNET.Misc;
 using WolframAlphaNET.Objects;
+using System.Threading.Tasks;
+using Autofac;
 
 namespace FinancialAdvisor.Services
 {
@@ -15,11 +20,14 @@ namespace FinancialAdvisor.Services
     {
         private string _appId = string.Empty;
         public string AppId { get => _appId; set => _appId = value; }
+        
 
-        public string ExecQuery(string query)
+        public async Task<string> ExecQueryAsync(string query)
         {
             IRequestLimiter _requestLimiter = ServiceResolver.Get<IRequestLimiter>();
-                RequestLimitEntity entity = _requestLimiter.Read();
+            ITranslatorServiceClient _translatorServiceClient = ServiceResolver.GetWithParameters<ITranslatorServiceClient>(new NamedParameter("SubscriptionKey", WebConfigurationManager.AppSettings["TextTranslatorId"]));
+
+            RequestLimitEntity entity = _requestLimiter.Read();
 
             if (entity.LastQueryDate.Month == DateTime.Now.Month && entity.QueriesNumber == 2000)
                 return Resources.Resource.NoMoreQueriesString;
@@ -30,6 +38,9 @@ namespace FinancialAdvisor.Services
             if (string.IsNullOrEmpty(query))
                 return Resources.Resource.EmptyQueryString;
 
+            string language = await _translatorServiceClient.DetectLanguageAsync(query);
+            string queryInEnglish = await _translatorServiceClient.TranslateAsync(query, language, "English");
+
             WolframAlpha wolfram = new WolframAlpha(_appId);
             wolfram.ScanTimeout = 1; //We set ScanTimeout really low to get a quick answer. See RecalculateResults() below.
             wolfram.UseTLS = true; //Use encryption
@@ -38,7 +49,7 @@ namespace FinancialAdvisor.Services
 
             _requestLimiter.Update(entity, DateTime.Now, entity.QueriesNumber + 1);
 
-            QueryResult results = wolfram.Query(query);
+            QueryResult results = wolfram.Query(queryInEnglish);
 
             if (results.ParseTimedout)
                 results.RecalculateResults();
@@ -50,7 +61,7 @@ namespace FinancialAdvisor.Services
             {
                 if (results.Warnings.SpellCheck != null)
                 {
-                    ExecQuery(results.Warnings.SpellCheck.Text);
+                    await ExecQueryAsync(results.Warnings.SpellCheck.Text);
                 }
             }
 
@@ -86,5 +97,7 @@ namespace FinancialAdvisor.Services
             }
             return Resources.Resource.UnknownQuery;
         }
+
+       
     }
 }
