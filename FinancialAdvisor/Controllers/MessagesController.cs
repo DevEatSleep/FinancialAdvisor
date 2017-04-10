@@ -12,6 +12,9 @@ using Microsoft.WindowsAzure.Storage; // Namespace for CloudStorageAccount
 using Microsoft.WindowsAzure.Storage.Table; // Namespace for Tab
 using FinancialAdvisor.Entity;
 using System.Resources;
+using Microsoft.Bot.Builder.Dialogs.Internals;
+using Autofac;
+using FinancialAdvisor.Helpers;
 
 namespace FinancialAdvisor
 {
@@ -28,16 +31,17 @@ namespace FinancialAdvisor
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                if (activity.Text.ToLower() == Resources.Resource.HiString)
-                {
-                    if (!_welcomeDone)
-                    {
-                        await WelcomeMessage(activity);
-                        _welcomeDone = true;
-                    }
-                }
-                else
-                    await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
+                //if (activity.Text.ToLower() == Resources.Resource.HiString)
+                //{
+                //    if (!_welcomeDone)
+                //    {
+                //        await WelcomeMessage(activity);
+                //        _welcomeDone = true;
+                //    }
+                //}
+                //else
+                activity.Text = await TranslationHandler.DetectAndTranslate(activity);
+                await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
             }
             else
             {
@@ -70,13 +74,31 @@ namespace FinancialAdvisor
                 // Use Activity.MembersAdded and Activity.MembersRemoved and Activity.Action for info
                 // Not available in all channelsc
 
+                IConversationUpdateActivity conversationupdate = message;
+
+                using (var scope = DialogModule.BeginLifetimeScope(Conversation.Container, message))
+                {
+                    var client = scope.Resolve<IConnectorClient>();
+                    if (conversationupdate.MembersAdded.Any())
+                    {
+                        var reply = message.CreateReply();
+                        foreach (var newMember in conversationupdate.MembersAdded)
+                        {
+                            if (newMember.Id != message.Recipient.Id)
+                            {
+                                await WelcomeMessage(message);
+                            }
+                        }
+                    }
+                }
+
                 //if (message.MembersAdded.Any(o => o.Id == message.Recipient.Id))
                 //{
-                if (!_welcomeDone)
-                {
-                    await WelcomeMessage(message);
-                        _welcomeDone = true;
-                }
+                //if (!_welcomeDone)
+                //{
+               
+                //        _welcomeDone = true;
+                //}
                 //}
                 //// pour Bot emulator only
                 //else if(message.From.Name == "User")
@@ -95,11 +117,11 @@ namespace FinancialAdvisor
                 // For Skype and Messenger ?
                 if (message.Action == "add")
                 {
-                    if (!_welcomeDone)
-                    {
+                    //if (!_welcomeDone)
+                    //{
                         await WelcomeMessage(message);
-                        _welcomeDone = true;
-                    }
+                    //    _welcomeDone = true;
+                    //}
                 }
             }
             else if (message.Type == ActivityTypes.Typing)

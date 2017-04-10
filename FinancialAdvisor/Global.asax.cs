@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.Http;
 using System.Web.Routing;
 using TranslatorService;
@@ -18,7 +19,14 @@ namespace FinancialAdvisor
             GlobalConfiguration.Configure(WebApiConfig.Register);
             var builder = new ContainerBuilder();
             builder.RegisterType<RequestLimiter>().As<IRequestLimiter>();
-            builder.RegisterType<TranslatorServiceClient>().As<ITranslatorServiceClient>();
+            //builder.Register(
+            //    ctx =>
+            //    {
+            //        var config = WebConfigurationManager.AppSettings["TextTranslatorId"];
+            //        return new TranslatorServiceClient(config);
+
+            //    }
+            //    ).As<ITranslatorServiceClient>();
             var container = builder.Build();
             ServiceResolver.Container = container;
         }

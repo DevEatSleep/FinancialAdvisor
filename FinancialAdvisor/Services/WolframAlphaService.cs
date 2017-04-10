@@ -25,7 +25,7 @@ namespace FinancialAdvisor.Services
         public async Task<string> ExecQueryAsync(string query)
         {
             IRequestLimiter _requestLimiter = ServiceResolver.Get<IRequestLimiter>();
-            ITranslatorServiceClient _translatorServiceClient = ServiceResolver.GetWithParameters<ITranslatorServiceClient>(new NamedParameter("SubscriptionKey", WebConfigurationManager.AppSettings["TextTranslatorId"]));
+            //ITranslatorServiceClient _translatorServiceClient = ServiceResolver.Get<ITranslatorServiceClient>();
 
             RequestLimitEntity entity = _requestLimiter.Read();
 
@@ -38,8 +38,10 @@ namespace FinancialAdvisor.Services
             if (string.IsNullOrEmpty(query))
                 return Resources.Resource.EmptyQueryString;
 
-            string language = await _translatorServiceClient.DetectLanguageAsync(query);
-            string queryInEnglish = await _translatorServiceClient.TranslateAsync(query, language, "English");
+            //string language = await _translatorServiceClient.DetectLanguageAsync(query);
+            //await _translatorServiceClient.InitializeAsync();
+            //var l = await _translatorServiceClient.DetectLanguageAsync(query);
+            //string queryInEnglish = await _translatorServiceClient.TranslateAsync(query, CultureInfo.CurrentCulture.Name, "English");
 
             WolframAlpha wolfram = new WolframAlpha(_appId);
             wolfram.ScanTimeout = 1; //We set ScanTimeout really low to get a quick answer. See RecalculateResults() below.
@@ -49,7 +51,7 @@ namespace FinancialAdvisor.Services
 
             _requestLimiter.Update(entity, DateTime.Now, entity.QueriesNumber + 1);
 
-            QueryResult results = wolfram.Query(queryInEnglish);
+            QueryResult results = wolfram.Query(query);
 
             if (results.ParseTimedout)
                 results.RecalculateResults();
