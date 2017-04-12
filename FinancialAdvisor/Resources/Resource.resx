@@ -117,43 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="EmptyQueryString" xml:space="preserve">
-    <value>Empty query ?</value>
-  </data>
-  <data name="ErrorString" xml:space="preserve">
-    <value>Woops, there is an error:</value>
-  </data>
-  <data name="HelpString" xml:space="preserve">
-    <value>help</value>
-  </data>
   <data name="HiString" xml:space="preserve">
-    <value>Hi</value>
-  </data>
-  <data name="MeanString" xml:space="preserve">
-    <value>Did you mean:</value>
-  </data>
-  <data name="NoMoreQueriesString" xml:space="preserve">
-    <value>No more queries available for this month, sorry</value>
-  </data>
-  <data name="UnknownQuery" xml:space="preserve">
-    <value>Sorry, I don't understand, please type 'Help' to see examples</value>
-  </data>
-  <data name="UsageFirstLine" xml:space="preserve">
-    <value>I can make conversions or calculations between currencies.</value>
-  </data>
-  <data name="UsageFourthLine" xml:space="preserve">
-    <value>Be kind, I'm under development ;-)</value>
-  </data>
-  <data name="UsageSecondLine" xml:space="preserve">
-    <value>like 'convert 100 USD in JPY' or 'add 100 USD and 10 JPY in EUR'</value>
-  </data>
-  <data name="UsageThirdLine" xml:space="preserve">
-    <value>I can get stock quotes like 'get Microsoft price'</value>
+    <value>Salut</value>
   </data>
   <data name="WelcomeStringFirstLine" xml:space="preserve">
-    <value>Welcome {0}, I'm Bob, your financial advisor.</value>
+    <value>Bienvenue {0}, je suis Bob, votre conseiller financier.</value>
   </data>
   <data name="WelcomeStringSecondLine" xml:space="preserve">
-    <value>say 'Help' to know what I can do for you</value>
+    <value>Dire « Aide » pour savoir ce que je peux faire pour vous</value>
+  </data>
+  <data name="EmptyQueryString" xml:space="preserve">
+    <value>Requête vide ?</value>
+  </data>
+  <data name="HelpString" xml:space="preserve">
+    <value>Aide</value>
+  </data>
+  <data name="MeanString" xml:space="preserve">
+    <value>Vouliez-vous dire :</value>
+  </data>
+  <data name="NoMoreQueriesString" xml:space="preserve">
+    <value>Pas plus de requêtes disponibles pour ce mois-ci, Désolé</value>
+  </data>
+  <data name="UnknownQuery" xml:space="preserve">
+    <value>Désolé, je ne comprends pas, s’il vous plaît dites « Aide » pour voir des exemples</value>
+  </data>
+  <data name="UsageFirstLine" xml:space="preserve">
+    <value>Je peux faire des conversions ou calculs entre monnaies.</value>
+  </data>
+  <data name="UsageFourthLine" xml:space="preserve">
+    <value>Soyez indulgent, je suis en cours d’élaboration  ;-)</value>
+  </data>
+  <data name="UsageSecondLine" xml:space="preserve">
+    <value>comme « convertir 100 USD en JPY » ou « ajouter 100 USD et 10 JPY en euros »</value>
+  </data>
+  <data name="UsageThirdLine" xml:space="preserve">
+    <value>Je peux obtenir des prix d'actions comme « quel est le prix de Microsoft ? »</value>
+  </data>
+  <data name="ErrorString" xml:space="preserve">
+    <value>Une erreur est survenue</value>
   </data>
 </root>

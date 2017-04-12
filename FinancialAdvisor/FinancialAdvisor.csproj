@@ -45,7 +45,7 @@
   </PropertyGroup>
   <PropertyGroup Label="MultilingualAppToolkit">
     <MultilingualAppToolkitVersion>4.0</MultilingualAppToolkitVersion>
-    <MultilingualFallbackLanguage>en</MultilingualFallbackLanguage>
+    <MultilingualFallbackLanguage>fr-FR</MultilingualFallbackLanguage>
     <TranslationReport Condition="'$(Configuration)' == 'Release'">true</TranslationReport>
     <SuppressPseudoWarning Condition="'$(Configuration)' == 'Debug'">true</SuppressPseudoWarning>
   </PropertyGroup>
@@ -176,11 +176,6 @@
     <Compile Include="Helpers\LocalLanguageExtension.cs" />
     <Compile Include="Helpers\StateHelper.cs" />
     <Compile Include="Helpers\TranslationHandler.cs" />
-    <Compile Include="Resources\Resource.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resource.resx</DependentUpon>
-    </Compile>
     <Compile Include="Entity\IRequestLimiter.cs" />
     <Compile Include="Entity\RequestLimitEntity.cs" />
     <Compile Include="Entity\RequestLimiter.cs" />
@@ -188,6 +183,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
     <Compile Include="Services\IWolframAlphaService.cs" />
     <Compile Include="Services\ServiceResolver.cs" />
     <Compile Include="Services\WolframAlphaService.cs" />
@@ -214,23 +214,33 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Resource.de.resx" />
+    <EmbeddedResource Include="Resources\Resource.en.resx" />
     <EmbeddedResource Include="Resources\Resource.es.resx" />
-    <EmbeddedResource Include="Resources\Resource.fr.resx" />
     <EmbeddedResource Include="Resources\Resource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Resource.it.resx" />
+    <EmbeddedResource Include="Resources\Resource.ja.resx" />
+    <EmbeddedResource Include="Resources\Resource.pt.resx" />
+    <EmbeddedResource Include="Resources\Resource.ru.resx" />
+    <EmbeddedResource Include="Resources\Resource.zh-Hans.resx" />
+    <EmbeddedResource Include="Resources\Resource.zh-Hant.resx" />
   </ItemGroup>
   <ItemGroup>
     <XliffResource Include="MultilingualResources\FinancialAdvisor.de.xlf">
       <SubType>Designer</SubType>
     </XliffResource>
+    <XliffResource Include="MultilingualResources\FinancialAdvisor.en.xlf" />
     <XliffResource Include="MultilingualResources\FinancialAdvisor.es.xlf">
       <SubType>Designer</SubType>
     </XliffResource>
-    <XliffResource Include="MultilingualResources\FinancialAdvisor.fr.xlf">
-      <SubType>Designer</SubType>
-    </XliffResource>
+    <XliffResource Include="MultilingualResources\FinancialAdvisor.it.xlf" />
+    <XliffResource Include="MultilingualResources\FinancialAdvisor.ja.xlf" />
+    <XliffResource Include="MultilingualResources\FinancialAdvisor.pt.xlf" />
+    <XliffResource Include="MultilingualResources\FinancialAdvisor.ru.xlf" />
+    <XliffResource Include="MultilingualResources\FinancialAdvisor.zh-Hans.xlf" />
+    <XliffResource Include="MultilingualResources\FinancialAdvisor.zh-Hant.xlf" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

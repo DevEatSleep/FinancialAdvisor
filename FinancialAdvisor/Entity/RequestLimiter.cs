@@ -19,10 +19,10 @@ namespace FinancialAdvisor.Entity
 
         public CloudTableClient TableClient { get => tableClient; set => tableClient = value; }
 
-        public RequestLimitEntity Read()
+        public RequestLimitEntity Read(string partitionKey, string rowKey)
         {
             table = TableClient.GetTableReference("RequestLimit");
-            TableOperation tableOperation = TableOperation.Retrieve<RequestLimitEntity>("Wolfram", "FinancialAdvisor");
+            TableOperation tableOperation = TableOperation.Retrieve<RequestLimitEntity>(partitionKey, rowKey);
             TableResult retrievedResult = table.Execute(tableOperation);
             return (RequestLimitEntity)retrievedResult.Result;
         }

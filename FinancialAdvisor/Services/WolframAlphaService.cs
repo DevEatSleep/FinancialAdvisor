@@ -25,23 +25,24 @@ namespace FinancialAdvisor.Services
         public async Task<string> ExecQueryAsync(string query)
         {
             IRequestLimiter _requestLimiter = ServiceResolver.Get<IRequestLimiter>();
-            //ITranslatorServiceClient _translatorServiceClient = ServiceResolver.Get<ITranslatorServiceClient>();
+            
+            RequestLimitEntity wolframEntity = _requestLimiter.Read("Wolfram", "FinancialAdvisor");
+            RequestLimitEntity translatorEntity = _requestLimiter.Read("CognitiveServices", "TextTranslator");
 
-            RequestLimitEntity entity = _requestLimiter.Read();
-
-            if (entity.LastQueryDate.Month == DateTime.Now.Month && entity.QueriesNumber == 2000)
+            if (wolframEntity.LastQueryDate.Month == DateTime.Now.Month && wolframEntity.QueriesNumber == 2000)
                 return Resources.Resource.NoMoreQueriesString;
 
-            if (DateTime.Now.Month > entity.LastQueryDate.Month)
-                _requestLimiter.Update(entity, DateTime.Now, 1);
+            if (DateTime.Now.Month > wolframEntity.LastQueryDate.Month)
+                _requestLimiter.Update(wolframEntity, DateTime.Now, 1);
+
+            if (translatorEntity.LastQueryDate.Month == DateTime.Now.Month && translatorEntity.QueriesNumber == 2000000)
+                return Resources.Resource.NoMoreQueriesString;
+
+            if (DateTime.Now.Month > translatorEntity.LastQueryDate.Month)
+                _requestLimiter.Update(translatorEntity, DateTime.Now, query.Length);
 
             if (string.IsNullOrEmpty(query))
                 return Resources.Resource.EmptyQueryString;
-
-            //string language = await _translatorServiceClient.DetectLanguageAsync(query);
-            //await _translatorServiceClient.InitializeAsync();
-            //var l = await _translatorServiceClient.DetectLanguageAsync(query);
-            //string queryInEnglish = await _translatorServiceClient.TranslateAsync(query, CultureInfo.CurrentCulture.Name, "English");
 
             WolframAlpha wolfram = new WolframAlpha(_appId);
             wolfram.ScanTimeout = 1; //We set ScanTimeout really low to get a quick answer. See RecalculateResults() below.
@@ -49,7 +50,8 @@ namespace FinancialAdvisor.Services
             wolfram.Scanners.Add("Money");
             wolfram.Scanners.Add("Data");
 
-            _requestLimiter.Update(entity, DateTime.Now, entity.QueriesNumber + 1);
+            _requestLimiter.Update(wolframEntity, DateTime.Now, wolframEntity.QueriesNumber + 1);
+            _requestLimiter.Update(translatorEntity, DateTime.Now, translatorEntity.QueriesNumber + query.Length);
 
             QueryResult results = wolfram.Query(query);
 
@@ -98,8 +100,6 @@ namespace FinancialAdvisor.Services
                     return Resources.Resource.UnknownQuery;
             }
             return Resources.Resource.UnknownQuery;
-        }
-
-       
+        }       
     }
 }

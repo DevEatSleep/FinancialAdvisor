@@ -11,21 +11,27 @@ namespace FinancialAdvisor.Helpers
 {
     public static class TranslationHandler
     {
-        public static Task<string> DetectAndTranslate(Activity activity)
+        public static async Task DetectAndSetUserLanguageCode(Activity activity)
+        {
+            var inputLanguageCode = DoLanguageDetection(activity.Text);
+            await StateHelper.SetUserLanguageCode(activity, inputLanguageCode.Result);
+        }
+
+        public static async Task<string> DetectAndTranslateAsync(Activity activity)
         {
             //detect language
             //update state for current user to detected language
-            var inputLanguageCode =  DoLanguageDetection(activity.Text);
 
-            StateHelper.SetUserLanguageCode(activity, inputLanguageCode.Result);
+            var inputLanguageCode = DoLanguageDetection(activity.Text);
+            await StateHelper.SetUserLanguageCode(activity, inputLanguageCode.Result);
 
-            if (inputLanguageCode.Result.ToLower() != "en")
+            if (inputLanguageCode.Result.ToLower() != "fr")
             {
 
-                return DoTranslation(activity.Text, inputLanguageCode.Result, "en");
+                return await DoTranslation(activity.Text, inputLanguageCode.Result, "fr");
 
             }
-            return new Task<string>(()=> activity.Text);
+            return await new Task<string>(() => activity.Text);
         }
 
         public static Task<string> DoTranslation(string inputText, string inputLocale, string outputLocale)

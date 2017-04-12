@@ -13,39 +13,39 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="HiString" xml:space="preserve">
-    <value>Hola</value>
+    <value>你好啊</value>
   </data>
   <data name="WelcomeStringFirstLine" xml:space="preserve">
-    <value>Bienvenida {0}, soy Bob, su asesor financiero.</value>
+    <value>歡迎 {0}，我是鮑勃，你的財務顧問。</value>
   </data>
   <data name="WelcomeStringSecondLine" xml:space="preserve">
-    <value>Decir "ayuda" para ver lo que puedo hacer para usted</value>
+    <value>說"説明"，可以看看我能為你做什麼</value>
   </data>
   <data name="EmptyQueryString" xml:space="preserve">
-    <value>¿Consulta vacía?</value>
+    <value>查詢空嗎？</value>
   </data>
   <data name="HelpString" xml:space="preserve">
-    <value>Ayuda</value>
+    <value>說明</value>
   </data>
   <data name="MeanString" xml:space="preserve">
-    <value>Quiso decir:</value>
+    <value>您的意思是不是:</value>
   </data>
   <data name="NoMoreQueriesString" xml:space="preserve">
-    <value>No más consultas disponibles para este mes, lo siento</value>
+    <value>沒有更多的查詢可用於這個月，我很抱歉</value>
   </data>
   <data name="UnknownQuery" xml:space="preserve">
-    <value>Lo sentimos, no entiendo, por favor, diga "help" para ver ejemplos</value>
+    <value>對不起，我不懂，請說"説明"以查看示例</value>
   </data>
   <data name="UsageFirstLine" xml:space="preserve">
-    <value>Que puedo hacer conversiones o cálculos entre monedas.</value>
+    <value>我可以做轉換或計算貨幣之間。</value>
   </data>
   <data name="UsageFourthLine" xml:space="preserve">
-    <value>Perdón, estoy siendo desarrollado ;-)</value>
+    <value>是寬容的我正在;-)</value>
   </data>
   <data name="UsageSecondLine" xml:space="preserve">
-    <value>como 'convertir 100 USD en JPY' o 'Añadir 100 USD y el JPY en 10 euros'</value>
+    <value>作為轉換 100 美元日元' 或者 '添加 100 美元和日元 EUR 10'</value>
   </data>
   <data name="UsageThirdLine" xml:space="preserve">
-    <value>Puedo conseguir el precio de las acciones tales como "¿Cuál es el precio de Microsoft?</value>
+    <value>我能得到的行動的價格如"微軟的價格是什麼？</value>
   </data>
 </root>

@@ -1,12 +1,13 @@
 ﻿using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
 using System;
+using System.Threading.Tasks;
 
 namespace FinancialAdvisor.Helpers
 {
     public static class StateHelper
     {
-        public static async void SetUserLanguageCode(Activity activity, string languageCode)
+        public static async Task SetUserLanguageCode(Activity activity, string languageCode)
         {
             try
             {
@@ -51,7 +52,6 @@ namespace FinancialAdvisor.Helpers
             {
                 throw ex;
             }
-
         }
 
         public static string GetUserLanguageCode(IDialogContext context)

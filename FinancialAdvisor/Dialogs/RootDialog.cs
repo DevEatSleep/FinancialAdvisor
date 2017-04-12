@@ -5,6 +5,7 @@ using Microsoft.Bot.Connector;
 using FinancialAdvisor.Services;
 using System.Web.Configuration;
 using FinancialAdvisor.Entity;
+using FinancialAdvisor.Helpers;
 
 namespace FinancialAdvisor.Dialogs
 {
@@ -19,23 +20,18 @@ namespace FinancialAdvisor.Dialogs
             return Task.CompletedTask;
         }
 
+
         private async Task MessageReceivedAsync(IDialogContext context, IAwaitable<object> result)
         {
             var activity = await result as Activity;
 
-            if (activity.Text.ToLower() == Resources.Resource.HelpString)
-            {
-                await context.PostAsync(Resources.Resource.UsageFirstLine + "\n\n" +
-                  Resources.Resource.UsageSecondLine + "\n\n" +
-                  Resources.Resource.UsageThirdLine + "\n\n" +
-                  Resources.Resource.UsageFourthLine);
-            }
-            else
-            {
-                _iwolframAlphaService.AppId = WebConfigurationManager.AppSettings["WolframAlphaAppId"];
-                var queryResult = await _iwolframAlphaService.ExecQueryAsync(activity.Text);
-                await context.PostAsync(queryResult.ToString());
-            }
+
+            _iwolframAlphaService.AppId = WebConfigurationManager.AppSettings["WolframAlphaAppId"];
+            var queryResult = await _iwolframAlphaService.ExecQueryAsync(activity.Text);
+            //TODO : parser les réponses et les traduire
+            //var queryResultLocale = queryResult.ToUserLocaleAsync(context);
+            await context.PostAsync(queryResult);
+
             context.Wait(MessageReceivedAsync);
         }
 

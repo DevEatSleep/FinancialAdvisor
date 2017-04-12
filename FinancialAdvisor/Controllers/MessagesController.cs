@@ -1,20 +1,15 @@
-﻿using System.Net;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
-using System.Collections.Generic;
 using System;
 using System.Linq;
-using Microsoft.Azure; // Namespace for CloudConfigurationManager
-using Microsoft.WindowsAzure.Storage; // Namespace for CloudStorageAccount
-using Microsoft.WindowsAzure.Storage.Table; // Namespace for Tab
-using FinancialAdvisor.Entity;
-using System.Resources;
 using Microsoft.Bot.Builder.Dialogs.Internals;
 using Autofac;
 using FinancialAdvisor.Helpers;
+using FinancialAdvisor;
+using System.Globalization;
 
 namespace FinancialAdvisor
 {
@@ -26,22 +21,28 @@ namespace FinancialAdvisor
         /// Receive a message from a user and reply to it
         /// </summary>
         /// 
-        private bool _welcomeDone;
+
         public async Task<HttpResponseMessage> Post([FromBody]Activity activity)
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                //if (activity.Text.ToLower() == Resources.Resource.HiString)
-                //{
-                //    if (!_welcomeDone)
-                //    {
-                //        await WelcomeMessage(activity);
-                //        _welcomeDone = true;
-                //    }
-                //}
-                //else
-                activity.Text = await TranslationHandler.DetectAndTranslate(activity);
-                await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
+                await TranslationHandler.DetectAndSetUserLanguageCode(activity);
+                if (activity.Text.ToLower() == Resources.Resource.HiString.ToLower())
+                {
+                    await WelcomeMessage(activity);
+                }
+                else
+                if (activity.Text.ToLower() == Resources.Resource.HelpString.ToLower())
+                {
+                    await HelpMessage(activity);
+                }
+                else
+                {
+                    var userLanguageCode = StateHelper.GetUserLanguageCode(activity);
+                    if (userLanguageCode != "en")
+                        activity.Text = await TranslationHandler.DoTranslation(activity.Text, userLanguageCode, "en");
+                    await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
+                }
             }
             else
             {
@@ -54,8 +55,27 @@ namespace FinancialAdvisor
 
         private async Task WelcomeMessage(Activity message)
         {
-            var reply = message.CreateReply(string.Format(Resources.Resource.WelcomeStringFirstLine, message.From.Name)
-                + Environment.NewLine + Resources.Resource.WelcomeStringSecondLine);
+            var text = string.Concat(string.Format(CultureInfo.CurrentCulture, Resources.Resource.WelcomeStringFirstLine, message.From.Name),
+                Environment.NewLine, string.Format(CultureInfo.CurrentCulture, Resources.Resource.WelcomeStringSecondLine));
+            var reply = message.CreateReply(text);
+            ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
+            await connector.Conversations.ReplyToActivityAsync(reply);
+        }
+
+        //private async Task DisplayLanguage(Activity message)
+        //{
+        //    var language = StateHelper.GetUserLanguageCode(message);
+        //    ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
+        //    await connector.Conversations.ReplyToActivityAsync(message.CreateReply(language));
+        //}
+
+        private async Task HelpMessage(Activity message)
+        {
+            var text = string.Concat(string.Format(CultureInfo.CurrentCulture, Resources.Resource.UsageFirstLine), "\n\n" ,
+                     string.Format(CultureInfo.CurrentCulture, Resources.Resource.UsageSecondLine), "\n\n" ,
+                     string.Format(CultureInfo.CurrentCulture, Resources.Resource.UsageThirdLine) , "\n\n" ,
+                     string.Format(CultureInfo.CurrentCulture, Resources.Resource.UsageFourthLine));
+            var reply = message.CreateReply(text);
 
             ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
             await connector.Conversations.ReplyToActivityAsync(reply);
@@ -73,7 +93,7 @@ namespace FinancialAdvisor
                 // Handle conversation state changes, like members being added and removed
                 // Use Activity.MembersAdded and Activity.MembersRemoved and Activity.Action for info
                 // Not available in all channelsc
-
+                await TranslationHandler.DetectAndSetUserLanguageCode(message);
                 IConversationUpdateActivity conversationupdate = message;
 
                 using (var scope = DialogModule.BeginLifetimeScope(Conversation.Container, message))
@@ -91,37 +111,16 @@ namespace FinancialAdvisor
                         }
                     }
                 }
-
-                //if (message.MembersAdded.Any(o => o.Id == message.Recipient.Id))
-                //{
-                //if (!_welcomeDone)
-                //{
-               
-                //        _welcomeDone = true;
-                //}
-                //}
-                //// pour Bot emulator only
-                //else if(message.From.Name == "User")
-                //{
-                //    if (!_welcomeDone)
-                //    {
-                //        await WelcomeMessage(message);
-                //        _welcomeDone = true;
-                //    }
-                //}
             }
             else if (message.Type == ActivityTypes.ContactRelationUpdate)
             {
                 // Handle add/remove from contact lists
                 // Activity.From + Activity.Action represent what happened
                 // For Skype and Messenger ?
-                if (message.Action == "add")
+                await TranslationHandler.DetectAndSetUserLanguageCode(message);
+                if (message.Action == "add" && (message.ChannelId == "skype" || message.ChannelId == "facebook"))
                 {
-                    //if (!_welcomeDone)
-                    //{
-                        await WelcomeMessage(message);
-                    //    _welcomeDone = true;
-                    //}
+                    await WelcomeMessage(message);
                 }
             }
             else if (message.Type == ActivityTypes.Typing)

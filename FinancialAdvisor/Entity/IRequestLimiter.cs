@@ -7,7 +7,7 @@ namespace FinancialAdvisor.Entity
     {
         CloudTableClient TableClient { get; set; }
 
-        RequestLimitEntity Read();
+        RequestLimitEntity Read(string partitionKey, string rowKey);
         void Update(RequestLimitEntity entity, DateTime RequestDatetime, int QueriesNumber);
     }
 }

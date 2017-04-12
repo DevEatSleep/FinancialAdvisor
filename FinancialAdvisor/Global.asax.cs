@@ -18,15 +18,7 @@ namespace FinancialAdvisor
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
             var builder = new ContainerBuilder();
-            builder.RegisterType<RequestLimiter>().As<IRequestLimiter>();
-            //builder.Register(
-            //    ctx =>
-            //    {
-            //        var config = WebConfigurationManager.AppSettings["TextTranslatorId"];
-            //        return new TranslatorServiceClient(config);
-
-            //    }
-            //    ).As<ITranslatorServiceClient>();
+            builder.RegisterType<RequestLimiter>().As<IRequestLimiter>();           
             var container = builder.Build();
             ServiceResolver.Container = container;
         }

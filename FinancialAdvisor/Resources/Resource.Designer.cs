@@ -22,7 +22,7 @@ namespace FinancialAdvisor.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resource {
+    public class Resource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace FinancialAdvisor.Resources {
         ///   Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FinancialAdvisor.Resources.Resource", typeof(Resource).Assembly);
@@ -51,7 +51,7 @@ namespace FinancialAdvisor.Resources {
         ///   les recherches de ressources à l'aide de cette classe de ressource fortement typée.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,117 +61,117 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Empty query ?.
+        ///   Recherche une chaîne localisée semblable à Requête vide ?.
         /// </summary>
-        internal static string EmptyQueryString {
+        public static string EmptyQueryString {
             get {
                 return ResourceManager.GetString("EmptyQueryString", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Woops, there is an error:.
+        ///   Recherche une chaîne localisée semblable à Une erreur est survenue.
         /// </summary>
-        internal static string ErrorString {
+        public static string ErrorString {
             get {
                 return ResourceManager.GetString("ErrorString", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à help.
+        ///   Recherche une chaîne localisée semblable à Aide.
         /// </summary>
-        internal static string HelpString {
+        public static string HelpString {
             get {
                 return ResourceManager.GetString("HelpString", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Hi.
+        ///   Recherche une chaîne localisée semblable à Salut.
         /// </summary>
-        internal static string HiString {
+        public static string HiString {
             get {
                 return ResourceManager.GetString("HiString", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Did you mean:.
+        ///   Recherche une chaîne localisée semblable à Vouliez-vous dire :.
         /// </summary>
-        internal static string MeanString {
+        public static string MeanString {
             get {
                 return ResourceManager.GetString("MeanString", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à No more queries available for this month, sorry.
+        ///   Recherche une chaîne localisée semblable à Pas plus de requêtes disponibles pour ce mois-ci, Désolé.
         /// </summary>
-        internal static string NoMoreQueriesString {
+        public static string NoMoreQueriesString {
             get {
                 return ResourceManager.GetString("NoMoreQueriesString", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Sorry, I don&apos;t understand, please type &apos;Help&apos; to see examples.
+        ///   Recherche une chaîne localisée semblable à Désolé, je ne comprends pas, s’il vous plaît dites « Aide » pour voir des exemples.
         /// </summary>
-        internal static string UnknownQuery {
+        public static string UnknownQuery {
             get {
                 return ResourceManager.GetString("UnknownQuery", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à I can make conversions or calculations between currencies..
+        ///   Recherche une chaîne localisée semblable à Je peux faire des conversions ou calculs entre monnaies..
         /// </summary>
-        internal static string UsageFirstLine {
+        public static string UsageFirstLine {
             get {
                 return ResourceManager.GetString("UsageFirstLine", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Be kind, I&apos;m under development ;-).
+        ///   Recherche une chaîne localisée semblable à Soyez indulgent, je suis en cours d’élaboration  ;-).
         /// </summary>
-        internal static string UsageFourthLine {
+        public static string UsageFourthLine {
             get {
                 return ResourceManager.GetString("UsageFourthLine", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à like &apos;convert 100 USD in JPY&apos; or &apos;add 100 USD and 10 JPY in EUR&apos;.
+        ///   Recherche une chaîne localisée semblable à comme « convertir 100 USD en JPY » ou « ajouter 100 USD et 10 JPY en euros ».
         /// </summary>
-        internal static string UsageSecondLine {
+        public static string UsageSecondLine {
             get {
                 return ResourceManager.GetString("UsageSecondLine", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à I can get stock quotes like &apos;get Microsoft price&apos;.
+        ///   Recherche une chaîne localisée semblable à Je peux obtenir des prix d&apos;actions comme « quel est le prix de Microsoft ? ».
         /// </summary>
-        internal static string UsageThirdLine {
+        public static string UsageThirdLine {
             get {
                 return ResourceManager.GetString("UsageThirdLine", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Welcome {0}, I&apos;m Bob, your financial advisor..
+        ///   Recherche une chaîne localisée semblable à Bienvenue {0}, je suis Bob, votre conseiller financier..
         /// </summary>
-        internal static string WelcomeStringFirstLine {
+        public static string WelcomeStringFirstLine {
             get {
                 return ResourceManager.GetString("WelcomeStringFirstLine", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à say &apos;Help&apos; to know what I can do for you.
+        ///   Recherche une chaîne localisée semblable à Dire « Aide » pour savoir ce que je peux faire pour vous.
         /// </summary>
-        internal static string WelcomeStringSecondLine {
+        public static string WelcomeStringSecondLine {
             get {
                 return ResourceManager.GetString("WelcomeStringSecondLine", resourceCulture);
             }

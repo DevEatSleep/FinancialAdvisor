@@ -13,39 +13,39 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="HiString" xml:space="preserve">
-    <value>Hola</value>
+    <value>なにこれ?</value>
   </data>
   <data name="WelcomeStringFirstLine" xml:space="preserve">
-    <value>Bienvenida {0}, soy Bob, su asesor financiero.</value>
+    <value>{0} を歓迎、私はボブ、あなたのファイナンシャルアドバイザー。</value>
   </data>
   <data name="WelcomeStringSecondLine" xml:space="preserve">
-    <value>Decir "ayuda" para ver lo que puedo hacer para usted</value>
+    <value>「ヘルプ」をあなたのために何ができるを参照するくださいと言う</value>
   </data>
   <data name="EmptyQueryString" xml:space="preserve">
-    <value>¿Consulta vacía?</value>
+    <value>クエリの空ですか。</value>
   </data>
   <data name="HelpString" xml:space="preserve">
-    <value>Ayuda</value>
+    <value>ヘルプ</value>
   </data>
   <data name="MeanString" xml:space="preserve">
-    <value>Quiso decir:</value>
+    <value>検索語句の候補:</value>
   </data>
   <data name="NoMoreQueriesString" xml:space="preserve">
-    <value>No más consultas disponibles para este mes, lo siento</value>
+    <value>今月の利用できるより多くのクエリはありません、ごめんなさい</value>
   </data>
   <data name="UnknownQuery" xml:space="preserve">
-    <value>Lo sentimos, no entiendo, por favor, diga "help" para ver ejemplos</value>
+    <value>申し訳ありませんが、私は理解していない、するくださいと言う例を参照するには、「ヘルプ」</value>
   </data>
   <data name="UsageFirstLine" xml:space="preserve">
-    <value>Que puedo hacer conversiones o cálculos entre monedas.</value>
+    <value>私は、変換または通貨間で計算を行うことができます。</value>
   </data>
   <data name="UsageFourthLine" xml:space="preserve">
-    <value>Perdón, estoy siendo desarrollado ;-)</value>
+    <value>寛容、私は;-) 開発されています</value>
   </data>
   <data name="UsageSecondLine" xml:space="preserve">
-    <value>como 'convertir 100 USD en JPY' o 'Añadir 100 USD y el JPY en 10 euros'</value>
+    <value>'100 米ドルを円に変換' または 'EUR 10 で 100 米ドルと円を追加'</value>
   </data>
   <data name="UsageThirdLine" xml:space="preserve">
-    <value>Puedo conseguir el precio de las acciones tales como "¿Cuál es el precio de Microsoft?</value>
+    <value>"マイクロソフトの価格は何ですなど、アクションの価格を得ることができます私か。</value>
   </data>
 </root>

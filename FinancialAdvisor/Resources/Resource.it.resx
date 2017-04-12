@@ -13,39 +13,39 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="HiString" xml:space="preserve">
-    <value>Hola</value>
+    <value>Ehilà!</value>
   </data>
   <data name="WelcomeStringFirstLine" xml:space="preserve">
-    <value>Bienvenida {0}, soy Bob, su asesor financiero.</value>
+    <value>Benvenuto {0}, sono Bob, il vostro consulente finanziario.</value>
   </data>
   <data name="WelcomeStringSecondLine" xml:space="preserve">
-    <value>Decir "ayuda" para ver lo que puedo hacer para usted</value>
+    <value>Dire "aiuto" per vedere cosa posso fare per te</value>
   </data>
   <data name="EmptyQueryString" xml:space="preserve">
-    <value>¿Consulta vacía?</value>
+    <value>Eseguire una query vuota?</value>
   </data>
   <data name="HelpString" xml:space="preserve">
-    <value>Ayuda</value>
+    <value>?</value>
   </data>
   <data name="MeanString" xml:space="preserve">
-    <value>Quiso decir:</value>
+    <value>Alternative:</value>
   </data>
   <data name="NoMoreQueriesString" xml:space="preserve">
-    <value>No más consultas disponibles para este mes, lo siento</value>
+    <value>Nessuna query più disponibile per questo mese, mi dispiace</value>
   </data>
   <data name="UnknownQuery" xml:space="preserve">
-    <value>Lo sentimos, no entiendo, por favor, diga "help" para ver ejemplos</value>
+    <value>Siamo spiacenti, non capisco, si prega di dire "aiuto" per vedere gli esempi</value>
   </data>
   <data name="UsageFirstLine" xml:space="preserve">
-    <value>Que puedo hacer conversiones o cálculos entre monedas.</value>
+    <value>Posso fare le conversioni o calcoli tra le valute.</value>
   </data>
   <data name="UsageFourthLine" xml:space="preserve">
-    <value>Perdón, estoy siendo desarrollado ;-)</value>
+    <value>Essere indulgente, sto sviluppando ;-)</value>
   </data>
   <data name="UsageSecondLine" xml:space="preserve">
-    <value>como 'convertir 100 USD en JPY' o 'Añadir 100 USD y el JPY en 10 euros'</value>
+    <value>come 'Converti 100 USD JPY' o 'Aggiungi 100 USD e JPY EUR 10'</value>
   </data>
   <data name="UsageThirdLine" xml:space="preserve">
-    <value>Puedo conseguir el precio de las acciones tales como "¿Cuál es el precio de Microsoft?</value>
+    <value>Posso ottenere il prezzo delle azioni come "Qual è il prezzo di Microsoft?</value>
   </data>
 </root>
