@@ -1,9 +1,4 @@
 ﻿using Autofac;
-using Autofac.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace FinancialAdvisor.Services
 {

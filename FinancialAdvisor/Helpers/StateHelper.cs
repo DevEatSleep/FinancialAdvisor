@@ -43,7 +43,7 @@ namespace FinancialAdvisor.Helpers
             {
                 StateClient stateClient = activity.GetStateClient();
                 BotData userData = stateClient.BotState.GetUserData(activity.ChannelId, activity.From.Id);
-
+               
                 var languageCode = userData.GetProperty<string>("LanguageCode");
 
                 return languageCode;

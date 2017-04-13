@@ -43,9 +43,15 @@
     <value>是宽容的我正在;-)</value>
   </data>
   <data name="UsageSecondLine" xml:space="preserve">
-    <value>作为转换 100 美元日元' 或者 '添加 100 美元和日元 EUR 10'</value>
+    <value>作为"把 100 美元兑换成日元"或者"添加 100 美元和 10 日元欧元"。</value>
   </data>
   <data name="UsageThirdLine" xml:space="preserve">
     <value>我能得到的行动的价格如"微软的价格是什么？</value>
+  </data>
+  <data name="ErrorString" xml:space="preserve">
+    <value>遇到错误</value>
+  </data>
+  <data name="LanguageString" xml:space="preserve">
+    <value>语言</value>
   </data>
 </root>

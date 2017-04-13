@@ -5,10 +5,7 @@ using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
 using System;
 using System.Linq;
-using Microsoft.Bot.Builder.Dialogs.Internals;
-using Autofac;
 using FinancialAdvisor.Helpers;
-using FinancialAdvisor;
 using System.Globalization;
 
 namespace FinancialAdvisor
@@ -26,90 +23,100 @@ namespace FinancialAdvisor
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                await TranslationHandler.DetectAndSetUserLanguageCode(activity);
-                if (activity.Text.ToLower() == Resources.Resource.HiString.ToLower())
+                activity.Locale = CultureInfo.CurrentCulture.Name;
+                if (activity.Text.ToLower() == string.Format(CultureInfo.CurrentCulture, Resources.Resource.HiString.ToLower()))
                 {
-                    await WelcomeMessage(activity);
+                    WelcomeMessage(activity);
                 }
                 else
-                if (activity.Text.ToLower() == Resources.Resource.HelpString.ToLower())
+                if (activity.Text.ToLower() == string.Format(CultureInfo.CurrentCulture, Resources.Resource.HelpString.ToLower()))
                 {
-                    await HelpMessage(activity);
+                    HelpMessage(activity);
+                }
+                else
+                if(activity.Text.ToLower() == "Culture".ToLower())
+                {
+                    DisplayCulture(activity);
+                }
+                else
+                if (activity.Text.ToLower() == string.Format(CultureInfo.CurrentCulture, Resources.Resource.LanguageString.ToLower()))
+                {
+                    await DisplayLanguageAsync(activity);
                 }
                 else
                 {
-                    var userLanguageCode = StateHelper.GetUserLanguageCode(activity);
-                    if (userLanguageCode != "en")
-                        activity.Text = await TranslationHandler.DoTranslation(activity.Text, userLanguageCode, "en");
+                    string language = await TranslationHandler.DoLanguageDetection(activity.Text);
+                    if (language != "en")
+                    {                        
+                        activity.Text = await TranslationHandler.DoTranslation(activity.Text, language, "en");
+                    }
+                        
                     await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
                 }
             }
             else
             {
 #pragma warning disable CS4014 // Dans la mesure où cet appel n'est pas attendu, l'exécution de la méthode actuelle continue avant la fin de l'appel
-                HandleSystemMessageAsync(activity);
+                HandleSystemMessage(activity);
 #pragma warning restore CS4014 // Dans la mesure où cet appel n'est pas attendu, l'exécution de la méthode actuelle continue avant la fin de l'appel
             }
             return new HttpResponseMessage(System.Net.HttpStatusCode.OK);
         }
 
-        private async Task WelcomeMessage(Activity message)
+        private void WelcomeMessage(Activity message)
         {
             var text = string.Concat(string.Format(CultureInfo.CurrentCulture, Resources.Resource.WelcomeStringFirstLine, message.From.Name),
-                Environment.NewLine, string.Format(CultureInfo.CurrentCulture, Resources.Resource.WelcomeStringSecondLine));
+                                Environment.NewLine, string.Format(CultureInfo.CurrentCulture, Resources.Resource.WelcomeStringSecondLine));
             var reply = message.CreateReply(text);
+
             ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
-            await connector.Conversations.ReplyToActivityAsync(reply);
+
+            connector.Conversations.ReplyToActivity(reply);
         }
 
-        //private async Task DisplayLanguage(Activity message)
-        //{
-        //    var language = StateHelper.GetUserLanguageCode(message);
-        //    ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
-        //    await connector.Conversations.ReplyToActivityAsync(message.CreateReply(language));
-        //}
-
-        private async Task HelpMessage(Activity message)
+        private async Task DisplayLanguageAsync(Activity message)
         {
-            var text = string.Concat(string.Format(CultureInfo.CurrentCulture, Resources.Resource.UsageFirstLine), "\n\n" ,
-                     string.Format(CultureInfo.CurrentCulture, Resources.Resource.UsageSecondLine), "\n\n" ,
-                     string.Format(CultureInfo.CurrentCulture, Resources.Resource.UsageThirdLine) , "\n\n" ,
+            string language = await TranslationHandler.DoLanguageDetection(message.Text);
+            ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
+            connector.Conversations.ReplyToActivity(message.CreateReply(language));
+        }
+
+        private void DisplayCulture(Activity message)
+        {
+            var language = CultureInfo.CurrentCulture.DisplayName;
+            ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
+            connector.Conversations.ReplyToActivity(message.CreateReply(language));
+        }
+
+        private void HelpMessage(Activity message)
+        {
+            var text = string.Concat(string.Format(CultureInfo.CurrentCulture, Resources.Resource.UsageFirstLine), "\n\n",
+                     string.Format(CultureInfo.CurrentCulture, Resources.Resource.UsageSecondLine), "\n\n",
+                     string.Format(CultureInfo.CurrentCulture, Resources.Resource.UsageThirdLine), "\n\n",
                      string.Format(CultureInfo.CurrentCulture, Resources.Resource.UsageFourthLine));
             var reply = message.CreateReply(text);
 
             ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
-            await connector.Conversations.ReplyToActivityAsync(reply);
+            connector.Conversations.ReplyToActivity(reply);
         }
 
-        private async Task<Activity> HandleSystemMessageAsync(Activity message)
+        private Activity HandleSystemMessage(Activity message)
         {
             if (message.Type == ActivityTypes.DeleteUserData)
             {
                 // Implement user deletion here
                 // If we handle user deletion, return a real message
+
             }
             else if (message.Type == ActivityTypes.ConversationUpdate)
             {
                 // Handle conversation state changes, like members being added and removed
                 // Use Activity.MembersAdded and Activity.MembersRemoved and Activity.Action for info
                 // Not available in all channelsc
-                await TranslationHandler.DetectAndSetUserLanguageCode(message);
-                IConversationUpdateActivity conversationupdate = message;
 
-                using (var scope = DialogModule.BeginLifetimeScope(Conversation.Container, message))
+                if (message.MembersAdded.Any(o => o.Id == message.Recipient.Id))
                 {
-                    var client = scope.Resolve<IConnectorClient>();
-                    if (conversationupdate.MembersAdded.Any())
-                    {
-                        var reply = message.CreateReply();
-                        foreach (var newMember in conversationupdate.MembersAdded)
-                        {
-                            if (newMember.Id != message.Recipient.Id)
-                            {
-                                await WelcomeMessage(message);
-                            }
-                        }
-                    }
+                    WelcomeMessage(message);
                 }
             }
             else if (message.Type == ActivityTypes.ContactRelationUpdate)
@@ -117,10 +124,13 @@ namespace FinancialAdvisor
                 // Handle add/remove from contact lists
                 // Activity.From + Activity.Action represent what happened
                 // For Skype and Messenger ?
-                await TranslationHandler.DetectAndSetUserLanguageCode(message);
-                if (message.Action == "add" && (message.ChannelId == "skype" || message.ChannelId == "facebook"))
+                //if (message.Action == "add" && (message.ChannelId == "skype" || message.ChannelId == "facebook"))
+                //{
+                //    await WelcomeMessage(message, message.From.Name);
+                //}
+                if (message.Action == "add")
                 {
-                    await WelcomeMessage(message);
+                    WelcomeMessage(message);
                 }
             }
             else if (message.Type == ActivityTypes.Typing)

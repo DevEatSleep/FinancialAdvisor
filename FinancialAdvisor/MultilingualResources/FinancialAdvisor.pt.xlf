@@ -47,8 +47,9 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Ser indulgente, eu estou sendo desenvolvido ;-)</target>
         </trans-unit>
         <trans-unit id="UsageSecondLine" translate="yes" xml:space="preserve">
-          <source>comme « convertir 100 USD en JPY » ou « ajouter 100 USD et 10 JPY en euros »</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">como 'converter 100 USD em JPY' ou 'Adicionar 100 USD e JPY em 10 euros'</target>
+          <source>comme « convertir 100 dollars en yens " ou « ajouter 100 dollars et 10 yens en euros »</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">como "converter 100 dólares em ienes" ou "Adicionar $ 100 e 10 ienes em euros".</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="UsageThirdLine" translate="yes" xml:space="preserve">
           <source>Je peux obtenir des prix d'actions comme « quel est le prix de Microsoft ? »</source>
@@ -56,7 +57,11 @@
         </trans-unit>
         <trans-unit id="ErrorString" translate="yes" xml:space="preserve">
           <source>Une erreur est survenue</source>
-          <target state="new">Une erreur est survenue</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Erro encontrado</target>
+        </trans-unit>
+        <trans-unit id="LanguageString" translate="yes" xml:space="preserve">
+          <source>Langue</source>
+          <target state="needs-review-translation" state-qualifier="exact-match">Idioma</target>
         </trans-unit>
       </group>
     </body>

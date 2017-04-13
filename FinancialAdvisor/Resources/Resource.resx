@@ -148,12 +148,15 @@
     <value>Soyez indulgent, je suis en cours d’élaboration  ;-)</value>
   </data>
   <data name="UsageSecondLine" xml:space="preserve">
-    <value>comme « convertir 100 USD en JPY » ou « ajouter 100 USD et 10 JPY en euros »</value>
+    <value>comme « convertir 100 dollars en yens " ou « ajouter 100 dollars et 10 yens en euros »</value>
   </data>
   <data name="UsageThirdLine" xml:space="preserve">
     <value>Je peux obtenir des prix d'actions comme « quel est le prix de Microsoft ? »</value>
   </data>
   <data name="ErrorString" xml:space="preserve">
     <value>Une erreur est survenue</value>
+  </data>
+  <data name="LanguageString" xml:space="preserve">
+    <value>Langue</value>
   </data>
 </root>

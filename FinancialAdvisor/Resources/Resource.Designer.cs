@@ -97,6 +97,15 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Langue.
+        /// </summary>
+        public static string LanguageString {
+            get {
+                return ResourceManager.GetString("LanguageString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Vouliez-vous dire :.
         /// </summary>
         public static string MeanString {
@@ -142,7 +151,7 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à comme « convertir 100 USD en JPY » ou « ajouter 100 USD et 10 JPY en euros ».
+        ///   Recherche une chaîne localisée semblable à comme « convertir 100 dollars en yens &quot; ou « ajouter 100 dollars et 10 yens en euros ».
         /// </summary>
         public static string UsageSecondLine {
             get {

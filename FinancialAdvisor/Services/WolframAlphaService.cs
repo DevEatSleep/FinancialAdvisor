@@ -1,17 +1,11 @@
 ﻿using FinancialAdvisor.Entity;
-using Microsoft.ApplicationInsights;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
-using System.Web;
-using System.Web.Configuration;
-using TranslatorService;
 using WolframAlphaNET;
 using WolframAlphaNET.Misc;
 using WolframAlphaNET.Objects;
 using System.Threading.Tasks;
-using Autofac;
 
 namespace FinancialAdvisor.Services
 {
