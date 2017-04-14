@@ -16,7 +16,7 @@ namespace FinancialAdvisor.Services
         public string AppId { get => _appId; set => _appId = value; }
         
 
-        public async Task<string> ExecQueryAsync(string query)
+        public async Task<string> ExecQueryAsync(string query, string scanner)
         {
             IRequestLimiter _requestLimiter = ServiceResolver.Get<IRequestLimiter>();
             
@@ -38,11 +38,13 @@ namespace FinancialAdvisor.Services
             if (string.IsNullOrEmpty(query))
                 return Resources.Resource.EmptyQueryString;
 
-            WolframAlpha wolfram = new WolframAlpha(_appId);
-            wolfram.ScanTimeout = 1; //We set ScanTimeout really low to get a quick answer. See RecalculateResults() below.
-            wolfram.UseTLS = true; //Use encryption
-            wolfram.Scanners.Add("Money");
-            wolfram.Scanners.Add("Data");
+            WolframAlpha wolfram = new WolframAlpha(_appId)
+            {
+                ScanTimeout = 1, //We set ScanTimeout really low to get a quick answer. See RecalculateResults() below.
+                UseTLS = true //Use encryption
+            };
+            wolfram.Scanners.Add(scanner);
+            //wolfram.Scanners.Add("Data");
 
             _requestLimiter.Update(wolframEntity, DateTime.Now, wolframEntity.QueriesNumber + 1);
             _requestLimiter.Update(translatorEntity, DateTime.Now, translatorEntity.QueriesNumber + query.Length);
@@ -59,7 +61,7 @@ namespace FinancialAdvisor.Services
             {
                 if (results.Warnings.SpellCheck != null)
                 {
-                    await ExecQueryAsync(results.Warnings.SpellCheck.Text);
+                    await ExecQueryAsync(results.Warnings.SpellCheck.Text, scanner);
                 }
             }
 
