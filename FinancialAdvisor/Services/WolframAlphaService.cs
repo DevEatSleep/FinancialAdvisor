@@ -14,10 +14,14 @@ namespace FinancialAdvisor.Services
     {
         private string _appId = string.Empty;
         public string AppId { get => _appId; set => _appId = value; }
+        private bool _hasValidData;
+        public bool HasValidData { get => _hasValidData; set => _hasValidData = value; }
         
 
         public async Task<string> ExecQueryAsync(string query, string scanner)
         {
+            _hasValidData = false;
+
             IRequestLimiter _requestLimiter = ServiceResolver.Get<IRequestLimiter>();
             
             RequestLimitEntity wolframEntity = _requestLimiter.Read("Wolfram", "FinancialAdvisor");
@@ -40,7 +44,7 @@ namespace FinancialAdvisor.Services
 
             WolframAlpha wolfram = new WolframAlpha(_appId)
             {
-                ScanTimeout = 1, //We set ScanTimeout really low to get a quick answer. See RecalculateResults() below.
+                //ScanTimeout = 1, //We set ScanTimeout really low to get a quick answer. See RecalculateResults() below.
                 UseTLS = true //Use encryption
             };
             wolfram.Scanners.Add(scanner);
@@ -84,6 +88,7 @@ namespace FinancialAdvisor.Services
                 {
                     if (primaryPod.SubPods.HasElements())
                     {
+                        _hasValidData = true;
                         List<string> resultList = new List<string>();
                         foreach (SubPod subPod in primaryPod.SubPods)
                         {

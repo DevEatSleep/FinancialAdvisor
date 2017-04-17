@@ -43,7 +43,7 @@
     <value>Verzeihen, ich bin ;-) entwickelt</value>
   </data>
   <data name="UsageSecondLine" xml:space="preserve">
-    <value>als "100 Dollar in Yen umwandeln" oder "add $ 100 und 10 Yen in Euro".</value>
+    <value>als "konvertieren 100 Dollar in Yen" oder "100 usd + 10 Gbp in Euro"</value>
   </data>
   <data name="UsageThirdLine" xml:space="preserve">
     <value>Dem Preis für Aktionen bekomme wie ich "Was ist der Preis von Microsoft?</value>

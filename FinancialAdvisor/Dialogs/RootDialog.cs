@@ -6,6 +6,8 @@ using FinancialAdvisor.Services;
 using System.Web.Configuration;
 using Microsoft.Bot.Builder.Luis;
 using Microsoft.Bot.Builder.Luis.Models;
+using System.Text.RegularExpressions;
+using FinancialAdvisor.Helpers;
 
 namespace FinancialAdvisor.Dialogs
 {
@@ -15,6 +17,15 @@ namespace FinancialAdvisor.Dialogs
     {
         private IWolframAlphaService _iwolframAlphaService = new WolframAlphaService();
         private const string EntityMoneyName = "builtin.currency";
+        private const string EntityCompanyName = "company";
+        private string[] EntitiesQuoteNames = { "Price", "Quote", "Value" };
+
+        private string language;
+
+        public RootDialog(string language)
+        {
+            this.language = language;
+        }
 
         //public Task StartAsync(IDialogContext context)
         //{            
@@ -31,11 +42,54 @@ namespace FinancialAdvisor.Dialogs
             context.Wait(this.MessageReceived);
         }
 
+
+        [LuisIntent("get")]
+        [LuisIntent("what")]
+        public async Task GetStockQuote(IDialogContext context, IAwaitable<IMessageActivity> activity, LuisResult result)
+        {
+            var message = await activity;
+
+            EntityRecommendation QuoteEntityRecommendation;
+
+            foreach(string entityQuoteName in EntitiesQuoteNames)
+            {
+                if (result.TryFindEntity(entityQuoteName, out QuoteEntityRecommendation))
+                {
+                    _iwolframAlphaService.AppId = WebConfigurationManager.AppSettings["WolframAlphaAppId"];
+                    var queryResult = await _iwolframAlphaService.ExecQueryAsync(message.Text, "Data");
+
+                    if (_iwolframAlphaService.HasValidData)
+                    {
+                        EntityRecommendation CompanyEntityRecommendation;
+                        //TODO gérer company sur LUIS
+                        if (result.TryFindEntity(EntityCompanyName, out CompanyEntityRecommendation))
+                        {
+                            var formatQueryResult = ParseQuote(queryResult, CompanyEntityRecommendation.Entity);
+                            
+                            string translatedQueryResult;
+
+                            if (language != "en")
+                                translatedQueryResult = await TranslationHandler.DoTranslation(formatQueryResult, "en", language);
+                            else
+                                translatedQueryResult = formatQueryResult;
+
+                            await context.PostAsync(translatedQueryResult);
+                        }
+                    }
+                    else
+                        await context.PostAsync(queryResult);
+                    break;
+                }
+            }
+            context.Wait(this.MessageReceived);
+        }
+
         [LuisIntent("convert")]
-        [LuisIntent("add")]
-        [LuisIntent("substract")]
-        [LuisIntent("divide")]
-        public async Task GoToStation(IDialogContext context, IAwaitable<IMessageActivity> activity, LuisResult result)
+        [LuisIntent("+")]
+        [LuisIntent("-")]
+        [LuisIntent("*")]
+        [LuisIntent("/")]
+        public async Task DoMoneyCalc(IDialogContext context, IAwaitable<IMessageActivity> activity, LuisResult result)
         {
             var message = await activity;
 
@@ -45,11 +99,48 @@ namespace FinancialAdvisor.Dialogs
             {
                 _iwolframAlphaService.AppId = WebConfigurationManager.AppSettings["WolframAlphaAppId"];
                 var queryResult = await _iwolframAlphaService.ExecQueryAsync(message.Text, "Money");
-                //TODO : parser les réponses et les traduire
-                //var queryResultLocale = queryResult.ToUserLocaleAsync(context);
-                await context.PostAsync(queryResult);
+               
+                //var queryResult = "euro94.22 (euros)"; ¥10860  (Japanese yen)
+
+                if(_iwolframAlphaService.HasValidData)
+                {
+                    var formatQueryResult = ParseMoney(queryResult);
+                    string translatedQueryResult;
+
+                    if (language != "en")
+                        translatedQueryResult = await TranslationHandler.DoTranslation(formatQueryResult, "en", language);
+                    else
+                        translatedQueryResult = formatQueryResult;
+
+                    await context.PostAsync(translatedQueryResult);
+                }
+                else
+                    await context.PostAsync(queryResult);
             }
             context.Wait(this.MessageReceived);
+        }
+        //$64.95(MSFT | NASDAQ | 10:00:00 pm CEST | Thursday, April 13, 2017)
+        private string ParseQuote(string queryResult, string companyName)
+        {
+            var quoteSentence = queryResult.Split("|".ToCharArray());
+
+            return string.Concat(companyName, " price is ", quoteSentence[0]);
+
+        }
+
+        private string ParseMoney(string input)
+        {
+            Regex r = new Regex(@"([+-]?[0-9]*[.]?[0-9]+)([ ]*)(\(([^()]*)\))", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            var m = r.Match(input);
+            if (m.Success)
+            {
+                String value = m.Groups[1].ToString();
+                String currency = m.Groups[4].ToString();
+
+                return string.Concat(value, " ", currency);
+            }
+            else
+                return input;            
         }
     }
 }

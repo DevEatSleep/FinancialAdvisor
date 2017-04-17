@@ -151,7 +151,7 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à comme « convertir 100 dollars en yens &quot; ou « ajouter 100 dollars et 10 yens en euros ».
+        ///   Recherche une chaîne localisée semblable à comme « convertir 100 dollars en yens &quot; ou « 100 usd + 10 gbp en euros ».
         /// </summary>
         public static string UsageSecondLine {
             get {

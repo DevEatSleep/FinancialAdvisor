@@ -43,7 +43,7 @@
     <value>Прощать, я являюсь разрабатывается ;-)</value>
   </data>
   <data name="UsageSecondLine" xml:space="preserve">
-    <value>Как «конвертировать 100 долларов в иен» или «добавить $ 100 и 10 иен в евро».</value>
+    <value>Как «конвертировать 100 долларов в иен» или «100 usd + 10 фунтов стерлингов в евро»</value>
   </data>
   <data name="UsageThirdLine" xml:space="preserve">
     <value>Я могу получить цена действия, такие как «Какова цена Microsoft?</value>

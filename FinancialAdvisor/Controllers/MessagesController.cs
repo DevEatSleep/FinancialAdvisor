@@ -48,10 +48,10 @@ namespace FinancialAdvisor
                     string language = await TranslationHandler.DoLanguageDetection(activity.Text);
                     if (language != "en")
                     {                        
-                        activity.Text = await TranslationHandler.DoTranslation(activity.Text, language, "en");
+                        activity.Text = (await TranslationHandler.DoTranslation(activity.Text, language, "en")).ToLower();
                     }
                         
-                    await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
+                    await Conversation.SendAsync(activity, () => new Dialogs.RootDialog(language));
                 }
             }
             else

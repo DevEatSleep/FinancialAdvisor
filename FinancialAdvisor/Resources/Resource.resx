@@ -148,7 +148,7 @@
     <value>Soyez indulgent, je suis en cours d’élaboration  ;-)</value>
   </data>
   <data name="UsageSecondLine" xml:space="preserve">
-    <value>comme « convertir 100 dollars en yens " ou « ajouter 100 dollars et 10 yens en euros »</value>
+    <value>comme « convertir 100 dollars en yens " ou « 100 usd + 10 gbp en euros »</value>
   </data>
   <data name="UsageThirdLine" xml:space="preserve">
     <value>Je peux obtenir des prix d'actions comme « quel est le prix de Microsoft ? »</value>

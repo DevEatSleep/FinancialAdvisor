@@ -47,8 +47,8 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Verzeihen, ich bin ;-) entwickelt</target>
         </trans-unit>
         <trans-unit id="UsageSecondLine" translate="yes" xml:space="preserve">
-          <source>comme « convertir 100 dollars en yens " ou « ajouter 100 dollars et 10 yens en euros »</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">als "100 Dollar in Yen umwandeln" oder "add $ 100 und 10 Yen in Euro".</target>
+          <source>comme « convertir 100 dollars en yens " ou « 100 usd + 10 gbp en euros »</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">als "konvertieren 100 Dollar in Yen" oder "100 usd + 10 Gbp in Euro"</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="UsageThirdLine" translate="yes" xml:space="preserve">

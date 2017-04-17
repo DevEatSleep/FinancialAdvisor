@@ -43,7 +43,7 @@
     <value>Ser indulgente, eu estou sendo desenvolvido ;-)</value>
   </data>
   <data name="UsageSecondLine" xml:space="preserve">
-    <value>como "converter 100 dólares em ienes" ou "Adicionar $ 100 e 10 ienes em euros".</value>
+    <value>como "converter 100 dólares em ienes" ou "100 usd + 10 libras esterlinas em euros"</value>
   </data>
   <data name="UsageThirdLine" xml:space="preserve">
     <value>Pode obter o preço de ações tais como "Qual é o preço da Microsoft?</value>

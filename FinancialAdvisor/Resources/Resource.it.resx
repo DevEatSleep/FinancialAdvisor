@@ -43,7 +43,7 @@
     <value>Essere indulgente, sto sviluppando ;-)</value>
   </data>
   <data name="UsageSecondLine" xml:space="preserve">
-    <value>come "convertire 100 dollari in yen" o "aggiungere $ 100 e 10 yen in euro".</value>
+    <value>come "convertire 100 dollari in yen" o "100 usd + 10 sterline in euro"</value>
   </data>
   <data name="UsageThirdLine" xml:space="preserve">
     <value>Posso ottenere il prezzo delle azioni come "Qual è il prezzo di Microsoft?</value>
