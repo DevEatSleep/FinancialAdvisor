@@ -57,8 +57,8 @@ namespace FinancialAdvisor
                 }
                 else
                 {
-                    // string language = await TranslationHelper.DoLanguageDetection(activity.Text);
-                    string language = CultureHelper.CurrentCulture.TwoLetterISOLanguageName;
+                    string language = await TranslationHelper.DoLanguageDetection(activity.Text);
+                    //string language = CultureHelper.CurrentCulture.TwoLetterISOLanguageName;
                     if (language != "en")
                     {
                         activity.Text = (await TranslationHelper.DoTranslation(activity.Text, language, "en")).ToLower();
