@@ -19,7 +19,7 @@
     <value>{0} を歓迎、私はボブ、あなたのファイナンシャルアドバイザー。</value>
   </data>
   <data name="WelcomeStringSecondLine" xml:space="preserve">
-    <value>「ヘルプ」をあなたのために何ができるを参照するくださいと言う</value>
+    <value>「ヘルプ」をあなたのために何ができるを参照するくださいと言います。</value>
   </data>
   <data name="EmptyQueryString" xml:space="preserve">
     <value>クエリの空ですか。</value>
@@ -53,5 +53,20 @@
   </data>
   <data name="LanguageString" xml:space="preserve">
     <value>言語</value>
+  </data>
+  <data name="WelcomeLanguageAvailable" xml:space="preserve">
+    <value>私はこれらの言語で利用できます。</value>
+  </data>
+  <data name="UsageFifthLine" xml:space="preserve">
+    <value>教えてください:「言語」は、言語を変更するには</value>
+  </data>
+  <data name="CultureString" xml:space="preserve">
+    <value>カルチャ</value>
+  </data>
+  <data name="SpeakString" xml:space="preserve">
+    <value>話</value>
+  </data>
+  <data name="NewLanguageString" xml:space="preserve">
+    <value>今、私は話す</value>
   </data>
 </root>

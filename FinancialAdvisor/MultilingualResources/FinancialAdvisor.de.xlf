@@ -15,8 +15,8 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Willkommen {0}, ich bin Bob, Ihren Finanzberater.</target>
         </trans-unit>
         <trans-unit id="WelcomeStringSecondLine" translate="yes" xml:space="preserve">
-          <source>Dire « Aide » pour savoir ce que je peux faire pour vous</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Sagen Sie "Hilf" zu sehen, was ich für Sie tun können</target>
+          <source>Dire « Aide » pour savoir ce que je peux faire pour vous.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Sagen Sie "Hilfe", um zu sehen was ich für Sie tun können.</target>
         </trans-unit>
         <trans-unit id="EmptyQueryString" translate="yes" xml:space="preserve">
           <source>Requête vide ?</source>
@@ -49,7 +49,6 @@
         <trans-unit id="UsageSecondLine" translate="yes" xml:space="preserve">
           <source>comme « convertir 100 dollars en yens " ou « 100 usd + 10 gbp en euros »</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">als "konvertieren 100 Dollar in Yen" oder "100 usd + 10 Gbp in Euro"</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="UsageThirdLine" translate="yes" xml:space="preserve">
           <source>Je peux obtenir des prix d'actions comme « quel est le prix de Microsoft ? »</source>
@@ -62,6 +61,26 @@
         <trans-unit id="LanguageString" translate="yes" xml:space="preserve">
           <source>Langue</source>
           <target state="needs-review-translation" state-qualifier="exact-match">Sprache</target>
+        </trans-unit>
+        <trans-unit id="WelcomeLanguageAvailable" translate="yes" xml:space="preserve">
+          <source>Je suis disponible dans toutes ces langues: </source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ich bin in diesen Sprachen verfügbar: </target>
+        </trans-unit>
+        <trans-unit id="UsageFifthLine" translate="yes" xml:space="preserve">
+          <source>Dites moi: "parle langue"  pour changer de langue</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Sagen Sie mir: "Sprache" die Sprache ändern</target>
+        </trans-unit>
+        <trans-unit id="CultureString" translate="yes" xml:space="preserve">
+          <source>Culture</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Kultur</target>
+        </trans-unit>
+        <trans-unit id="SpeakString" translate="yes" xml:space="preserve">
+          <source>Parle</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Sprechen</target>
+        </trans-unit>
+        <trans-unit id="NewLanguageString" translate="yes" xml:space="preserve">
+          <source>Maintenant, je parle en</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Nun, ich spreche</target>
         </trans-unit>
       </group>
     </body>

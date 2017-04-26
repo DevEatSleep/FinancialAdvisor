@@ -19,7 +19,7 @@
     <value>Bem-vindo {0}, sou o Bob, seu consultor financeiro.</value>
   </data>
   <data name="WelcomeStringSecondLine" xml:space="preserve">
-    <value>Dizer que "ajuda" para ver o que posso fazer por você</value>
+    <value>Dizer "ajuda" para ver o que posso fazer por você.</value>
   </data>
   <data name="EmptyQueryString" xml:space="preserve">
     <value>Consulta vazia?</value>
@@ -53,5 +53,20 @@
   </data>
   <data name="LanguageString" xml:space="preserve">
     <value>Idioma</value>
+  </data>
+  <data name="WelcomeLanguageAvailable" xml:space="preserve">
+    <value>Estou disponível nessas línguas: </value>
+  </data>
+  <data name="UsageFifthLine" xml:space="preserve">
+    <value>Diga-me: "linguagem" para alterar o idioma</value>
+  </data>
+  <data name="CultureString" xml:space="preserve">
+    <value>Cultura</value>
+  </data>
+  <data name="SpeakString" xml:space="preserve">
+    <value>Falar</value>
+  </data>
+  <data name="NewLanguageString" xml:space="preserve">
+    <value>Agora, eu falo.</value>
   </data>
 </root>

@@ -19,7 +19,7 @@
     <value>Добро пожаловать {0}, я Боб, ваш финансовый консультант.</value>
   </data>
   <data name="WelcomeStringSecondLine" xml:space="preserve">
-    <value>Говорят, «помочь», чтобы увидеть, что я могу сделать для вас</value>
+    <value>Говорят, «помочь», чтобы увидеть, что я могу сделать для вас.</value>
   </data>
   <data name="EmptyQueryString" xml:space="preserve">
     <value>Пустой запрос?</value>
@@ -53,5 +53,20 @@
   </data>
   <data name="LanguageString" xml:space="preserve">
     <value>Язык</value>
+  </data>
+  <data name="WelcomeLanguageAvailable" xml:space="preserve">
+    <value>Я доступен на следующих языках: </value>
+  </data>
+  <data name="UsageFifthLine" xml:space="preserve">
+    <value>Скажите: «язык», чтобы изменить язык</value>
+  </data>
+  <data name="CultureString" xml:space="preserve">
+    <value>Язык и региональные параметры</value>
+  </data>
+  <data name="SpeakString" xml:space="preserve">
+    <value>Разговор</value>
+  </data>
+  <data name="NewLanguageString" xml:space="preserve">
+    <value>Теперь я говорю</value>
   </data>
 </root>

@@ -61,6 +61,15 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Culture.
+        /// </summary>
+        public static string CultureString {
+            get {
+                return ResourceManager.GetString("CultureString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Requête vide ?.
         /// </summary>
         public static string EmptyQueryString {
@@ -115,6 +124,15 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Maintenant, je parle en.
+        /// </summary>
+        public static string NewLanguageString {
+            get {
+                return ResourceManager.GetString("NewLanguageString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Pas plus de requêtes disponibles pour ce mois-ci, Désolé.
         /// </summary>
         public static string NoMoreQueriesString {
@@ -124,11 +142,29 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Parle.
+        /// </summary>
+        public static string SpeakString {
+            get {
+                return ResourceManager.GetString("SpeakString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Désolé, je ne comprends pas, s’il vous plaît dites « Aide » pour voir des exemples.
         /// </summary>
         public static string UnknownQuery {
             get {
                 return ResourceManager.GetString("UnknownQuery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Dites moi: &quot;parle langue&quot;  pour changer de langue.
+        /// </summary>
+        public static string UsageFifthLine {
+            get {
+                return ResourceManager.GetString("UsageFifthLine", resourceCulture);
             }
         }
         
@@ -169,6 +205,15 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Je suis disponible dans toutes ces langues: .
+        /// </summary>
+        public static string WelcomeLanguageAvailable {
+            get {
+                return ResourceManager.GetString("WelcomeLanguageAvailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Bienvenue {0}, je suis Bob, votre conseiller financier..
         /// </summary>
         public static string WelcomeStringFirstLine {
@@ -178,7 +223,7 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Dire « Aide » pour savoir ce que je peux faire pour vous.
+        ///   Recherche une chaîne localisée semblable à Dire « Aide » pour savoir ce que je peux faire pour vous..
         /// </summary>
         public static string WelcomeStringSecondLine {
             get {

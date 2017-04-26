@@ -19,7 +19,7 @@
     <value>歡迎 {0}，我是鮑勃，你的財務顧問。</value>
   </data>
   <data name="WelcomeStringSecondLine" xml:space="preserve">
-    <value>說"説明"，可以看看我能為你做什麼</value>
+    <value>說"説明"，可以看看我能為你做什麼。</value>
   </data>
   <data name="EmptyQueryString" xml:space="preserve">
     <value>查詢空嗎？</value>
@@ -53,5 +53,20 @@
   </data>
   <data name="LanguageString" xml:space="preserve">
     <value>語言</value>
+  </data>
+  <data name="WelcomeLanguageAvailable" xml:space="preserve">
+    <value>我在這些語言中可用︰</value>
+  </data>
+  <data name="UsageFifthLine" xml:space="preserve">
+    <value>告訴我:"語言"來更改語言</value>
+  </data>
+  <data name="CultureString" xml:space="preserve">
+    <value>文化特性</value>
+  </data>
+  <data name="SpeakString" xml:space="preserve">
+    <value>談話</value>
+  </data>
+  <data name="NewLanguageString" xml:space="preserve">
+    <value>發言，</value>
   </data>
 </root>

@@ -124,7 +124,7 @@
     <value>Bienvenue {0}, je suis Bob, votre conseiller financier.</value>
   </data>
   <data name="WelcomeStringSecondLine" xml:space="preserve">
-    <value>Dire « Aide » pour savoir ce que je peux faire pour vous</value>
+    <value>Dire « Aide » pour savoir ce que je peux faire pour vous.</value>
   </data>
   <data name="EmptyQueryString" xml:space="preserve">
     <value>Requête vide ?</value>
@@ -158,5 +158,20 @@
   </data>
   <data name="LanguageString" xml:space="preserve">
     <value>Langue</value>
+  </data>
+  <data name="CultureString" xml:space="preserve">
+    <value>Culture</value>
+  </data>
+  <data name="SpeakString" xml:space="preserve">
+    <value>Parle</value>
+  </data>
+  <data name="UsageFifthLine" xml:space="preserve">
+    <value>Dites moi: "parle langue"  pour changer de langue</value>
+  </data>
+  <data name="WelcomeLanguageAvailable" xml:space="preserve">
+    <value>Je suis disponible dans toutes ces langues: </value>
+  </data>
+  <data name="NewLanguageString" xml:space="preserve">
+    <value>Maintenant, je parle en</value>
   </data>
 </root>

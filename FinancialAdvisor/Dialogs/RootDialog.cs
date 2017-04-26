@@ -27,12 +27,6 @@ namespace FinancialAdvisor.Dialogs
             this.language = language;
         }
 
-        //public Task StartAsync(IDialogContext context)
-        //{            
-        //    context.Wait(MessageReceivedAsync);
-        //    return Task.CompletedTask;
-        //}
-
         [LuisIntent("")]
         [LuisIntent("None")]
         public async Task None(IDialogContext context, LuisResult result)
@@ -51,7 +45,7 @@ namespace FinancialAdvisor.Dialogs
 
             EntityRecommendation QuoteEntityRecommendation;
 
-            foreach(string entityQuoteName in EntitiesQuoteNames)
+            foreach (string entityQuoteName in EntitiesQuoteNames)
             {
                 if (result.TryFindEntity(entityQuoteName, out QuoteEntityRecommendation))
                 {
@@ -61,15 +55,15 @@ namespace FinancialAdvisor.Dialogs
                     if (_iwolframAlphaService.HasValidData)
                     {
                         EntityRecommendation CompanyEntityRecommendation;
-                        //TODO gérer company sur LUIS
+
                         if (result.TryFindEntity(EntityCompanyName, out CompanyEntityRecommendation))
                         {
                             var formatQueryResult = ParseQuote(queryResult, CompanyEntityRecommendation.Entity);
-                            
+
                             string translatedQueryResult;
 
                             if (language != "en")
-                                translatedQueryResult = await TranslationHandler.DoTranslation(formatQueryResult, "en", language);
+                                translatedQueryResult = await TranslationHelper.DoTranslation(formatQueryResult, "en", language);
                             else
                                 translatedQueryResult = formatQueryResult;
 
@@ -99,16 +93,16 @@ namespace FinancialAdvisor.Dialogs
             {
                 _iwolframAlphaService.AppId = WebConfigurationManager.AppSettings["WolframAlphaAppId"];
                 var queryResult = await _iwolframAlphaService.ExecQueryAsync(message.Text, "Money");
-               
+
                 //var queryResult = "euro94.22 (euros)"; ¥10860  (Japanese yen)
 
-                if(_iwolframAlphaService.HasValidData)
+                if (_iwolframAlphaService.HasValidData)
                 {
                     var formatQueryResult = ParseMoney(queryResult);
                     string translatedQueryResult;
 
                     if (language != "en")
-                        translatedQueryResult = await TranslationHandler.DoTranslation(formatQueryResult, "en", language);
+                        translatedQueryResult = await TranslationHelper.DoTranslation(formatQueryResult, "en", language);
                     else
                         translatedQueryResult = formatQueryResult;
 
@@ -124,8 +118,14 @@ namespace FinancialAdvisor.Dialogs
         {
             var quoteSentence = queryResult.Split("|".ToCharArray());
 
-            return string.Concat(companyName, " price is ", quoteSentence[0]);
-
+            Regex r = new Regex(@"([+-]?[0-9]*[.]?[0-9]+)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            var m = r.Match(quoteSentence[0]);
+            if (m.Success)
+            {
+                return string.Concat("The price of ", companyName," is ", m.Groups[0]);
+            }
+            else
+                return queryResult;
         }
 
         private string ParseMoney(string input)
@@ -140,7 +140,7 @@ namespace FinancialAdvisor.Dialogs
                 return string.Concat(value, " ", currency);
             }
             else
-                return input;            
+                return input;
         }
     }
 }

@@ -15,12 +15,12 @@ namespace FinancialAdvisor.Helpers
 
             return text;
         }
-        public static async System.Threading.Tasks.Task<string> ToUserLocale(this string text, Activity activity)
+        public static string ToUserLocale(this string text, Activity activity)
         {
             var userLanguageCode = StateHelper.GetUserLanguageCode(activity);
             if (userLanguageCode != "en")
             {
-                text = await TranslationHandler.DoTranslation(text, "en", userLanguageCode);
+                text = TranslationHandler.DoTranslation(text, "en", userLanguageCode).Result;
             }
 
             return text;
