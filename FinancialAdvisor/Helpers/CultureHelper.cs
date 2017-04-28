@@ -36,6 +36,8 @@ namespace FinancialAdvisor.Helpers
             return false;
         }
 
+
+
         public static void LoadCultures()
         {
             if (_culturesAvailable.Count > 0)

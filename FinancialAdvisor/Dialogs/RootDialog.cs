@@ -6,8 +6,8 @@ using FinancialAdvisor.Services;
 using System.Web.Configuration;
 using Microsoft.Bot.Builder.Luis;
 using Microsoft.Bot.Builder.Luis.Models;
-using System.Text.RegularExpressions;
 using FinancialAdvisor.Helpers;
+using System.Threading;
 
 namespace FinancialAdvisor.Dialogs
 {
@@ -29,13 +29,43 @@ namespace FinancialAdvisor.Dialogs
 
         [LuisIntent("")]
         [LuisIntent("None")]
-        public async Task None(IDialogContext context, LuisResult result)
+        public async Task None(IDialogContext context, IAwaitable<IMessageActivity> message, LuisResult result)
         {
-            string message = Resources.Resource.UnknownQuery;
-            await context.PostAsync(message);
-            context.Wait(this.MessageReceived);
+            var cts = new CancellationTokenSource();
+            await context.Forward(new WelcomeDialog(), GreetingDialogDoneAsync, await message, cts.Token);
         }
 
+        private async Task GreetingDialogDoneAsync(IDialogContext context, IAwaitable<object> result)
+        {
+            var success = await result;
+            if(!(bool)success)
+                await context.PostAsync(Resources.Resource.UnknownQuery);
+
+            context.Wait(MessageReceived);
+        }
+
+        [LuisIntent("help")]
+        [LuisIntent("usage")]
+        [LuisIntent("?")]
+        public async Task Help(IDialogContext context, IAwaitable<IMessageActivity> message, LuisResult result)
+        {
+            if (result.TopScoringIntent.Score < 0.5)
+                await None(context, message, result);
+            else
+            {
+                var cts = new CancellationTokenSource();
+                await context.Forward(new HelpDialog(), HelpDialogDoneAsync, await message, cts.Token);
+            }           
+        }
+
+        private async Task HelpDialogDoneAsync(IDialogContext context, IAwaitable<object> result)
+        {
+            var success = await result;
+            if (!(bool)success)
+                await context.PostAsync(Resources.Resource.UnknownQuery);
+
+            context.Wait(MessageReceived);
+        }
 
         [LuisIntent("get")]
         [LuisIntent("what")]
@@ -58,7 +88,7 @@ namespace FinancialAdvisor.Dialogs
 
                         if (result.TryFindEntity(EntityCompanyName, out CompanyEntityRecommendation))
                         {
-                            var formatQueryResult = ParseQuote(queryResult, CompanyEntityRecommendation.Entity);
+                            var formatQueryResult = _iwolframAlphaService.ParseQuote(queryResult, CompanyEntityRecommendation.Entity);
 
                             string translatedQueryResult;
 
@@ -87,9 +117,7 @@ namespace FinancialAdvisor.Dialogs
         {
             var message = await activity;
 
-            EntityRecommendation moneyEntityRecommendation;
-
-            if (result.TryFindEntity(EntityMoneyName, out moneyEntityRecommendation))
+            if (result.TryFindEntity(EntityMoneyName, out EntityRecommendation moneyEntityRecommendation))
             {
                 _iwolframAlphaService.AppId = WebConfigurationManager.AppSettings["WolframAlphaAppId"];
                 var queryResult = await _iwolframAlphaService.ExecQueryAsync(message.Text, "Money");
@@ -98,7 +126,7 @@ namespace FinancialAdvisor.Dialogs
 
                 if (_iwolframAlphaService.HasValidData)
                 {
-                    var formatQueryResult = ParseMoney(queryResult);
+                    var formatQueryResult = _iwolframAlphaService.ParseMoney(queryResult);
                     string translatedQueryResult;
 
                     if (language != "en")
@@ -112,35 +140,6 @@ namespace FinancialAdvisor.Dialogs
                     await context.PostAsync(queryResult);
             }
             context.Wait(this.MessageReceived);
-        }
-        //$64.95(MSFT | NASDAQ | 10:00:00 pm CEST | Thursday, April 13, 2017)
-        private string ParseQuote(string queryResult, string companyName)
-        {
-            var quoteSentence = queryResult.Split("|".ToCharArray());
-
-            Regex r = new Regex(@"([+-]?[0-9]*[.]?[0-9]+)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            var m = r.Match(quoteSentence[0]);
-            if (m.Success)
-            {
-                return string.Concat("The price of ", companyName," is ", m.Groups[0]);
-            }
-            else
-                return queryResult;
-        }
-
-        private string ParseMoney(string input)
-        {
-            Regex r = new Regex(@"([+-]?[0-9]*[.]?[0-9]+)([ ]*)(\(([^()]*)\))", RegexOptions.IgnoreCase | RegexOptions.Singleline);
-            var m = r.Match(input);
-            if (m.Success)
-            {
-                String value = m.Groups[1].ToString();
-                String currency = m.Groups[4].ToString();
-
-                return string.Concat(value, " ", currency);
-            }
-            else
-                return input;
-        }
+        }       
     }
 }

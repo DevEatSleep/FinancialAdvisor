@@ -174,4 +174,7 @@
   <data name="NewLanguageString" xml:space="preserve">
     <value>Maintenant, je parle en</value>
   </data>
+  <data name="ByeString" xml:space="preserve">
+    <value>Au revoir, passez une bonne journée</value>
+  </data>
 </root>

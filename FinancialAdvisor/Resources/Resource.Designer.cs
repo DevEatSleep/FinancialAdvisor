@@ -61,6 +61,15 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Au revoir, passez une bonne journée.
+        /// </summary>
+        public static string ByeString {
+            get {
+                return ResourceManager.GetString("ByeString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Culture.
         /// </summary>
         public static string CultureString {

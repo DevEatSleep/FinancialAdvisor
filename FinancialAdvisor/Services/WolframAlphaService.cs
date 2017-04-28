@@ -6,6 +6,7 @@ using WolframAlphaNET;
 using WolframAlphaNET.Misc;
 using WolframAlphaNET.Objects;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace FinancialAdvisor.Services
 {
@@ -101,6 +102,35 @@ namespace FinancialAdvisor.Services
                     return Resources.Resource.UnknownQuery;
             }
             return Resources.Resource.UnknownQuery;
-        }       
+        }
+        //$64.95(MSFT | NASDAQ | 10:00:00 pm CEST | Thursday, April 13, 2017)
+        public string ParseQuote(string queryResult, string companyName)
+        {
+            var quoteSentence = queryResult.Split("|".ToCharArray());
+
+            Regex r = new Regex(@"([+-]?[0-9]*[.]?[0-9]+)", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            var m = r.Match(quoteSentence[0]);
+            if (m.Success)
+            {
+                return string.Concat("The price of ", companyName, " is ", m.Groups[0]);
+            }
+            else
+                return queryResult;
+        }
+
+        public string ParseMoney(string input)
+        {
+            Regex r = new Regex(@"([+-]?[0-9]*[.]?[0-9]+)([ ]*)(\(([^()]*)\))", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            var m = r.Match(input);
+            if (m.Success)
+            {
+                String value = m.Groups[1].ToString();
+                String currency = m.Groups[4].ToString();
+
+                return string.Concat(value, " ", currency);
+            }
+            else
+                return input;
+        }
     }
 }

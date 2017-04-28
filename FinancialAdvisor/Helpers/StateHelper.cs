@@ -7,15 +7,41 @@ namespace FinancialAdvisor.Helpers
 {
     public static class StateHelper
     {
-       
-        
+        public static async Task SetUserLanguageCode(Activity activity, string languageCode)
+        {
+            try
+            {
+                StateClient stateClient = activity.GetStateClient();
+                BotData userData = stateClient.BotState.GetUserData(activity.ChannelId, activity.From.Id);
+
+                userData.SetProperty<string>("LanguageCode", languageCode);
+                await stateClient.BotState.SetUserDataAsync(activity.ChannelId, activity.From.Id, userData);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static void SetUserLanguageCode(IDialogContext context, string languageCode)
+        {
+            try
+            {
+                context.UserData.SetValue("LanguageCode", languageCode);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public static string GetUserLanguageCode(Activity activity)
         {
             try
             {
                 StateClient stateClient = activity.GetStateClient();
                 BotData userData = stateClient.BotState.GetUserData(activity.ChannelId, activity.From.Id);
-               
+
                 var languageCode = userData.GetProperty<string>("LanguageCode");
 
                 return languageCode;

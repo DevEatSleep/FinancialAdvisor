@@ -69,4 +69,7 @@
   <data name="NewLanguageString" xml:space="preserve">
     <value>Nun, ich spreche</value>
   </data>
+  <data name="ByeString" xml:space="preserve">
+    <value>Auf Wiedersehen, noch einen schönen Tag</value>
+  </data>
 </root>

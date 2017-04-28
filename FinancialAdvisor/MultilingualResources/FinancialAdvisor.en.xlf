@@ -82,6 +82,10 @@
           <source>Maintenant, je parle en</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Now, I speak</target>
         </trans-unit>
+        <trans-unit id="ByeString" translate="yes" xml:space="preserve">
+          <source>Au revoir, passez une bonne journée</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Goodbye, have a nice day</target>
+        </trans-unit>
       </group>
     </body>
   </file>

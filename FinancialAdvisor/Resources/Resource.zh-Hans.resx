@@ -69,4 +69,7 @@
   <data name="NewLanguageString" xml:space="preserve">
     <value>发言，</value>
   </data>
+  <data name="ByeString" xml:space="preserve">
+    <value>再见，祝你今天愉快</value>
+  </data>
 </root>
