@@ -9,6 +9,57 @@
   <GeneralIds>
     <StringID>3</StringID>
   </GeneralIds>
+  <GeneralIds>
+    <StringID>4</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>5</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>6</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>7</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>8</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>9</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>10</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>11</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>12</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>13</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>14</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>15</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>16</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>17</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>18</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>19</StringID>
+  </GeneralIds>
+  <GeneralIds>
+    <StringID>20</StringID>
+  </GeneralIds>
   <Languages>
     <LanguageID>9</LanguageID>
     <LanguageName>Anglais</LanguageName>
@@ -39,6 +90,114 @@
     <LanguageText>Welcome {0}, I'm Bob, your financial advisor.</LanguageText>
     <Status>1</Status>
   </GeneralTexts>
+  <GeneralTexts>
+    <StringID>4</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>Hello</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>5</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>Say "help" to see what I can do for you.</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>6</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>Query empty?</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>7</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>Help</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>8</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>Did you mean:</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>9</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>No more queries available for this month, I'm sorry</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>10</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>Sorry, I don't understand, please say "help" to see examples</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>11</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>I can do conversions or calculations between currencies.</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>12</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>Be forgiving, I am being developed ;-)</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>13</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>as "convert 100 dollars into yen"or "100 usd + 10 gbp in euros"</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>14</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>I can get the price of actions such as "what is the price of Microsoft?</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>15</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>An error occurred</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>16</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>I am available in these languages: </LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>17</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>Tell me: "speak ..." to change the language</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>18</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>Speak</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>19</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>Now, I speak</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>20</StringID>
+    <LanguageID>9</LanguageID>
+    <LanguageText>Goodbye, have a nice day</LanguageText>
+    <Status>1</Status>
+  </GeneralTexts>
+  <GeneralTexts>
+    <StringID>7</StringID>
+    <LanguageID>12</LanguageID>
+    <LanguageText>Aide</LanguageText>
+    <Status>3</Status>
+  </GeneralTexts>
   <Properties>
     <Component>Resources.resx</Component>
     <Name>type_Help_to_know_what_I_can_d</Name>
@@ -61,6 +220,150 @@
     <StringID>3</StringID>
     <Selected>true</Selected>
     <ResourceName>Welcome_0_I_m_Bob_your_financi</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resource.resx</Component>
+    <Name>HiString</Name>
+    <StringID>4</StringID>
+    <Selected>true</Selected>
+    <ResourceName>HiString</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resource.resx</Component>
+    <Name>WelcomeStringFirstLine</Name>
+    <StringID>3</StringID>
+    <Selected>true</Selected>
+    <ResourceName>WelcomeStringFirstLine</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resource.resx</Component>
+    <Name>WelcomeStringSecondLine</Name>
+    <StringID>5</StringID>
+    <Selected>true</Selected>
+    <ResourceName>WelcomeStringSecondLine</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resource.resx</Component>
+    <Name>EmptyQueryString</Name>
+    <StringID>6</StringID>
+    <Selected>true</Selected>
+    <ResourceName>EmptyQueryString</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resource.resx</Component>
+    <Name>HelpString</Name>
+    <StringID>7</StringID>
+    <Selected>true</Selected>
+    <ResourceName>HelpString</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resource.resx</Component>
+    <Name>MeanString</Name>
+    <StringID>8</StringID>
+    <Selected>true</Selected>
+    <ResourceName>MeanString</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resource.resx</Component>
+    <Name>NoMoreQueriesString</Name>
+    <StringID>9</StringID>
+    <Selected>true</Selected>
+    <ResourceName>NoMoreQueriesString</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resource.resx</Component>
+    <Name>UnknownQuery</Name>
+    <StringID>10</StringID>
+    <Selected>true</Selected>
+    <ResourceName>UnknownQuery</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resource.resx</Component>
+    <Name>UsageFirstLine</Name>
+    <StringID>11</StringID>
+    <Selected>true</Selected>
+    <ResourceName>UsageFirstLine</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resource.resx</Component>
+    <Name>UsageFourthLine</Name>
+    <StringID>12</StringID>
+    <Selected>true</Selected>
+    <ResourceName>UsageFourthLine</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resource.resx</Component>
+    <Name>UsageSecondLine</Name>
+    <StringID>13</StringID>
+    <Selected>true</Selected>
+    <ResourceName>UsageSecondLine</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resource.resx</Component>
+    <Name>UsageThirdLine</Name>
+    <StringID>14</StringID>
+    <Selected>true</Selected>
+    <ResourceName>UsageThirdLine</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resource.resx</Component>
+    <Name>ErrorString</Name>
+    <StringID>15</StringID>
+    <Selected>true</Selected>
+    <ResourceName>ErrorString</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resource.resx</Component>
+    <Name>WelcomeLanguageAvailable</Name>
+    <StringID>16</StringID>
+    <Selected>true</Selected>
+    <ResourceName>WelcomeLanguageAvailable</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resource.resx</Component>
+    <Name>UsageFifthLine</Name>
+    <StringID>17</StringID>
+    <Selected>true</Selected>
+    <ResourceName>UsageFifthLine</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resource.resx</Component>
+    <Name>SpeakString</Name>
+    <StringID>18</StringID>
+    <Selected>true</Selected>
+    <ResourceName>SpeakString</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resource.resx</Component>
+    <Name>NewLanguageString</Name>
+    <StringID>19</StringID>
+    <Selected>true</Selected>
+    <ResourceName>NewLanguageString</ResourceName>
+    <Hidden>false</Hidden>
+  </Properties>
+  <Properties>
+    <Component>Resource.resx</Component>
+    <Name>ByeString</Name>
+    <StringID>20</StringID>
+    <Selected>true</Selected>
+    <ResourceName>ByeString</ResourceName>
     <Hidden>false</Hidden>
   </Properties>
   <GeneralAttributes>

@@ -61,7 +61,7 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Au revoir, passez une bonne journée.
+        ///   Recherche une chaîne localisée semblable à Goodbye, have a nice day.
         /// </summary>
         public static string ByeString {
             get {
@@ -70,16 +70,7 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Culture.
-        /// </summary>
-        public static string CultureString {
-            get {
-                return ResourceManager.GetString("CultureString", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Requête vide ?.
+        ///   Recherche une chaîne localisée semblable à Query empty?.
         /// </summary>
         public static string EmptyQueryString {
             get {
@@ -88,7 +79,7 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Une erreur est survenue.
+        ///   Recherche une chaîne localisée semblable à An error occurred.
         /// </summary>
         public static string ErrorString {
             get {
@@ -97,7 +88,7 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Aide.
+        ///   Recherche une chaîne localisée semblable à Help.
         /// </summary>
         public static string HelpString {
             get {
@@ -106,7 +97,7 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Salut.
+        ///   Recherche une chaîne localisée semblable à Hello.
         /// </summary>
         public static string HiString {
             get {
@@ -115,16 +106,16 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Langue.
+        ///   Recherche une chaîne localisée semblable à {0} is not a possible language.
         /// </summary>
-        public static string LanguageString {
+        public static string LanguageUnaivalable {
             get {
-                return ResourceManager.GetString("LanguageString", resourceCulture);
+                return ResourceManager.GetString("LanguageUnaivalable", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Vouliez-vous dire :.
+        ///   Recherche une chaîne localisée semblable à Did you mean:.
         /// </summary>
         public static string MeanString {
             get {
@@ -133,7 +124,7 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Maintenant, je parle en.
+        ///   Recherche une chaîne localisée semblable à Now, I speak.
         /// </summary>
         public static string NewLanguageString {
             get {
@@ -142,7 +133,7 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Pas plus de requêtes disponibles pour ce mois-ci, Désolé.
+        ///   Recherche une chaîne localisée semblable à No more queries available for this month, I&apos;m sorry.
         /// </summary>
         public static string NoMoreQueriesString {
             get {
@@ -151,7 +142,7 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Parle.
+        ///   Recherche une chaîne localisée semblable à Speak.
         /// </summary>
         public static string SpeakString {
             get {
@@ -160,7 +151,7 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Désolé, je ne comprends pas, s’il vous plaît dites « Aide » pour voir des exemples.
+        ///   Recherche une chaîne localisée semblable à Sorry, I don&apos;t understand, please say &quot;help&quot; to see examples.
         /// </summary>
         public static string UnknownQuery {
             get {
@@ -169,7 +160,7 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Dites moi: &quot;parle langue&quot;  pour changer de langue.
+        ///   Recherche une chaîne localisée semblable à Tell me: &quot;speak ...&quot; to change the language.
         /// </summary>
         public static string UsageFifthLine {
             get {
@@ -178,7 +169,7 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Je peux faire des conversions ou calculs entre monnaies..
+        ///   Recherche une chaîne localisée semblable à I can do conversions or calculations between currencies..
         /// </summary>
         public static string UsageFirstLine {
             get {
@@ -187,7 +178,7 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Soyez indulgent, je suis en cours d’élaboration  ;-).
+        ///   Recherche une chaîne localisée semblable à Be forgiving, I am being developed ;-).
         /// </summary>
         public static string UsageFourthLine {
             get {
@@ -196,7 +187,7 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à comme « convertir 100 dollars en yens &quot; ou « 100 usd + 10 gbp en euros ».
+        ///   Recherche une chaîne localisée semblable à as &quot;convert 100 dollars into yen&quot;or &quot;100 usd + 10 gbp in euros&quot;.
         /// </summary>
         public static string UsageSecondLine {
             get {
@@ -205,7 +196,7 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Je peux obtenir des prix d&apos;actions comme « quel est le prix de Microsoft ? ».
+        ///   Recherche une chaîne localisée semblable à I can get the price of actions such as &quot;what is the price of Microsoft?&quot;.
         /// </summary>
         public static string UsageThirdLine {
             get {
@@ -214,7 +205,7 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Je suis disponible dans toutes ces langues: .
+        ///   Recherche une chaîne localisée semblable à I am available in these languages: .
         /// </summary>
         public static string WelcomeLanguageAvailable {
             get {
@@ -223,7 +214,7 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Bienvenue {0}, je suis Bob, votre conseiller financier..
+        ///   Recherche une chaîne localisée semblable à Welcome {0}, I&apos;m Bob, your financial advisor..
         /// </summary>
         public static string WelcomeStringFirstLine {
             get {
@@ -232,7 +223,7 @@ namespace FinancialAdvisor.Resources {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Dire « Aide » pour savoir ce que je peux faire pour vous..
+        ///   Recherche une chaîne localisée semblable à Say &quot;help&quot; to see what I can do for you..
         /// </summary>
         public static string WelcomeStringSecondLine {
             get {

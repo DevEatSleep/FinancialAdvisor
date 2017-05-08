@@ -13,50 +13,70 @@ namespace FinancialAdvisor.Dialogs
 {
     public static class Messages
     {
-        public async static Task WelcomeMessageAsync(IDialogContext context, string from)
+        private static async Task<string> WelcomeMessageCulturesAsync(IDialogContext context)
         {
             List<string> culturesName = new List<string>();
-            CultureHelper.CurrentCulture = Thread.CurrentThread.CurrentUICulture;
             CultureHelper.LoadCultures();
 
             foreach (var item in CultureHelper.CulturesAvailable)
+            {
+                var languageName = await TranslationHelper.DoTranslation(item.DisplayName, StateHelper.GetUserUiLanguage(context), item.TwoLetterISOLanguageName);
                 culturesName.Add(item.DisplayName);
+            }
+            return String.Join(", ", culturesName.ToArray());
+        }
 
-            var text = string.Concat(string.Format(CultureInfo.CurrentCulture, Resources.Resource.WelcomeStringFirstLine, from),
-                                Environment.NewLine, string.Format(CultureInfo.CurrentCulture, Resources.Resource.WelcomeStringSecondLine),
+        private static async Task<string> WelcomeMessageCulturesAsync(Activity message)
+        {
+            List<string> culturesName = new List<string>();
+            CultureHelper.LoadCultures();
+
+            var UiLanguage = StateHelper.GetUserUiLanguage(message);
+            foreach (var item in CultureHelper.CulturesAvailable)
+            {
+                string inputLanguage = Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
+                string languageName = item.DisplayName;
+                if (inputLanguage != UiLanguage)
+                   languageName = await TranslationHelper.DoTranslation(item.DisplayName, inputLanguage, UiLanguage);
+                culturesName.Add(languageName);
+            }
+            return String.Join(", ", culturesName.ToArray());
+        }
+
+
+        public async static Task WelcomeMessageAsync(IDialogContext context, string from)
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(StateHelper.GetUserUiLanguage(context));
+            var text = string.Concat(String.Format(Resources.Resource.WelcomeStringFirstLine, from),
                                 Environment.NewLine,
-                                string.Format(CultureInfo.CurrentCulture, Resources.Resource.WelcomeLanguageAvailable),
-                                String.Join(", ", culturesName.ToArray()));
-
-
+                                Resources.Resource.WelcomeStringSecondLine,
+                                Environment.NewLine,
+                                Resources.Resource.WelcomeLanguageAvailable,
+                                await WelcomeMessageCulturesAsync(context));
             await context.PostAsync(text);
         }
 
         public async static Task HelpMessageAsync(IDialogContext context)
         {
-            var text = string.Concat(string.Format(CultureInfo.CurrentCulture, Resources.Resource.UsageFirstLine), "\n\n",
-                     string.Format(CultureInfo.CurrentCulture, Resources.Resource.UsageSecondLine), "\n\n",
-                     string.Format(CultureInfo.CurrentCulture, Resources.Resource.UsageThirdLine), "\n\n",
-                     string.Format(CultureInfo.CurrentCulture, Resources.Resource.UsageFourthLine), "\n\n",
-                        string.Format(CultureInfo.CurrentCulture, Resources.Resource.UsageFifthLine));
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(StateHelper.GetUserUiLanguage(context));
+            var text = string.Concat(Resources.Resource.UsageFirstLine, Environment.NewLine,
+                     Resources.Resource.UsageSecondLine, Environment.NewLine,
+                     Resources.Resource.UsageThirdLine, Environment.NewLine,
+                     Resources.Resource.UsageFourthLine, Environment.NewLine,
+                     Resources.Resource.UsageFifthLine);
             await context.PostAsync(text);
         }
 
-        public static void WelcomeMessage(Activity message, string from)
+        public static async Task WelcomeMessageAsync(Activity message)
         {
-            List<string> culturesName = new List<string>();
-            CultureHelper.CurrentCulture = Thread.CurrentThread.CurrentUICulture;
-            CultureHelper.LoadCultures();
-
-            foreach (var item in CultureHelper.CulturesAvailable)
-                culturesName.Add(item.DisplayName);
-
-            var text = string.Concat(string.Format(CultureInfo.CurrentCulture, Resources.Resource.WelcomeStringFirstLine, from),
-                               Environment.NewLine, string.Format(CultureInfo.CurrentCulture, Resources.Resource.WelcomeStringSecondLine),
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(StateHelper.GetUserUiLanguage(message));
+            var text = string.Concat(string.Format(Resources.Resource.WelcomeStringFirstLine, message.From.Name),
                                Environment.NewLine,
-                               string.Format(CultureInfo.CurrentCulture, Resources.Resource.WelcomeLanguageAvailable),
-                               String.Join(", ", culturesName.ToArray()));
-
+                               Resources.Resource.WelcomeStringSecondLine,
+                               Environment.NewLine,
+                               Resources.Resource.WelcomeLanguageAvailable,
+                               await WelcomeMessageCulturesAsync(message));
+            
             ConnectorClient connector = new ConnectorClient(new Uri(message.ServiceUrl));
             connector.Conversations.ReplyToActivity(message.CreateReply(text));
         }

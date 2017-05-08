@@ -46,10 +46,9 @@ namespace FinancialAdvisor.Services
             WolframAlpha wolfram = new WolframAlpha(_appId)
             {
                 //ScanTimeout = 1, //We set ScanTimeout really low to get a quick answer. See RecalculateResults() below.
-                UseTLS = true //Use encryption
+                UseTLS = true//Use encryption
             };
-            wolfram.Scanners.Add(scanner);
-            //wolfram.Scanners.Add("Data");
+            wolfram.Scanners.Add(scanner);          
 
             _requestLimiter.Update(wolframEntity, DateTime.Now, wolframEntity.QueriesNumber + 1);
             _requestLimiter.Update(translatorEntity, DateTime.Now, translatorEntity.QueriesNumber + query.Length);

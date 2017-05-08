@@ -8,6 +8,8 @@ using Microsoft.Bot.Builder.Luis;
 using Microsoft.Bot.Builder.Luis.Models;
 using FinancialAdvisor.Helpers;
 using System.Threading;
+using System.Globalization;
+using System.Resources;
 
 namespace FinancialAdvisor.Dialogs
 {
@@ -16,16 +18,12 @@ namespace FinancialAdvisor.Dialogs
     public class RootDialog : LuisDialog<object>
     {
         private IWolframAlphaService _iwolframAlphaService = new WolframAlphaService();
+
         private const string EntityMoneyName = "builtin.currency";
         private const string EntityCompanyName = "company";
-        private string[] EntitiesQuoteNames = { "Price", "Quote", "Value" };
-
-        private string language;
-
-        public RootDialog(string language)
-        {
-            this.language = language;
-        }
+        private const string LanguageEntityName = "language";
+        private const string QueryLanguage = "en";
+        private string[] EntitiesQuoteNames = { "price", "quotation", "value" };
 
         [LuisIntent("")]
         [LuisIntent("None")]
@@ -37,8 +35,9 @@ namespace FinancialAdvisor.Dialogs
 
         private async Task GreetingDialogDoneAsync(IDialogContext context, IAwaitable<object> result)
         {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(StateHelper.GetUserUiLanguage(context));
             var success = await result;
-            if(!(bool)success)
+            if (!(bool)success)
                 await context.PostAsync(Resources.Resource.UnknownQuery);
 
             context.Wait(MessageReceived);
@@ -55,11 +54,12 @@ namespace FinancialAdvisor.Dialogs
             {
                 var cts = new CancellationTokenSource();
                 await context.Forward(new HelpDialog(), HelpDialogDoneAsync, await message, cts.Token);
-            }           
+            }
         }
 
         private async Task HelpDialogDoneAsync(IDialogContext context, IAwaitable<object> result)
         {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(StateHelper.GetUserUiLanguage(context));
             var success = await result;
             if (!(bool)success)
                 await context.PostAsync(Resources.Resource.UnknownQuery);
@@ -67,33 +67,56 @@ namespace FinancialAdvisor.Dialogs
             context.Wait(MessageReceived);
         }
 
-        [LuisIntent("get")]
+        [LuisIntent("speak")]
+        public async Task Speak(IDialogContext context, IAwaitable<IMessageActivity> activity, LuisResult result)
+        {
+            var message = await activity;
+            if (result.TryFindEntity(LanguageEntityName, out EntityRecommendation languageEntityRecommendation))
+            {
+                var culture = CultureHelper.GetCulture(languageEntityRecommendation.Entity);
+                if (culture == null)
+                {
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo(StateHelper.GetUserUiLanguage(context));
+                    string languageName = await TranslationHelper.DoTranslation(languageEntityRecommendation.Entity, QueryLanguage, StateHelper.GetUserUiLanguage(context));
+                    await context.PostAsync(string.Format(Resources.Resource.LanguageUnaivalable, languageName));
+                }
+                else
+                {
+                    var currentLanguageName = Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
+                    StateHelper.SetUserUiLanguage(context, culture.TwoLetterISOLanguageName);
+                    Thread.CurrentThread.CurrentUICulture = culture;
+                    await context.PostAsync(string.Concat(Resources.Resource.NewLanguageString, " ", culture.NativeName));
+                }                   
+            }
+            context.Wait(this.MessageReceived);
+        }     
+
         [LuisIntent("what")]
         public async Task GetStockQuote(IDialogContext context, IAwaitable<IMessageActivity> activity, LuisResult result)
         {
             var message = await activity;
-
-            EntityRecommendation QuoteEntityRecommendation;
-
+            var currentLanguage = StateHelper.GetUserUiLanguage(context);
+            
             foreach (string entityQuoteName in EntitiesQuoteNames)
             {
-                if (result.TryFindEntity(entityQuoteName, out QuoteEntityRecommendation))
+                if (result.TryFindEntity(entityQuoteName, out EntityRecommendation QuoteEntityRecommendation))
                 {
+                    if (currentLanguage != QueryLanguage)
+                        message.Text = (await TranslationHelper.DoTranslation(message.Text, currentLanguage, QueryLanguage)).ToLower();
+
                     _iwolframAlphaService.AppId = WebConfigurationManager.AppSettings["WolframAlphaAppId"];
                     var queryResult = await _iwolframAlphaService.ExecQueryAsync(message.Text, "Data");
 
                     if (_iwolframAlphaService.HasValidData)
                     {
-                        EntityRecommendation CompanyEntityRecommendation;
-
-                        if (result.TryFindEntity(EntityCompanyName, out CompanyEntityRecommendation))
+                        if (result.TryFindEntity(EntityCompanyName, out EntityRecommendation CompanyEntityRecommendation))
                         {
                             var formatQueryResult = _iwolframAlphaService.ParseQuote(queryResult, CompanyEntityRecommendation.Entity);
 
                             string translatedQueryResult;
 
-                            if (language != "en")
-                                translatedQueryResult = await TranslationHelper.DoTranslation(formatQueryResult, "en", language);
+                            if (currentLanguage != QueryLanguage)
+                                translatedQueryResult = await TranslationHelper.DoTranslation(formatQueryResult, QueryLanguage, currentLanguage);
                             else
                                 translatedQueryResult = formatQueryResult;
 
@@ -116,9 +139,13 @@ namespace FinancialAdvisor.Dialogs
         public async Task DoMoneyCalc(IDialogContext context, IAwaitable<IMessageActivity> activity, LuisResult result)
         {
             var message = await activity;
+            var currentLanguage = StateHelper.GetUserUiLanguage(context);
 
             if (result.TryFindEntity(EntityMoneyName, out EntityRecommendation moneyEntityRecommendation))
             {
+                if (currentLanguage != QueryLanguage)
+                    message.Text = (await TranslationHelper.DoTranslation(message.Text, currentLanguage, QueryLanguage)).ToLower();
+
                 _iwolframAlphaService.AppId = WebConfigurationManager.AppSettings["WolframAlphaAppId"];
                 var queryResult = await _iwolframAlphaService.ExecQueryAsync(message.Text, "Money");
 
@@ -129,8 +156,8 @@ namespace FinancialAdvisor.Dialogs
                     var formatQueryResult = _iwolframAlphaService.ParseMoney(queryResult);
                     string translatedQueryResult;
 
-                    if (language != "en")
-                        translatedQueryResult = await TranslationHelper.DoTranslation(formatQueryResult, "en", language);
+                    if (currentLanguage != QueryLanguage)
+                        translatedQueryResult = await TranslationHelper.DoTranslation(formatQueryResult, QueryLanguage, currentLanguage);
                     else
                         translatedQueryResult = formatQueryResult;
 
@@ -140,6 +167,6 @@ namespace FinancialAdvisor.Dialogs
                     await context.PostAsync(queryResult);
             }
             context.Wait(this.MessageReceived);
-        }       
+        }
     }
 }

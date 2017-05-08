@@ -32,6 +32,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -40,12 +41,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Label="MultilingualAppToolkit">
-    <MultilingualAppToolkitVersion>4.0</MultilingualAppToolkitVersion>
-    <MultilingualFallbackLanguage>fr-FR</MultilingualFallbackLanguage>
-    <TranslationReport Condition="'$(Configuration)' == 'Release'">true</TranslationReport>
-    <SuppressPseudoWarning Condition="'$(Configuration)' == 'Debug'">true</SuppressPseudoWarning>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
@@ -192,6 +187,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Resource.fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.fr.resx</DependentUpon>
+    </Compile>
     <Compile Include="Services\IWolframAlphaService.cs" />
     <Compile Include="Services\ServiceResolver.cs" />
     <Compile Include="Services\WolframAlphaService.cs" />
@@ -217,36 +217,18 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Resource.de.resx" />
-    <EmbeddedResource Include="Resources\Resource.en.resx" />
-    <EmbeddedResource Include="Resources\Resource.es.resx" />
     <EmbeddedResource Include="Resources\Resource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Resource.it.resx" />
-    <EmbeddedResource Include="Resources\Resource.ja.resx" />
-    <EmbeddedResource Include="Resources\Resource.pt.resx" />
-    <EmbeddedResource Include="Resources\Resource.ru.resx" />
-    <EmbeddedResource Include="Resources\Resource.zh-Hans.resx" />
-    <EmbeddedResource Include="Resources\Resource.zh-Hant.resx" />
+    <EmbeddedResource Include="Resources\Resource.fr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <XliffResource Include="MultilingualResources\FinancialAdvisor.de.xlf">
-      <SubType>Designer</SubType>
-    </XliffResource>
-    <XliffResource Include="MultilingualResources\FinancialAdvisor.en.xlf">
-      <SubType>Designer</SubType>
-    </XliffResource>
-    <XliffResource Include="MultilingualResources\FinancialAdvisor.es.xlf">
-      <SubType>Designer</SubType>
-    </XliffResource>
-    <XliffResource Include="MultilingualResources\FinancialAdvisor.it.xlf" />
-    <XliffResource Include="MultilingualResources\FinancialAdvisor.ja.xlf" />
-    <XliffResource Include="MultilingualResources\FinancialAdvisor.pt.xlf" />
-    <XliffResource Include="MultilingualResources\FinancialAdvisor.ru.xlf" />
-    <XliffResource Include="MultilingualResources\FinancialAdvisor.zh-Hans.xlf" />
-    <XliffResource Include="MultilingualResources\FinancialAdvisor.zh-Hant.xlf" />
+    <XliffResource Include="MultilingualResources\FinancialAdvisor.fr.xlf" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -258,10 +240,6 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
-  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\v$(MultilingualAppToolkitVersion)\Microsoft.Multilingual.ResxResources.targets')" />
-  <Target Name="MATPrerequisite" BeforeTargets="PrepareForBuild" Condition="!Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets')" Label="MultilingualAppToolkit">
-    <Warning Text="$(MSBuildProjectFile) is Multilingual build enabled, but the Multilingual App Toolkit is unavailable during the build. If building with Visual Studio, please check to ensure that toolkit is properly installed." />
-  </Target>
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">

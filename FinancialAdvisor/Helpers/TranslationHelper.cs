@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Globalization;
+using System.Threading.Tasks;
 using System.Web.Configuration;
 using Microsoft.Bot.Connector;
 using TranslatorService;
@@ -19,19 +20,9 @@ namespace FinancialAdvisor.Helpers
             return translator.DetectLanguageAsync(input);
         }
 
-        public static async Task<string> DetectAndTranslateAsync(Activity activity)
+        public static async Task<string> GetNativeLanguageNameAsync(string languageName, CultureInfo currentCulture)
         {
-            //detect language
-            //update state for current user to detected language
-            var inputLanguageCode = await DoLanguageDetectionAsync(activity.Text);
-
-            await StateHelper.SetUserLanguageCode(activity, inputLanguageCode);
-
-            if (inputLanguageCode.ToLower() != "en")
-            {
-                return await DoTranslation(activity.Text, inputLanguageCode, "en");
-            }
-            return activity.Text;
+            return await TranslationHelper.DoTranslation(languageName, currentCulture.TwoLetterISOLanguageName, "en");
         }
     }
 }

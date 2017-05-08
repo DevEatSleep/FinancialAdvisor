@@ -9,34 +9,16 @@ namespace FinancialAdvisor.Helpers
     {
         static List<CultureInfo> _culturesAvailable = new List<CultureInfo>();
         public static List<CultureInfo> CulturesAvailable { get => _culturesAvailable; set => _culturesAvailable = value; }
-        static CultureInfo _currentCulture;
-        public static CultureInfo CurrentCulture { get => _currentCulture; set => _currentCulture = value; }
-
-        public static async Task<bool> ChangeCultureAsync(string languageName)
+        
+        public static CultureInfo GetCulture(string EnglishName)
         {
-            ResourceManager rm = new ResourceManager(typeof(Resources.Resource));
-
-            var languageNameInEnglish = await TranslationHelper.DoTranslation(languageName, _currentCulture.TwoLetterISOLanguageName, "en");
-
-            foreach (CultureInfo culture in _culturesAvailable)
+            foreach (CultureInfo info in _culturesAvailable)
             {
-                try
-                {
-                    if (culture.EnglishName.ToLower().Contains( languageNameInEnglish.ToLower()))
-                    {
-                        Resources.Resource.Culture = culture;
-                        _currentCulture = culture;
-                        return true;
-                    }
-                }
-                catch (CultureNotFoundException)
-                {
-                }
+                if (info.EnglishName.ToLower().Contains(EnglishName.ToLower()))
+                    return info;
             }
-            return false;
+            return null;
         }
-
-
 
         public static void LoadCultures()
         {
@@ -44,7 +26,7 @@ namespace FinancialAdvisor.Helpers
                 _culturesAvailable.Clear();
 
             ResourceManager rm = new ResourceManager(typeof(Resources.Resource));
-            CultureInfo[] cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
+            CultureInfo[] cultures = CultureInfo.GetCultures(CultureTypes.InstalledWin32Cultures);
             foreach (CultureInfo culture in cultures)
             {
                 try

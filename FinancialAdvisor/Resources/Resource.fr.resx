@@ -118,60 +118,57 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ByeString" xml:space="preserve">
-    <value>Goodbye, have a nice day</value>
+    <value>Au revoir, passez une bonne journée</value>
   </data>
   <data name="EmptyQueryString" xml:space="preserve">
-    <value>Query empty?</value>
+    <value>Requête vide ?</value>
   </data>
   <data name="ErrorString" xml:space="preserve">
-    <value>An error occurred</value>
+    <value>Une erreur est survenue</value>
   </data>
   <data name="HelpString" xml:space="preserve">
-    <value>Help</value>
+    <value>Aide</value>
   </data>
   <data name="HiString" xml:space="preserve">
-    <value>Hello</value>
-  </data>
-  <data name="LanguageUnaivalable" xml:space="preserve">
-    <value>{0} is not a possible language</value>
+    <value>Salut</value>
   </data>
   <data name="MeanString" xml:space="preserve">
-    <value>Did you mean:</value>
+    <value>Vouliez-vous dire :</value>
   </data>
   <data name="NewLanguageString" xml:space="preserve">
-    <value>Now, I speak</value>
+    <value>Maintenant, je parle en</value>
   </data>
   <data name="NoMoreQueriesString" xml:space="preserve">
-    <value>No more queries available for this month, I'm sorry</value>
+    <value>Pas plus de requêtes disponibles pour ce mois-ci, Désolé</value>
   </data>
   <data name="SpeakString" xml:space="preserve">
-    <value>Speak</value>
+    <value>Parle</value>
   </data>
   <data name="UnknownQuery" xml:space="preserve">
-    <value>Sorry, I don't understand, please say "help" to see examples</value>
+    <value>Désolé, je ne comprends pas, s’il vous plaît dites « Aide » pour voir des exemples</value>
   </data>
   <data name="UsageFifthLine" xml:space="preserve">
-    <value>Tell me: "speak ..." to change the language</value>
+    <value>Dites moi: "parle langue"  pour changer de langue</value>
   </data>
   <data name="UsageFirstLine" xml:space="preserve">
-    <value>I can do conversions or calculations between currencies.</value>
+    <value>Je peux faire des conversions ou calculs entre monnaies.</value>
   </data>
   <data name="UsageFourthLine" xml:space="preserve">
-    <value>Be forgiving, I am being developed ;-)</value>
+    <value>Soyez indulgent, je suis en cours d’élaboration  ;-)</value>
   </data>
   <data name="UsageSecondLine" xml:space="preserve">
-    <value>as "convert 100 dollars into yen"or "100 usd + 10 gbp in euros"</value>
+    <value>comme « convertir 100 dollars en yens " ou « 100 usd + 10 gbp en euros »</value>
   </data>
   <data name="UsageThirdLine" xml:space="preserve">
-    <value>I can get the price of actions such as "what is the price of Microsoft?"</value>
+    <value>Je peux obtenir des prix d'actions comme « quel est le prix de Microsoft ? »</value>
   </data>
   <data name="WelcomeLanguageAvailable" xml:space="preserve">
-    <value>I am available in these languages: </value>
+    <value>Je suis disponible dans toutes ces langues: </value>
   </data>
   <data name="WelcomeStringFirstLine" xml:space="preserve">
-    <value>Welcome {0}, I'm Bob, your financial advisor.</value>
+    <value>Bienvenue {0}, je suis Bob, votre conseiller financier.</value>
   </data>
   <data name="WelcomeStringSecondLine" xml:space="preserve">
-    <value>Say "help" to see what I can do for you.</value>
+    <value>Dire « Aide » pour savoir ce que je peux faire pour vous.</value>
   </data>
 </root>

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="fr" original="FINANCIALADVISOR/RESOURCES/RESOURCE.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.6799.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="FINANCIALADVISOR/RESOURCES/RESOURCE.RESX" datatype="resx">
+        <trans-unit id="ByeString" translate="yes" xml:space="preserve">
+          <source>Goodbye, have a nice day</source>
+          <target state="new">Goodbye, have a nice day</target>
+        </trans-unit>
+        <trans-unit id="EmptyQueryString" translate="yes" xml:space="preserve">
+          <source>Query empty?</source>
+          <target state="new">Query empty?</target>
+        </trans-unit>
+        <trans-unit id="ErrorString" translate="yes" xml:space="preserve">
+          <source>An error occurred</source>
+          <target state="new">An error occurred</target>
+        </trans-unit>
+        <trans-unit id="HelpString" translate="yes" xml:space="preserve">
+          <source>Help</source>
+          <target state="new">Help</target>
+        </trans-unit>
+        <trans-unit id="HiString" translate="yes" xml:space="preserve">
+          <source>Hello</source>
+          <target state="new">Hello</target>
+        </trans-unit>
+        <trans-unit id="LanguageUnaivalable" translate="yes" xml:space="preserve">
+          <source>{0} is not a possible language</source>
+          <target state="new">{0} is not a possible language</target>
+        </trans-unit>
+        <trans-unit id="MeanString" translate="yes" xml:space="preserve">
+          <source>Did you mean:</source>
+          <target state="new">Did you mean:</target>
+        </trans-unit>
+        <trans-unit id="NewLanguageString" translate="yes" xml:space="preserve">
+          <source>Now, I speak</source>
+          <target state="new">Now, I speak</target>
+        </trans-unit>
+        <trans-unit id="NoMoreQueriesString" translate="yes" xml:space="preserve">
+          <source>No more queries available for this month, I'm sorry</source>
+          <target state="new">No more queries available for this month, I'm sorry</target>
+        </trans-unit>
+        <trans-unit id="SpeakString" translate="yes" xml:space="preserve">
+          <source>Speak</source>
+          <target state="new">Speak</target>
+        </trans-unit>
+        <trans-unit id="UnknownQuery" translate="yes" xml:space="preserve">
+          <source>Sorry, I don't understand, please say "help" to see examples</source>
+          <target state="new">Sorry, I don't understand, please say "help" to see examples</target>
+        </trans-unit>
+        <trans-unit id="UsageFifthLine" translate="yes" xml:space="preserve">
+          <source>Tell me: "speak ..." to change the language</source>
+          <target state="new">Tell me: "speak ..." to change the language</target>
+        </trans-unit>
+        <trans-unit id="UsageFirstLine" translate="yes" xml:space="preserve">
+          <source>I can do conversions or calculations between currencies.</source>
+          <target state="new">I can do conversions or calculations between currencies.</target>
+        </trans-unit>
+        <trans-unit id="UsageFourthLine" translate="yes" xml:space="preserve">
+          <source>Be forgiving, I am being developed ;-)</source>
+          <target state="new">Be forgiving, I am being developed ;-)</target>
+        </trans-unit>
+        <trans-unit id="UsageSecondLine" translate="yes" xml:space="preserve">
+          <source>as "convert 100 dollars into yen"or "100 usd + 10 gbp in euros"</source>
+          <target state="new">as "convert 100 dollars into yen"or "100 usd + 10 gbp in euros"</target>
+        </trans-unit>
+        <trans-unit id="UsageThirdLine" translate="yes" xml:space="preserve">
+          <source>I can get the price of actions such as "what is the price of Microsoft?"</source>
+          <target state="new">I can get the price of actions such as "what is the price of Microsoft?"</target>
+        </trans-unit>
+        <trans-unit id="WelcomeLanguageAvailable" translate="yes" xml:space="preserve">
+          <source>I am available in these languages: </source>
+          <target state="new">I am available in these languages: </target>
+        </trans-unit>
+        <trans-unit id="WelcomeStringFirstLine" translate="yes" xml:space="preserve">
+          <source>Welcome {0}, I'm Bob, your financial advisor.</source>
+          <target state="new">Welcome {0}, I'm Bob, your financial advisor.</target>
+        </trans-unit>
+        <trans-unit id="WelcomeStringSecondLine" translate="yes" xml:space="preserve">
+          <source>Say "help" to see what I can do for you.</source>
+          <target state="new">Say "help" to see what I can do for you.</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

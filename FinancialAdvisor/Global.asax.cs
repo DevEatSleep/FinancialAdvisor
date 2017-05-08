@@ -2,6 +2,7 @@
 using FinancialAdvisor.Entity;
 using FinancialAdvisor.Services;
 using System.Web.Http;
+using FinancialAdvisor.Helpers;
 
 namespace FinancialAdvisor
 {
@@ -13,7 +14,7 @@ namespace FinancialAdvisor
             var builder = new ContainerBuilder();
             builder.RegisterType<RequestLimiter>().As<IRequestLimiter>();           
             var container = builder.Build();
-            ServiceResolver.Container = container;
+            ServiceResolver.Container = container;           
         }
     }
 }

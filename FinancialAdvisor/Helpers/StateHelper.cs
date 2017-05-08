@@ -7,14 +7,13 @@ namespace FinancialAdvisor.Helpers
 {
     public static class StateHelper
     {
-        public static async Task SetUserLanguageCode(Activity activity, string languageCode)
+        public static async Task SetUserUiLanguageAsync(Activity activity, string UiCulture)
         {
             try
             {
                 StateClient stateClient = activity.GetStateClient();
                 BotData userData = stateClient.BotState.GetUserData(activity.ChannelId, activity.From.Id);
-
-                userData.SetProperty<string>("LanguageCode", languageCode);
+                userData.SetProperty<string>("UiCulture", UiCulture);               
                 await stateClient.BotState.SetUserDataAsync(activity.ChannelId, activity.From.Id, userData);
             }
             catch (Exception ex)
@@ -22,29 +21,16 @@ namespace FinancialAdvisor.Helpers
                 throw ex;
             }
         }
+           
 
-        public static void SetUserLanguageCode(IDialogContext context, string languageCode)
-        {
-            try
-            {
-                context.UserData.SetValue("LanguageCode", languageCode);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        public static string GetUserLanguageCode(Activity activity)
+        public static string GetUserUiLanguage(Activity activity)
         {
             try
             {
                 StateClient stateClient = activity.GetStateClient();
                 BotData userData = stateClient.BotState.GetUserData(activity.ChannelId, activity.From.Id);
-
-                var languageCode = userData.GetProperty<string>("LanguageCode");
-
-                return languageCode;
+                var UiCulture = userData.GetProperty<string>("UiCulture");
+                return UiCulture;
             }
             catch (Exception ex)
             {
@@ -52,13 +38,23 @@ namespace FinancialAdvisor.Helpers
             }
         }
 
-        public static string GetUserLanguageCode(IDialogContext context)
+        public static void SetUserUiLanguage(IDialogContext context, string UiCulture)
         {
             try
             {
-                string result;
-                context.UserData.TryGetValue("LanguageCode", out result);
+                context.UserData.SetValue("UiCulture", UiCulture);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
+        public static string GetUserUiLanguage(IDialogContext context)
+        {
+            try
+            {
+                context.UserData.TryGetValue("UiCulture", out string result);
                 return result;
             }
             catch (Exception ex)

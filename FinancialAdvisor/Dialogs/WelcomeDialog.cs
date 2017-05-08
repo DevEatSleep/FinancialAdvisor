@@ -13,21 +13,22 @@ namespace FinancialAdvisor.Dialogs
 {
     [Serializable]
     public class WelcomeDialog : BestMatchDialog<object>
-    {
-        [BestMatch(new string[] { "Hi", "Hi There", "Hello there", "Hey", "Hello",
-        "Hey there", "Greetings", "Good morning", "Good afternoon", "Good evening", "Good day" },
+    {        [BestMatch(new string[] { "hi", "hi There", "hello there", "hey", "hello",
+            "hey there", "greetings", "Good morning", "good afternoon", "good evening", "good day" },
        threshold: 0.5, ignoreCase: true, ignoreNonAlphaNumericCharacters: false)]
         public async Task WelcomeGreeting(IDialogContext context, string messageText)
-        {
+        {            
             await Messages.WelcomeMessageAsync(context, context.Activity.From.Name);
             context.Done(true);
         }
 
-        [BestMatch(new string[] { "good bye", "bye", "bye bye", "got to go","see you later", "laters", "adios", "see you again" },
+        [BestMatch(new string[] { "bye", "bye bye", "got to go",
+            "see you later", "laters", "adios" },
        threshold: 0.5, ignoreCase: true, ignoreNonAlphaNumericCharacters: false)]
         public async Task FarewellGreeting(IDialogContext context, string messageText)
         {
-            await context.PostAsync(string.Format(CultureInfo.CurrentCulture, Resources.Resource.ByeString));
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(StateHelper.GetUserUiLanguage(context));
+            await context.PostAsync(Resources.Resource.ByeString);
             context.Done(true);
         }
 

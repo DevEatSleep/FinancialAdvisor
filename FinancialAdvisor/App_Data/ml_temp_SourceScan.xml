@@ -1,238 +1,936 @@
 <?xml version="1.0" standalone="yes"?>
 <SourceScanResultsCache xmlns="http://tempuri.org/SourceScanResults.xsd">
   <SourceScanResults>
+    <SourceScanID>1</SourceScanID>
+    <ModuleName>CultureHelper.cs</ModuleName>
+    <LineNumber>35</LineNumber>
+    <ColumnNumber>82</ColumnNumber>
+    <OriginalText>IVL</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>35</StartOfStatement>
+    <EndOfStatement>35</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>LoadCultures</CodeElement>
+    <RelativeLineNumber>12</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>2</SourceScanID>
+    <ModuleName>HelpDialog.cs</ModuleName>
+    <LineNumber>14</LineNumber>
+    <ColumnNumber>36</ColumnNumber>
+    <OriginalText>help</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>14</StartOfStatement>
+    <EndOfStatement>14</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>WelcomeGreeting</CodeElement>
+    <RelativeLineNumber>0</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>3</SourceScanID>
+    <ModuleName>HelpDialog.cs</ModuleName>
+    <LineNumber>14</LineNumber>
+    <ColumnNumber>44</ColumnNumber>
+    <OriginalText>usage</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>1</IndexOnLine>
+    <StartOfStatement>14</StartOfStatement>
+    <EndOfStatement>14</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>WelcomeGreeting</CodeElement>
+    <RelativeLineNumber>0</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>4</SourceScanID>
+    <ModuleName>HelpDialog.cs</ModuleName>
+    <LineNumber>14</LineNumber>
+    <ColumnNumber>53</ColumnNumber>
+    <OriginalText>?</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>2</IndexOnLine>
+    <StartOfStatement>14</StartOfStatement>
+    <EndOfStatement>14</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>WelcomeGreeting</CodeElement>
+    <RelativeLineNumber>0</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>5</SourceScanID>
+    <ModuleName>Messages.cs</ModuleName>
+    <LineNumber>24</LineNumber>
+    <ColumnNumber>33</ColumnNumber>
+    <OriginalText>, </OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>24</StartOfStatement>
+    <EndOfStatement>24</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>WelcomeMessageCultures</CodeElement>
+    <RelativeLineNumber>8</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
     <SourceScanID>6</SourceScanID>
+    <ModuleName>Messages.cs</ModuleName>
+    <LineNumber>29</LineNumber>
+    <ColumnNumber>52</ColumnNumber>
+    <StringID>3</StringID>
+    <OriginalText>Welcome {0}, I'm Bob, your financial advisor.</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>29</StartOfStatement>
+    <EndOfStatement>29</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>WelcomeMessageAsync</CodeElement>
+    <RelativeLineNumber>2</RelativeLineNumber>
+    <NamedResource>WelcomeStringFirstLine</NamedResource>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>7</SourceScanID>
+    <ModuleName>Messages.cs</ModuleName>
+    <LineNumber>31</LineNumber>
+    <ColumnNumber>33</ColumnNumber>
+    <StringID>5</StringID>
+    <OriginalText>Say "help" to see what I can do for you.</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>31</StartOfStatement>
+    <EndOfStatement>31</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>WelcomeMessageAsync</CodeElement>
+    <RelativeLineNumber>4</RelativeLineNumber>
+    <NamedResource>WelcomeStringSecondLine</NamedResource>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>8</SourceScanID>
+    <ModuleName>Messages.cs</ModuleName>
+    <LineNumber>33</LineNumber>
+    <ColumnNumber>33</ColumnNumber>
+    <StringID>16</StringID>
+    <OriginalText>I am available in these languages: </OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>33</StartOfStatement>
+    <EndOfStatement>33</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>WelcomeMessageAsync</CodeElement>
+    <RelativeLineNumber>6</RelativeLineNumber>
+    <NamedResource>WelcomeLanguageAvailable</NamedResource>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>9</SourceScanID>
+    <ModuleName>Messages.cs</ModuleName>
+    <LineNumber>40</LineNumber>
+    <ColumnNumber>38</ColumnNumber>
+    <StringID>11</StringID>
+    <OriginalText>I can do conversions or calculations between currencies.</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>40</StartOfStatement>
+    <EndOfStatement>40</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>HelpMessageAsync</CodeElement>
+    <RelativeLineNumber>2</RelativeLineNumber>
+    <NamedResource>UsageFirstLine</NamedResource>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>10</SourceScanID>
+    <ModuleName>Messages.cs</ModuleName>
+    <LineNumber>41</LineNumber>
+    <ColumnNumber>22</ColumnNumber>
+    <StringID>13</StringID>
+    <OriginalText>as "convert 100 dollars into yen"or "100 usd + 10 gbp in euros"</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>41</StartOfStatement>
+    <EndOfStatement>41</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>HelpMessageAsync</CodeElement>
+    <RelativeLineNumber>3</RelativeLineNumber>
+    <NamedResource>UsageSecondLine</NamedResource>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>11</SourceScanID>
+    <ModuleName>Messages.cs</ModuleName>
+    <LineNumber>42</LineNumber>
+    <ColumnNumber>22</ColumnNumber>
+    <StringID>14</StringID>
+    <OriginalText>I can get the price of actions such as "what is the price of Microsoft?</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>42</StartOfStatement>
+    <EndOfStatement>42</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>HelpMessageAsync</CodeElement>
+    <RelativeLineNumber>4</RelativeLineNumber>
+    <NamedResource>UsageThirdLine</NamedResource>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>12</SourceScanID>
+    <ModuleName>Messages.cs</ModuleName>
+    <LineNumber>43</LineNumber>
+    <ColumnNumber>22</ColumnNumber>
+    <StringID>12</StringID>
+    <OriginalText>Be forgiving, I am being developed ;-)</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>43</StartOfStatement>
+    <EndOfStatement>43</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>HelpMessageAsync</CodeElement>
+    <RelativeLineNumber>5</RelativeLineNumber>
+    <NamedResource>UsageFourthLine</NamedResource>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>13</SourceScanID>
+    <ModuleName>Messages.cs</ModuleName>
+    <LineNumber>44</LineNumber>
+    <ColumnNumber>22</ColumnNumber>
+    <StringID>17</StringID>
+    <OriginalText>Tell me: "speak ..." to change the language</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>44</StartOfStatement>
+    <EndOfStatement>44</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>HelpMessageAsync</CodeElement>
+    <RelativeLineNumber>6</RelativeLineNumber>
+    <NamedResource>UsageFifthLine</NamedResource>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>14</SourceScanID>
+    <ModuleName>Messages.cs</ModuleName>
+    <LineNumber>50</LineNumber>
+    <ColumnNumber>52</ColumnNumber>
+    <StringID>3</StringID>
+    <OriginalText>Welcome {0}, I'm Bob, your financial advisor.</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>50</StartOfStatement>
+    <EndOfStatement>50</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>WelcomeMessage</CodeElement>
+    <RelativeLineNumber>2</RelativeLineNumber>
+    <NamedResource>WelcomeStringFirstLine</NamedResource>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>15</SourceScanID>
+    <ModuleName>Messages.cs</ModuleName>
+    <LineNumber>51</LineNumber>
+    <ColumnNumber>95</ColumnNumber>
+    <StringID>5</StringID>
+    <OriginalText>Say "help" to see what I can do for you.</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>51</StartOfStatement>
+    <EndOfStatement>51</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>WelcomeMessage</CodeElement>
+    <RelativeLineNumber>3</RelativeLineNumber>
+    <NamedResource>WelcomeStringSecondLine</NamedResource>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>16</SourceScanID>
+    <ModuleName>Messages.cs</ModuleName>
+    <LineNumber>53</LineNumber>
+    <ColumnNumber>32</ColumnNumber>
+    <StringID>16</StringID>
+    <OriginalText>I am available in these languages: </OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>53</StartOfStatement>
+    <EndOfStatement>53</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>WelcomeMessage</CodeElement>
+    <RelativeLineNumber>5</RelativeLineNumber>
+    <NamedResource>WelcomeLanguageAvailable</NamedResource>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>17</SourceScanID>
+    <ModuleName>RequestLimiter.cs</ModuleName>
+    <LineNumber>16</LineNumber>
+    <ColumnNumber>55</ColumnNumber>
+    <OriginalText>StorageConnectionString</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>16</StartOfStatement>
+    <EndOfStatement>16</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>RequestLimiter</CodeElement>
+    <RelativeLineNumber>3</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>18</SourceScanID>
+    <ModuleName>RequestLimiter.cs</ModuleName>
+    <LineNumber>24</LineNumber>
+    <ColumnNumber>52</ColumnNumber>
+    <OriginalText>RequestLimit</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>24</StartOfStatement>
+    <EndOfStatement>24</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Read</CodeElement>
+    <RelativeLineNumber>2</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>19</SourceScanID>
+    <ModuleName>RootDialog.cs</ModuleName>
+    <LineNumber>17</LineNumber>
+    <ColumnNumber>17</ColumnNumber>
+    <OriginalText>e5b55528-76cd-48f7-8a61-9fd6fee485d8</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>17</StartOfStatement>
+    <EndOfStatement>17</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>RootDialog</CodeElement>
+    <RelativeLineNumber>1</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>20</SourceScanID>
+    <ModuleName>RootDialog.cs</ModuleName>
+    <LineNumber>17</LineNumber>
+    <ColumnNumber>57</ColumnNumber>
+    <OriginalText>526e1166d5f34d178d96464bcb743ef8</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>1</IndexOnLine>
+    <StartOfStatement>17</StartOfStatement>
+    <EndOfStatement>17</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>RootDialog</CodeElement>
+    <RelativeLineNumber>1</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>21</SourceScanID>
+    <ModuleName>RootDialog.cs</ModuleName>
+    <LineNumber>22</LineNumber>
+    <ColumnNumber>49</ColumnNumber>
+    <OriginalText>builtin.currency</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>22</StartOfStatement>
+    <EndOfStatement>22</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>EntityMoneyName</CodeElement>
+    <RelativeLineNumber>0</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>22</SourceScanID>
+    <ModuleName>RootDialog.cs</ModuleName>
+    <LineNumber>23</LineNumber>
+    <ColumnNumber>51</ColumnNumber>
+    <OriginalText>company</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>23</StartOfStatement>
+    <EndOfStatement>23</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>EntityCompanyName</CodeElement>
+    <RelativeLineNumber>0</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>23</SourceScanID>
+    <ModuleName>RootDialog.cs</ModuleName>
+    <LineNumber>24</LineNumber>
+    <ColumnNumber>52</ColumnNumber>
+    <OriginalText>language</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>24</StartOfStatement>
+    <EndOfStatement>24</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>LanguageEntityName</CodeElement>
+    <RelativeLineNumber>0</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>24</SourceScanID>
     <ModuleName>RootDialog.cs</ModuleName>
     <LineNumber>25</LineNumber>
-    <ColumnNumber>45</ColumnNumber>
-    <OriginalText>help</OriginalText>
+    <ColumnNumber>47</ColumnNumber>
+    <OriginalText>en</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
     <StartOfStatement>25</StartOfStatement>
     <EndOfStatement>25</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>MessageReceivedAsync</CodeElement>
+    <CodeElement>QueryLanguage</CodeElement>
+    <RelativeLineNumber>0</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>25</SourceScanID>
+    <ModuleName>RootDialog.cs</ModuleName>
+    <LineNumber>26</LineNumber>
+    <ColumnNumber>50</ColumnNumber>
+    <OriginalText>price</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>26</StartOfStatement>
+    <EndOfStatement>26</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>EntitiesQuoteNames</CodeElement>
+    <RelativeLineNumber>0</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>26</SourceScanID>
+    <ModuleName>RootDialog.cs</ModuleName>
+    <LineNumber>26</LineNumber>
+    <ColumnNumber>59</ColumnNumber>
+    <OriginalText>quotation</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>1</IndexOnLine>
+    <StartOfStatement>26</StartOfStatement>
+    <EndOfStatement>26</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>EntitiesQuoteNames</CodeElement>
+    <RelativeLineNumber>0</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>27</SourceScanID>
+    <ModuleName>RootDialog.cs</ModuleName>
+    <LineNumber>26</LineNumber>
+    <ColumnNumber>72</ColumnNumber>
+    <OriginalText>value</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>2</IndexOnLine>
+    <StartOfStatement>26</StartOfStatement>
+    <EndOfStatement>26</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>EntitiesQuoteNames</CodeElement>
+    <RelativeLineNumber>0</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>28</SourceScanID>
+    <ModuleName>RootDialog.cs</ModuleName>
+    <LineNumber>29</LineNumber>
+    <ColumnNumber>22</ColumnNumber>
+    <OriginalText>None</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>29</StartOfStatement>
+    <EndOfStatement>29</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>None</CodeElement>
+    <RelativeLineNumber>1</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>29</SourceScanID>
+    <ModuleName>RootDialog.cs</ModuleName>
+    <LineNumber>40</LineNumber>
+    <ColumnNumber>41</ColumnNumber>
+    <StringID>10</StringID>
+    <OriginalText>Sorry, I don't understand, please say "help" to see examples</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>40</StartOfStatement>
+    <EndOfStatement>40</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>GreetingDialogDoneAsync</CodeElement>
+    <RelativeLineNumber>4</RelativeLineNumber>
+    <NamedResource>UnknownQuery</NamedResource>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>30</SourceScanID>
+    <ModuleName>RootDialog.cs</ModuleName>
+    <LineNumber>45</LineNumber>
+    <ColumnNumber>22</ColumnNumber>
+    <OriginalText>help</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>45</StartOfStatement>
+    <EndOfStatement>45</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Help</CodeElement>
+    <RelativeLineNumber>0</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>31</SourceScanID>
+    <ModuleName>RootDialog.cs</ModuleName>
+    <LineNumber>46</LineNumber>
+    <ColumnNumber>22</ColumnNumber>
+    <OriginalText>usage</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>46</StartOfStatement>
+    <EndOfStatement>46</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Help</CodeElement>
+    <RelativeLineNumber>1</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>32</SourceScanID>
+    <ModuleName>RootDialog.cs</ModuleName>
+    <LineNumber>47</LineNumber>
+    <ColumnNumber>22</ColumnNumber>
+    <OriginalText>?</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>47</StartOfStatement>
+    <EndOfStatement>47</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Help</CodeElement>
+    <RelativeLineNumber>2</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>33</SourceScanID>
+    <ModuleName>RootDialog.cs</ModuleName>
+    <LineNumber>59</LineNumber>
+    <ColumnNumber>22</ColumnNumber>
+    <OriginalText>speak</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>59</StartOfStatement>
+    <EndOfStatement>59</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Speak</CodeElement>
+    <RelativeLineNumber>0</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>34</SourceScanID>
+    <ModuleName>RootDialog.cs</ModuleName>
+    <LineNumber>70</LineNumber>
+    <ColumnNumber>55</ColumnNumber>
+    <StringID>19</StringID>
+    <OriginalText>Now, I speak</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>70</StartOfStatement>
+    <EndOfStatement>70</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Speak</CodeElement>
+    <RelativeLineNumber>11</RelativeLineNumber>
+    <NamedResource>NewLanguageString</NamedResource>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>35</SourceScanID>
+    <ModuleName>RootDialog.cs</ModuleName>
+    <LineNumber>70</LineNumber>
+    <ColumnNumber>94</ColumnNumber>
+    <OriginalText xml:space="preserve"> </OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>1</IndexOnLine>
+    <StartOfStatement>70</StartOfStatement>
+    <EndOfStatement>70</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>Speak</CodeElement>
+    <RelativeLineNumber>11</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>36</SourceScanID>
+    <ModuleName>RootDialog.cs</ModuleName>
+    <LineNumber>79</LineNumber>
+    <ColumnNumber>41</ColumnNumber>
+    <StringID>10</StringID>
+    <OriginalText>Sorry, I don't understand, please say "help" to see examples</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>79</StartOfStatement>
+    <EndOfStatement>79</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>HelpDialogDoneAsync</CodeElement>
+    <RelativeLineNumber>4</RelativeLineNumber>
+    <NamedResource>UnknownQuery</NamedResource>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>37</SourceScanID>
+    <ModuleName>RootDialog.cs</ModuleName>
+    <LineNumber>84</LineNumber>
+    <ColumnNumber>22</ColumnNumber>
+    <OriginalText>what</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>84</StartOfStatement>
+    <EndOfStatement>84</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>GetStockQuote</CodeElement>
+    <RelativeLineNumber>0</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>38</SourceScanID>
+    <ModuleName>RootDialog.cs</ModuleName>
+    <LineNumber>97</LineNumber>
+    <ColumnNumber>88</ColumnNumber>
+    <OriginalText>WolframAlphaAppId</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>97</StartOfStatement>
+    <EndOfStatement>97</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>GetStockQuote</CodeElement>
+    <RelativeLineNumber>13</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>39</SourceScanID>
+    <ModuleName>RootDialog.cs</ModuleName>
+    <LineNumber>98</LineNumber>
+    <ColumnNumber>97</ColumnNumber>
+    <OriginalText>Data</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>98</StartOfStatement>
+    <EndOfStatement>98</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>GetStockQuote</CodeElement>
+    <RelativeLineNumber>14</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>40</SourceScanID>
+    <ModuleName>RootDialog.cs</ModuleName>
+    <LineNumber>124</LineNumber>
+    <ColumnNumber>22</ColumnNumber>
+    <OriginalText>convert</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>124</StartOfStatement>
+    <EndOfStatement>124</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>DoMoneyCalc</CodeElement>
+    <RelativeLineNumber>0</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>41</SourceScanID>
+    <ModuleName>RootDialog.cs</ModuleName>
+    <LineNumber>125</LineNumber>
+    <ColumnNumber>22</ColumnNumber>
+    <OriginalText>+</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>125</StartOfStatement>
+    <EndOfStatement>125</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>DoMoneyCalc</CodeElement>
+    <RelativeLineNumber>1</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>42</SourceScanID>
+    <ModuleName>RootDialog.cs</ModuleName>
+    <LineNumber>126</LineNumber>
+    <ColumnNumber>22</ColumnNumber>
+    <OriginalText>-</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>126</StartOfStatement>
+    <EndOfStatement>126</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>DoMoneyCalc</CodeElement>
+    <RelativeLineNumber>2</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>43</SourceScanID>
+    <ModuleName>RootDialog.cs</ModuleName>
+    <LineNumber>127</LineNumber>
+    <ColumnNumber>22</ColumnNumber>
+    <OriginalText>*</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>127</StartOfStatement>
+    <EndOfStatement>127</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>DoMoneyCalc</CodeElement>
+    <RelativeLineNumber>3</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>44</SourceScanID>
+    <ModuleName>RootDialog.cs</ModuleName>
+    <LineNumber>128</LineNumber>
+    <ColumnNumber>22</ColumnNumber>
+    <OriginalText>/</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>128</StartOfStatement>
+    <EndOfStatement>128</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>DoMoneyCalc</CodeElement>
     <RelativeLineNumber>4</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>7</SourceScanID>
+    <SourceScanID>45</SourceScanID>
     <ModuleName>RootDialog.cs</ModuleName>
-    <LineNumber>27</LineNumber>
-    <ColumnNumber>42</ColumnNumber>
-    <OriginalText>For the moment, I can only make conversions or calculations between currencies.</OriginalText>
+    <LineNumber>139</LineNumber>
+    <ColumnNumber>84</ColumnNumber>
+    <OriginalText>WolframAlphaAppId</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>27</StartOfStatement>
-    <EndOfStatement>27</EndOfStatement>
+    <StartOfStatement>139</StartOfStatement>
+    <EndOfStatement>139</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>MessageReceivedAsync</CodeElement>
-    <RelativeLineNumber>6</RelativeLineNumber>
+    <CodeElement>DoMoneyCalc</CodeElement>
+    <RelativeLineNumber>15</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>8</SourceScanID>
+    <SourceScanID>46</SourceScanID>
     <ModuleName>RootDialog.cs</ModuleName>
-    <LineNumber>27</LineNumber>
-    <ColumnNumber>126</ColumnNumber>
-    <OriginalText xml:space="preserve">
-
-</OriginalText>
-    <IsHidden>false</IsHidden>
-    <IndexOnLine>1</IndexOnLine>
-    <StartOfStatement>27</StartOfStatement>
-    <EndOfStatement>27</EndOfStatement>
-    <IsVerbatim>false</IsVerbatim>
-    <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>MessageReceivedAsync</CodeElement>
-    <RelativeLineNumber>6</RelativeLineNumber>
-    <IsHiddenString>false</IsHiddenString>
-    <IsInterpolatedString>false</IsInterpolatedString>
-  </SourceScanResults>
-  <SourceScanResults>
-    <SourceScanID>9</SourceScanID>
-    <ModuleName>RootDialog.cs</ModuleName>
-    <LineNumber>28</LineNumber>
-    <ColumnNumber>20</ColumnNumber>
-    <OriginalText>like 'convert 100 USD in JPY' or 'add 100 USD and 10 JPY in EUR'</OriginalText>
-    <IsHidden>false</IsHidden>
-    <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>28</StartOfStatement>
-    <EndOfStatement>28</EndOfStatement>
-    <IsVerbatim>false</IsVerbatim>
-    <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>MessageReceivedAsync</CodeElement>
-    <RelativeLineNumber>7</RelativeLineNumber>
-    <IsHiddenString>false</IsHiddenString>
-    <IsInterpolatedString>false</IsInterpolatedString>
-  </SourceScanResults>
-  <SourceScanResults>
-    <SourceScanID>10</SourceScanID>
-    <ModuleName>RootDialog.cs</ModuleName>
-    <LineNumber>28</LineNumber>
-    <ColumnNumber>89</ColumnNumber>
-    <OriginalText xml:space="preserve">
-
-</OriginalText>
-    <IsHidden>false</IsHidden>
-    <IndexOnLine>1</IndexOnLine>
-    <StartOfStatement>28</StartOfStatement>
-    <EndOfStatement>28</EndOfStatement>
-    <IsVerbatim>false</IsVerbatim>
-    <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>MessageReceivedAsync</CodeElement>
-    <RelativeLineNumber>7</RelativeLineNumber>
-    <IsHiddenString>false</IsHiddenString>
-    <IsInterpolatedString>false</IsInterpolatedString>
-  </SourceScanResults>
-  <SourceScanResults>
-    <SourceScanID>11</SourceScanID>
-    <ModuleName>RootDialog.cs</ModuleName>
-    <LineNumber>29</LineNumber>
-    <ColumnNumber>20</ColumnNumber>
-    <OriginalText>or '10 USD + 10 JPY - 10 CAD in EUR'</OriginalText>
-    <IsHidden>false</IsHidden>
-    <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>29</StartOfStatement>
-    <EndOfStatement>29</EndOfStatement>
-    <IsVerbatim>false</IsVerbatim>
-    <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>MessageReceivedAsync</CodeElement>
-    <RelativeLineNumber>8</RelativeLineNumber>
-    <IsHiddenString>false</IsHiddenString>
-    <IsInterpolatedString>false</IsInterpolatedString>
-  </SourceScanResults>
-  <SourceScanResults>
-    <SourceScanID>12</SourceScanID>
-    <ModuleName>RootDialog.cs</ModuleName>
-    <LineNumber>29</LineNumber>
-    <ColumnNumber>61</ColumnNumber>
-    <OriginalText xml:space="preserve">
-
-</OriginalText>
-    <IsHidden>false</IsHidden>
-    <IndexOnLine>1</IndexOnLine>
-    <StartOfStatement>29</StartOfStatement>
-    <EndOfStatement>29</EndOfStatement>
-    <IsVerbatim>false</IsVerbatim>
-    <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>MessageReceivedAsync</CodeElement>
-    <RelativeLineNumber>8</RelativeLineNumber>
-    <IsHiddenString>false</IsHiddenString>
-    <IsInterpolatedString>false</IsInterpolatedString>
-  </SourceScanResults>
-  <SourceScanResults>
-    <SourceScanID>13</SourceScanID>
-    <ModuleName>RootDialog.cs</ModuleName>
-    <LineNumber>30</LineNumber>
-    <ColumnNumber>20</ColumnNumber>
-    <OriginalText>Many functions will come later, I'll keep you informed</OriginalText>
-    <IsHidden>false</IsHidden>
-    <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>30</StartOfStatement>
-    <EndOfStatement>30</EndOfStatement>
-    <IsVerbatim>false</IsVerbatim>
-    <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>MessageReceivedAsync</CodeElement>
-    <RelativeLineNumber>9</RelativeLineNumber>
-    <IsHiddenString>false</IsHiddenString>
-    <IsInterpolatedString>false</IsInterpolatedString>
-  </SourceScanResults>
-  <SourceScanResults>
-    <SourceScanID>14</SourceScanID>
-    <ModuleName>RootDialog.cs</ModuleName>
-    <LineNumber>30</LineNumber>
-    <ColumnNumber>79</ColumnNumber>
-    <OriginalText xml:space="preserve">
-
-</OriginalText>
-    <IsHidden>false</IsHidden>
-    <IndexOnLine>1</IndexOnLine>
-    <StartOfStatement>30</StartOfStatement>
-    <EndOfStatement>30</EndOfStatement>
-    <IsVerbatim>false</IsVerbatim>
-    <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>MessageReceivedAsync</CodeElement>
-    <RelativeLineNumber>9</RelativeLineNumber>
-    <IsHiddenString>false</IsHiddenString>
-    <IsInterpolatedString>false</IsInterpolatedString>
-  </SourceScanResults>
-  <SourceScanResults>
-    <SourceScanID>15</SourceScanID>
-    <ModuleName>RootDialog.cs</ModuleName>
-    <LineNumber>31</LineNumber>
-    <ColumnNumber>20</ColumnNumber>
-    <OriginalText>Don't use often, I've a limitation in request to the API web server.</OriginalText>
-    <IsHidden>false</IsHidden>
-    <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>31</StartOfStatement>
-    <EndOfStatement>31</EndOfStatement>
-    <IsVerbatim>false</IsVerbatim>
-    <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>MessageReceivedAsync</CodeElement>
-    <RelativeLineNumber>10</RelativeLineNumber>
-    <IsHiddenString>false</IsHiddenString>
-    <IsInterpolatedString>false</IsInterpolatedString>
-  </SourceScanResults>
-  <SourceScanResults>
-    <SourceScanID>16</SourceScanID>
-    <ModuleName>RootDialog.cs</ModuleName>
-    <LineNumber>31</LineNumber>
+    <LineNumber>140</LineNumber>
     <ColumnNumber>93</ColumnNumber>
-    <OriginalText xml:space="preserve">
-
-</OriginalText>
+    <OriginalText>Money</OriginalText>
     <IsHidden>false</IsHidden>
-    <IndexOnLine>1</IndexOnLine>
-    <StartOfStatement>31</StartOfStatement>
-    <EndOfStatement>31</EndOfStatement>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>140</StartOfStatement>
+    <EndOfStatement>140</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>MessageReceivedAsync</CodeElement>
-    <RelativeLineNumber>10</RelativeLineNumber>
+    <CodeElement>DoMoneyCalc</CodeElement>
+    <RelativeLineNumber>16</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>17</SourceScanID>
-    <ModuleName>RootDialog.cs</ModuleName>
+    <SourceScanID>47</SourceScanID>
+    <ModuleName>StateHelper.cs</ModuleName>
+    <LineNumber>16</LineNumber>
+    <ColumnNumber>47</ColumnNumber>
+    <OriginalText>UiCulture</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>16</StartOfStatement>
+    <EndOfStatement>16</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>SetUserUiLanguageAsync</CodeElement>
+    <RelativeLineNumber>6</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>48</SourceScanID>
+    <ModuleName>StateHelper.cs</ModuleName>
     <LineNumber>32</LineNumber>
-    <ColumnNumber>20</ColumnNumber>
-    <OriginalText>Be kind, I'm under development ;-)</OriginalText>
+    <ColumnNumber>63</ColumnNumber>
+    <OriginalText>UiCulture</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
     <StartOfStatement>32</StartOfStatement>
     <EndOfStatement>32</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>MessageReceivedAsync</CodeElement>
-    <RelativeLineNumber>11</RelativeLineNumber>
+    <CodeElement>GetUserUiLanguage</CodeElement>
+    <RelativeLineNumber>6</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>18</SourceScanID>
-    <ModuleName>RootDialog.cs</ModuleName>
-    <LineNumber>36</LineNumber>
-    <ColumnNumber>84</ColumnNumber>
-    <OriginalText>WolframAlphaAppId</OriginalText>
+    <SourceScanID>49</SourceScanID>
+    <ModuleName>StateHelper.cs</ModuleName>
+    <LineNumber>45</LineNumber>
+    <ColumnNumber>44</ColumnNumber>
+    <OriginalText>UiCulture</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>36</StartOfStatement>
-    <EndOfStatement>36</EndOfStatement>
+    <StartOfStatement>45</StartOfStatement>
+    <EndOfStatement>45</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>MessageReceivedAsync</CodeElement>
-    <RelativeLineNumber>15</RelativeLineNumber>
+    <CodeElement>SetUserUiLanguage</CodeElement>
+    <RelativeLineNumber>4</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>19</SourceScanID>
+    <SourceScanID>50</SourceScanID>
+    <ModuleName>StateHelper.cs</ModuleName>
+    <LineNumber>57</LineNumber>
+    <ColumnNumber>47</ColumnNumber>
+    <OriginalText>UiCulture</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>57</StartOfStatement>
+    <EndOfStatement>57</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>GetUserUiCulture</CodeElement>
+    <RelativeLineNumber>4</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>51</SourceScanID>
+    <ModuleName>TranslationHelper.cs</ModuleName>
+    <LineNumber>13</LineNumber>
+    <ColumnNumber>95</ColumnNumber>
+    <OriginalText>TextTranslatorId</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>13</StartOfStatement>
+    <EndOfStatement>13</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>DoTranslation</CodeElement>
+    <RelativeLineNumber>2</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>52</SourceScanID>
+    <ModuleName>TranslationHelper.cs</ModuleName>
+    <LineNumber>19</LineNumber>
+    <ColumnNumber>95</ColumnNumber>
+    <OriginalText>TextTranslatorId</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>19</StartOfStatement>
+    <EndOfStatement>19</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>DoLanguageDetectionAsync</CodeElement>
+    <RelativeLineNumber>2</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>53</SourceScanID>
+    <ModuleName>TranslationHelper.cs</ModuleName>
+    <LineNumber>25</LineNumber>
+    <ColumnNumber>114</ColumnNumber>
+    <OriginalText>en</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>25</StartOfStatement>
+    <EndOfStatement>25</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>GetNativeLanguageNameAsync</CodeElement>
+    <RelativeLineNumber>2</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>54</SourceScanID>
     <ModuleName>WebApiConfig.cs</ModuleName>
     <LineNumber>28</LineNumber>
     <ColumnNumber>24</ColumnNumber>
@@ -249,7 +947,7 @@
     <IsInterpolatedString>false</IsInterpolatedString>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>20</SourceScanID>
+    <SourceScanID>55</SourceScanID>
     <ModuleName>WebApiConfig.cs</ModuleName>
     <LineNumber>29</LineNumber>
     <ColumnNumber>33</ColumnNumber>
@@ -266,248 +964,647 @@
     <IsInterpolatedString>false</IsInterpolatedString>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>21</SourceScanID>
-    <ModuleName>WolframAlphaService.cs</ModuleName>
-    <LineNumber>22</LineNumber>
-    <ColumnNumber>25</ColumnNumber>
-    <OriginalText>Empty query ?</OriginalText>
+    <SourceScanID>56</SourceScanID>
+    <ModuleName>WelcomeDialog.cs</ModuleName>
+    <LineNumber>16</LineNumber>
+    <ColumnNumber>41</ColumnNumber>
+    <OriginalText>hg</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>22</StartOfStatement>
-    <EndOfStatement>22</EndOfStatement>
+    <StartOfStatement>16</StartOfStatement>
+    <EndOfStatement>16</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>ExecQuery</CodeElement>
-    <RelativeLineNumber>3</RelativeLineNumber>
+    <CodeElement>WelcomeGreeting</CodeElement>
+    <RelativeLineNumber>0</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>22</SourceScanID>
-    <ModuleName>WolframAlphaService.cs</ModuleName>
+    <SourceScanID>57</SourceScanID>
+    <ModuleName>WelcomeDialog.cs</ModuleName>
+    <LineNumber>16</LineNumber>
+    <ColumnNumber>47</ColumnNumber>
+    <OriginalText>hi There</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>1</IndexOnLine>
+    <StartOfStatement>16</StartOfStatement>
+    <EndOfStatement>16</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>WelcomeGreeting</CodeElement>
+    <RelativeLineNumber>0</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>58</SourceScanID>
+    <ModuleName>WelcomeDialog.cs</ModuleName>
+    <LineNumber>16</LineNumber>
+    <ColumnNumber>59</ColumnNumber>
+    <OriginalText>hello there</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>2</IndexOnLine>
+    <StartOfStatement>16</StartOfStatement>
+    <EndOfStatement>16</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>WelcomeGreeting</CodeElement>
+    <RelativeLineNumber>0</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>59</SourceScanID>
+    <ModuleName>WelcomeDialog.cs</ModuleName>
+    <LineNumber>16</LineNumber>
+    <ColumnNumber>74</ColumnNumber>
+    <OriginalText>hey</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>3</IndexOnLine>
+    <StartOfStatement>16</StartOfStatement>
+    <EndOfStatement>16</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>WelcomeGreeting</CodeElement>
+    <RelativeLineNumber>0</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>60</SourceScanID>
+    <ModuleName>WelcomeDialog.cs</ModuleName>
+    <LineNumber>16</LineNumber>
+    <ColumnNumber>81</ColumnNumber>
+    <OriginalText>hello</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>4</IndexOnLine>
+    <StartOfStatement>16</StartOfStatement>
+    <EndOfStatement>16</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>WelcomeGreeting</CodeElement>
+    <RelativeLineNumber>0</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>61</SourceScanID>
+    <ModuleName>WelcomeDialog.cs</ModuleName>
+    <LineNumber>17</LineNumber>
+    <ColumnNumber>14</ColumnNumber>
+    <OriginalText>hey there</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>17</StartOfStatement>
+    <EndOfStatement>17</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>WelcomeGreeting</CodeElement>
+    <RelativeLineNumber>1</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>62</SourceScanID>
+    <ModuleName>WelcomeDialog.cs</ModuleName>
+    <LineNumber>17</LineNumber>
+    <ColumnNumber>27</ColumnNumber>
+    <OriginalText>greetings</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>1</IndexOnLine>
+    <StartOfStatement>17</StartOfStatement>
+    <EndOfStatement>17</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>WelcomeGreeting</CodeElement>
+    <RelativeLineNumber>1</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>63</SourceScanID>
+    <ModuleName>WelcomeDialog.cs</ModuleName>
+    <LineNumber>17</LineNumber>
+    <ColumnNumber>40</ColumnNumber>
+    <OriginalText>Good morning</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>2</IndexOnLine>
+    <StartOfStatement>17</StartOfStatement>
+    <EndOfStatement>17</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>WelcomeGreeting</CodeElement>
+    <RelativeLineNumber>1</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>64</SourceScanID>
+    <ModuleName>WelcomeDialog.cs</ModuleName>
+    <LineNumber>17</LineNumber>
+    <ColumnNumber>56</ColumnNumber>
+    <OriginalText>good afternoon</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>3</IndexOnLine>
+    <StartOfStatement>17</StartOfStatement>
+    <EndOfStatement>17</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>WelcomeGreeting</CodeElement>
+    <RelativeLineNumber>1</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>65</SourceScanID>
+    <ModuleName>WelcomeDialog.cs</ModuleName>
+    <LineNumber>17</LineNumber>
+    <ColumnNumber>74</ColumnNumber>
+    <OriginalText>good evening</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>4</IndexOnLine>
+    <StartOfStatement>17</StartOfStatement>
+    <EndOfStatement>17</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>WelcomeGreeting</CodeElement>
+    <RelativeLineNumber>1</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>66</SourceScanID>
+    <ModuleName>WelcomeDialog.cs</ModuleName>
+    <LineNumber>17</LineNumber>
+    <ColumnNumber>90</ColumnNumber>
+    <OriginalText>good day</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>5</IndexOnLine>
+    <StartOfStatement>17</StartOfStatement>
+    <EndOfStatement>17</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>WelcomeGreeting</CodeElement>
+    <RelativeLineNumber>1</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>67</SourceScanID>
+    <ModuleName>WelcomeDialog.cs</ModuleName>
+    <LineNumber>26</LineNumber>
+    <ColumnNumber>36</ColumnNumber>
+    <OriginalText>bye</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>26</StartOfStatement>
+    <EndOfStatement>26</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>FarewellGreeting</CodeElement>
+    <RelativeLineNumber>0</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>68</SourceScanID>
+    <ModuleName>WelcomeDialog.cs</ModuleName>
+    <LineNumber>26</LineNumber>
+    <ColumnNumber>43</ColumnNumber>
+    <OriginalText>bye bye</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>1</IndexOnLine>
+    <StartOfStatement>26</StartOfStatement>
+    <EndOfStatement>26</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>FarewellGreeting</CodeElement>
+    <RelativeLineNumber>0</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>69</SourceScanID>
+    <ModuleName>WelcomeDialog.cs</ModuleName>
+    <LineNumber>26</LineNumber>
+    <ColumnNumber>54</ColumnNumber>
+    <OriginalText>got to go</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>2</IndexOnLine>
+    <StartOfStatement>26</StartOfStatement>
+    <EndOfStatement>26</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>FarewellGreeting</CodeElement>
+    <RelativeLineNumber>0</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>70</SourceScanID>
+    <ModuleName>WelcomeDialog.cs</ModuleName>
     <LineNumber>27</LineNumber>
-    <ColumnNumber>35</ColumnNumber>
-    <OriginalText>Money</OriginalText>
+    <ColumnNumber>14</ColumnNumber>
+    <OriginalText>see you later</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
     <StartOfStatement>27</StartOfStatement>
     <EndOfStatement>27</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>ExecQuery</CodeElement>
-    <RelativeLineNumber>8</RelativeLineNumber>
+    <CodeElement>FarewellGreeting</CodeElement>
+    <RelativeLineNumber>1</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>23</SourceScanID>
+    <SourceScanID>71</SourceScanID>
+    <ModuleName>WelcomeDialog.cs</ModuleName>
+    <LineNumber>27</LineNumber>
+    <ColumnNumber>31</ColumnNumber>
+    <OriginalText>laters</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>1</IndexOnLine>
+    <StartOfStatement>27</StartOfStatement>
+    <EndOfStatement>27</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>FarewellGreeting</CodeElement>
+    <RelativeLineNumber>1</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>72</SourceScanID>
+    <ModuleName>WelcomeDialog.cs</ModuleName>
+    <LineNumber>27</LineNumber>
+    <ColumnNumber>41</ColumnNumber>
+    <OriginalText>adios</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>2</IndexOnLine>
+    <StartOfStatement>27</StartOfStatement>
+    <EndOfStatement>27</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>FarewellGreeting</CodeElement>
+    <RelativeLineNumber>1</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>73</SourceScanID>
+    <ModuleName>WelcomeDialog.cs</ModuleName>
+    <LineNumber>32</LineNumber>
+    <ColumnNumber>37</ColumnNumber>
+    <StringID>20</StringID>
+    <OriginalText>Goodbye, have a nice day</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>32</StartOfStatement>
+    <EndOfStatement>32</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>FarewellGreeting</CodeElement>
+    <RelativeLineNumber>6</RelativeLineNumber>
+    <NamedResource>ByeString</NamedResource>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>74</SourceScanID>
     <ModuleName>WolframAlphaService.cs</ModuleName>
     <LineNumber>28</LineNumber>
-    <ColumnNumber>35</ColumnNumber>
-    <OriginalText>Data</OriginalText>
+    <ColumnNumber>70</ColumnNumber>
+    <OriginalText>Wolfram</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
     <StartOfStatement>28</StartOfStatement>
     <EndOfStatement>28</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>ExecQuery</CodeElement>
-    <RelativeLineNumber>9</RelativeLineNumber>
+    <CodeElement>ExecQueryAsync</CodeElement>
+    <RelativeLineNumber>6</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>24</SourceScanID>
+    <SourceScanID>75</SourceScanID>
     <ModuleName>WolframAlphaService.cs</ModuleName>
-    <LineNumber>33</LineNumber>
-    <ColumnNumber>25</ColumnNumber>
-    <OriginalText>Woops, where was an error: </OriginalText>
+    <LineNumber>28</LineNumber>
+    <ColumnNumber>81</ColumnNumber>
+    <OriginalText>FinancialAdvisor</OriginalText>
     <IsHidden>false</IsHidden>
-    <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>33</StartOfStatement>
-    <EndOfStatement>33</EndOfStatement>
+    <IndexOnLine>1</IndexOnLine>
+    <StartOfStatement>28</StartOfStatement>
+    <EndOfStatement>28</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>ExecQuery</CodeElement>
-    <RelativeLineNumber>14</RelativeLineNumber>
+    <CodeElement>ExecQueryAsync</CodeElement>
+    <RelativeLineNumber>6</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>25</SourceScanID>
+    <SourceScanID>76</SourceScanID>
     <ModuleName>WolframAlphaService.cs</ModuleName>
-    <LineNumber>47</LineNumber>
-    <ColumnNumber>22</ColumnNumber>
-    <OriginalText>Did you mean: </OriginalText>
+    <LineNumber>29</LineNumber>
+    <ColumnNumber>73</ColumnNumber>
+    <OriginalText>CognitiveServices</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>47</StartOfStatement>
-    <EndOfStatement>47</EndOfStatement>
+    <StartOfStatement>29</StartOfStatement>
+    <EndOfStatement>29</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>ExecQuery</CodeElement>
-    <RelativeLineNumber>28</RelativeLineNumber>
+    <CodeElement>ExecQueryAsync</CodeElement>
+    <RelativeLineNumber>7</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>26</SourceScanID>
+    <SourceScanID>77</SourceScanID>
     <ModuleName>WolframAlphaService.cs</ModuleName>
-    <LineNumber>53</LineNumber>
+    <LineNumber>29</LineNumber>
+    <ColumnNumber>94</ColumnNumber>
+    <OriginalText>TextTranslator</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>1</IndexOnLine>
+    <StartOfStatement>29</StartOfStatement>
+    <EndOfStatement>29</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>ExecQueryAsync</CodeElement>
+    <RelativeLineNumber>7</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>78</SourceScanID>
+    <ModuleName>WolframAlphaService.cs</ModuleName>
+    <LineNumber>32</LineNumber>
+    <ColumnNumber>24</ColumnNumber>
+    <StringID>9</StringID>
+    <OriginalText>No more queries available for this month, I'm sorry</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>32</StartOfStatement>
+    <EndOfStatement>32</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>ExecQueryAsync</CodeElement>
+    <RelativeLineNumber>10</RelativeLineNumber>
+    <NamedResource>NoMoreQueriesString</NamedResource>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>79</SourceScanID>
+    <ModuleName>WolframAlphaService.cs</ModuleName>
+    <LineNumber>38</LineNumber>
+    <ColumnNumber>24</ColumnNumber>
+    <StringID>9</StringID>
+    <OriginalText>No more queries available for this month, I'm sorry</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>38</StartOfStatement>
+    <EndOfStatement>38</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>ExecQueryAsync</CodeElement>
+    <RelativeLineNumber>16</RelativeLineNumber>
+    <NamedResource>NoMoreQueriesString</NamedResource>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>80</SourceScanID>
+    <ModuleName>WolframAlphaService.cs</ModuleName>
+    <LineNumber>44</LineNumber>
+    <ColumnNumber>24</ColumnNumber>
+    <StringID>6</StringID>
+    <OriginalText>Query empty?</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>44</StartOfStatement>
+    <EndOfStatement>44</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>ExecQueryAsync</CodeElement>
+    <RelativeLineNumber>22</RelativeLineNumber>
+    <NamedResource>EmptyQueryString</NamedResource>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>81</SourceScanID>
+    <ModuleName>WolframAlphaService.cs</ModuleName>
+    <LineNumber>62</LineNumber>
+    <ColumnNumber>24</ColumnNumber>
+    <StringID>15</StringID>
+    <OriginalText>An error occurred</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>62</StartOfStatement>
+    <EndOfStatement>62</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>ExecQueryAsync</CodeElement>
+    <RelativeLineNumber>40</RelativeLineNumber>
+    <NamedResource>ErrorString</NamedResource>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>82</SourceScanID>
+    <ModuleName>WolframAlphaService.cs</ModuleName>
+    <LineNumber>76</LineNumber>
+    <ColumnNumber>21</ColumnNumber>
+    <StringID>8</StringID>
+    <OriginalText>Did you mean:</OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>76</StartOfStatement>
+    <EndOfStatement>76</EndOfStatement>
+    <IsVerbatim>false</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>ExecQueryAsync</CodeElement>
+    <RelativeLineNumber>54</RelativeLineNumber>
+    <NamedResource>MeanString</NamedResource>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>83</SourceScanID>
+    <ModuleName>WolframAlphaService.cs</ModuleName>
+    <LineNumber>82</LineNumber>
     <ColumnNumber>58</ColumnNumber>
     <OriginalText>,</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>53</StartOfStatement>
-    <EndOfStatement>53</EndOfStatement>
+    <StartOfStatement>82</StartOfStatement>
+    <EndOfStatement>82</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>ExecQuery</CodeElement>
-    <RelativeLineNumber>34</RelativeLineNumber>
+    <CodeElement>ExecQueryAsync</CodeElement>
+    <RelativeLineNumber>60</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>27</SourceScanID>
+    <SourceScanID>84</SourceScanID>
     <ModuleName>WolframAlphaService.cs</ModuleName>
-    <LineNumber>67</LineNumber>
+    <LineNumber>97</LineNumber>
     <ColumnNumber>68</ColumnNumber>
     <OriginalText>,</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>67</StartOfStatement>
-    <EndOfStatement>67</EndOfStatement>
+    <StartOfStatement>97</StartOfStatement>
+    <EndOfStatement>97</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>ExecQuery</CodeElement>
-    <RelativeLineNumber>48</RelativeLineNumber>
+    <CodeElement>ExecQueryAsync</CodeElement>
+    <RelativeLineNumber>75</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>28</SourceScanID>
+    <SourceScanID>85</SourceScanID>
     <ModuleName>WolframAlphaService.cs</ModuleName>
-    <LineNumber>71</LineNumber>
-    <ColumnNumber>29</ColumnNumber>
-    <OriginalText>Sorry, I didn't understand, please type 'Help' to see examples</OriginalText>
+    <LineNumber>101</LineNumber>
+    <ColumnNumber>28</ColumnNumber>
+    <StringID>10</StringID>
+    <OriginalText>Sorry, I don't understand, please say "help" to see examples</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>71</StartOfStatement>
-    <EndOfStatement>71</EndOfStatement>
+    <StartOfStatement>101</StartOfStatement>
+    <EndOfStatement>101</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>ExecQuery</CodeElement>
-    <RelativeLineNumber>52</RelativeLineNumber>
+    <CodeElement>ExecQueryAsync</CodeElement>
+    <RelativeLineNumber>79</RelativeLineNumber>
+    <NamedResource>UnknownQuery</NamedResource>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>29</SourceScanID>
+    <SourceScanID>86</SourceScanID>
     <ModuleName>WolframAlphaService.cs</ModuleName>
-    <LineNumber>73</LineNumber>
-    <ColumnNumber>21</ColumnNumber>
-    <OriginalText>Sorry, I didn't understand, please type 'Help' to see examples</OriginalText>
+    <LineNumber>103</LineNumber>
+    <ColumnNumber>20</ColumnNumber>
+    <StringID>10</StringID>
+    <OriginalText>Sorry, I don't understand, please say "help" to see examples</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>73</StartOfStatement>
-    <EndOfStatement>73</EndOfStatement>
+    <StartOfStatement>103</StartOfStatement>
+    <EndOfStatement>103</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>ExecQuery</CodeElement>
-    <RelativeLineNumber>54</RelativeLineNumber>
+    <CodeElement>ExecQueryAsync</CodeElement>
+    <RelativeLineNumber>81</RelativeLineNumber>
+    <NamedResource>UnknownQuery</NamedResource>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>30</SourceScanID>
-    <ModuleName>MessagesController.cs</ModuleName>
-    <LineNumber>51</LineNumber>
-    <ColumnNumber>68</ColumnNumber>
-    <OriginalText>Welcome {0}, I'm Bob, your financial advisor.</OriginalText>
+    <SourceScanID>87</SourceScanID>
+    <ModuleName>WolframAlphaService.cs</ModuleName>
+    <LineNumber>108</LineNumber>
+    <ColumnNumber>52</ColumnNumber>
+    <OriginalText>|</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>51</StartOfStatement>
-    <EndOfStatement>51</EndOfStatement>
+    <StartOfStatement>108</StartOfStatement>
+    <EndOfStatement>108</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>HandleSystemMessageAsync</CodeElement>
-    <RelativeLineNumber>15</RelativeLineNumber>
+    <CodeElement>ParseQuote</CodeElement>
+    <RelativeLineNumber>2</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>31</SourceScanID>
-    <ModuleName>MessagesController.cs</ModuleName>
-    <LineNumber>52</LineNumber>
-    <ColumnNumber>51</ColumnNumber>
-    <StringID>1</StringID>
-    <OriginalText>type 'Help' to know what I can do for you</OriginalText>
+    <SourceScanID>88</SourceScanID>
+    <ModuleName>WolframAlphaService.cs</ModuleName>
+    <LineNumber>110</LineNumber>
+    <ColumnNumber>35</ColumnNumber>
+    <OriginalText>([+-]?[0-9]*[.]?[0-9]+)</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>52</StartOfStatement>
-    <EndOfStatement>52</EndOfStatement>
-    <IsVerbatim>false</IsVerbatim>
+    <StartOfStatement>110</StartOfStatement>
+    <EndOfStatement>110</EndOfStatement>
+    <IsVerbatim>true</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>HandleSystemMessageAsync</CodeElement>
-    <RelativeLineNumber>16</RelativeLineNumber>
-    <NamedResource>type_Help_to_know_what_I_can_d</NamedResource>
+    <CodeElement>ParseQuote</CodeElement>
+    <RelativeLineNumber>4</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>32</SourceScanID>
-    <ModuleName>MessagesController.cs</ModuleName>
-    <LineNumber>63</LineNumber>
-    <ColumnNumber>40</ColumnNumber>
-    <StringID>2</StringID>
-    <OriginalText>add</OriginalText>
+    <SourceScanID>89</SourceScanID>
+    <ModuleName>WolframAlphaService.cs</ModuleName>
+    <LineNumber>114</LineNumber>
+    <ColumnNumber>39</ColumnNumber>
+    <OriginalText>The price of </OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>63</StartOfStatement>
-    <EndOfStatement>63</EndOfStatement>
+    <StartOfStatement>114</StartOfStatement>
+    <EndOfStatement>114</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>HandleSystemMessageAsync</CodeElement>
-    <RelativeLineNumber>27</RelativeLineNumber>
-    <NamedResource>add</NamedResource>
+    <CodeElement>ParseQuote</CodeElement>
+    <RelativeLineNumber>8</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>33</SourceScanID>
-    <ModuleName>MessagesController.cs</ModuleName>
-    <LineNumber>65</LineNumber>
-    <ColumnNumber>68</ColumnNumber>
-    <StringID>3</StringID>
-    <OriginalText>Welcome {0}, I'm Bob, your financial advisor.</OriginalText>
+    <SourceScanID>90</SourceScanID>
+    <ModuleName>WolframAlphaService.cs</ModuleName>
+    <LineNumber>114</LineNumber>
+    <ColumnNumber>69</ColumnNumber>
+    <OriginalText> is </OriginalText>
     <IsHidden>false</IsHidden>
-    <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>65</StartOfStatement>
-    <EndOfStatement>65</EndOfStatement>
+    <IndexOnLine>1</IndexOnLine>
+    <StartOfStatement>114</StartOfStatement>
+    <EndOfStatement>114</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>HandleSystemMessageAsync</CodeElement>
-    <RelativeLineNumber>29</RelativeLineNumber>
-    <NamedResource>Welcome_0_I_m_Bob_your_financi</NamedResource>
+    <CodeElement>ParseQuote</CodeElement>
+    <RelativeLineNumber>8</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
   </SourceScanResults>
   <SourceScanResults>
-    <SourceScanID>34</SourceScanID>
-    <ModuleName>MessagesController.cs</ModuleName>
-    <LineNumber>66</LineNumber>
-    <ColumnNumber>48</ColumnNumber>
-    <StringID>1</StringID>
-    <OriginalText>type 'Help' to know what I can do for you</OriginalText>
+    <SourceScanID>91</SourceScanID>
+    <ModuleName>WolframAlphaService.cs</ModuleName>
+    <LineNumber>122</LineNumber>
+    <ColumnNumber>35</ColumnNumber>
+    <OriginalText>([+-]?[0-9]*[.]?[0-9]+)([ ]*)(\(([^()]*)\))</OriginalText>
     <IsHidden>false</IsHidden>
     <IndexOnLine>0</IndexOnLine>
-    <StartOfStatement>66</StartOfStatement>
-    <EndOfStatement>66</EndOfStatement>
+    <StartOfStatement>122</StartOfStatement>
+    <EndOfStatement>122</EndOfStatement>
+    <IsVerbatim>true</IsVerbatim>
+    <IsHiddenBlock>false</IsHiddenBlock>
+    <CodeElement>ParseMoney</CodeElement>
+    <RelativeLineNumber>2</RelativeLineNumber>
+    <IsHiddenString>false</IsHiddenString>
+    <IsInterpolatedString>false</IsInterpolatedString>
+  </SourceScanResults>
+  <SourceScanResults>
+    <SourceScanID>92</SourceScanID>
+    <ModuleName>WolframAlphaService.cs</ModuleName>
+    <LineNumber>129</LineNumber>
+    <ColumnNumber>46</ColumnNumber>
+    <OriginalText xml:space="preserve"> </OriginalText>
+    <IsHidden>false</IsHidden>
+    <IndexOnLine>0</IndexOnLine>
+    <StartOfStatement>129</StartOfStatement>
+    <EndOfStatement>129</EndOfStatement>
     <IsVerbatim>false</IsVerbatim>
     <IsHiddenBlock>false</IsHiddenBlock>
-    <CodeElement>HandleSystemMessageAsync</CodeElement>
-    <RelativeLineNumber>30</RelativeLineNumber>
-    <NamedResource>type_Help_to_know_what_I_can_d</NamedResource>
+    <CodeElement>ParseMoney</CodeElement>
+    <RelativeLineNumber>9</RelativeLineNumber>
     <IsHiddenString>false</IsHiddenString>
     <IsInterpolatedString>false</IsInterpolatedString>
   </SourceScanResults>
