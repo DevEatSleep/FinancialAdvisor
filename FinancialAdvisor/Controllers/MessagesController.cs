@@ -32,17 +32,9 @@ namespace FinancialAdvisor
             if (activity.Type == ActivityTypes.Message)
             {               
                 var UiLanguage =  StateHelper.GetUserUiLanguage(activity);
-                var neutralLanguage = 
-                    Assembly.GetExecutingAssembly().GetCustomAttribute<NeutralResourcesLanguageAttribute>().CultureName.Substring(0, 2);
-                if (UiLanguage == null)
-                {
-                    UiLanguage = neutralLanguage;
-                    await StateHelper.SetUserUiLanguageAsync(activity, UiLanguage);
-                }                    
+                var neutralLanguage = StateHelper.GetNeutralLanguage();
                 if (UiLanguage != neutralLanguage)
-                {
                     activity.Text = await TranslationHelper.DoTranslation(activity.Text, UiLanguage, neutralLanguage);
-                }
                 await Conversation.SendAsync(activity, () => new RootDialog());               
             }
             else
@@ -88,14 +80,10 @@ namespace FinancialAdvisor
                 // Handle add/remove from contact lists
                 // Activity.From + Activity.Action represent what happened
                 // For Skype and Messenger ?
-                //if (message.Action == "add" && (message.ChannelId == "skype" || message.ChannelId == "facebook"))
-                //{
-                //    Messages.WelcomeMessage(message, message.From.Name);
-                //}
-                //if (message.Action == "add")
-                //{
-                //    Messages.WelcomeMessage(message, message.From.Name);
-                //}
+                if (message.Action == "add" && (message.ChannelId == "skype" || message.ChannelId == "facebook"))
+                {
+                    await Messages.WelcomeMessageAsync(message);
+                }               
             }
             else if (message.Type == ActivityTypes.Typing)
             {

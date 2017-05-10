@@ -46,7 +46,9 @@ namespace FinancialAdvisor.Dialogs
 
         public async static Task WelcomeMessageAsync(IDialogContext context, string from)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(StateHelper.GetUserUiLanguage(context));
+            var UiCulture = new CultureInfo(StateHelper.GetUserUiLanguage(context));
+            if (UiCulture != null)
+                Thread.CurrentThread.CurrentUICulture = UiCulture;
             var text = string.Concat(String.Format(Resources.Resource.WelcomeStringFirstLine, from),
                                 Environment.NewLine,
                                 Resources.Resource.WelcomeStringSecondLine,
@@ -58,7 +60,10 @@ namespace FinancialAdvisor.Dialogs
 
         public async static Task HelpMessageAsync(IDialogContext context)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(StateHelper.GetUserUiLanguage(context));
+            var UiCulture = new CultureInfo(StateHelper.GetUserUiLanguage(context));
+            if (UiCulture != null)
+                Thread.CurrentThread.CurrentUICulture = UiCulture;
+
             var text = string.Concat(Resources.Resource.UsageFirstLine, Environment.NewLine,
                      Resources.Resource.UsageSecondLine, Environment.NewLine,
                      Resources.Resource.UsageThirdLine, Environment.NewLine,
@@ -69,7 +74,9 @@ namespace FinancialAdvisor.Dialogs
 
         public static async Task WelcomeMessageAsync(Activity message)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(StateHelper.GetUserUiLanguage(message));
+            var UiCulture = new CultureInfo(StateHelper.GetUserUiLanguage(message));
+            if (UiCulture != null)
+                Thread.CurrentThread.CurrentUICulture = UiCulture;
             var text = string.Concat(string.Format(Resources.Resource.WelcomeStringFirstLine, message.From.Name),
                                Environment.NewLine,
                                Resources.Resource.WelcomeStringSecondLine,

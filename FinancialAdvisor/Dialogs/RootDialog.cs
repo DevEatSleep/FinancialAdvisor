@@ -48,7 +48,7 @@ namespace FinancialAdvisor.Dialogs
         [LuisIntent("?")]
         public async Task Help(IDialogContext context, IAwaitable<IMessageActivity> message, LuisResult result)
         {
-            if (result.TopScoringIntent.Score < 0.5)
+            if (result.TopScoringIntent.Score < 0.8)
                 await None(context, message, result);
             else
             {
