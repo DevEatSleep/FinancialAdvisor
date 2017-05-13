@@ -29,8 +29,8 @@ namespace FinancialAdvisor.Dialogs
         [LuisIntent("None")]
         public async Task None(IDialogContext context, IAwaitable<IMessageActivity> message, LuisResult result)
         {
-            var cts = new CancellationTokenSource();
-            await context.Forward(new WelcomeDialog(), GreetingDialogDoneAsync, await message, cts.Token);
+            await context.PostAsync(Resources.Resource.UnknownQuery);
+            context.Wait(MessageReceived);
         }
 
         private async Task GreetingDialogDoneAsync(IDialogContext context, IAwaitable<object> result)
@@ -48,16 +48,28 @@ namespace FinancialAdvisor.Dialogs
         [LuisIntent("?")]
         public async Task Help(IDialogContext context, IAwaitable<IMessageActivity> message, LuisResult result)
         {
-            if (result.TopScoringIntent.Score < 0.8)
+            if (result.TopScoringIntent.Score < 0.5)
                 await None(context, message, result);
             else
             {
                 var cts = new CancellationTokenSource();
-                await context.Forward(new HelpDialog(), HelpDialogDoneAsync, await message, cts.Token);
+                await context.Forward(new HelpDialog(), DialogDoneAsync, await message, cts.Token);
             }
         }
 
-        private async Task HelpDialogDoneAsync(IDialogContext context, IAwaitable<object> result)
+        [LuisIntent("hi")]       
+        public async Task Hi(IDialogContext context, IAwaitable<IMessageActivity> message, LuisResult result)
+        {
+            if (result.TopScoringIntent.Score < 0.5)
+                await None(context, message, result);
+            else
+            {
+                var cts = new CancellationTokenSource();
+                await context.Forward(new WelcomeDialog(), DialogDoneAsync, await message, cts.Token);
+            }
+        }
+
+        private async Task DialogDoneAsync(IDialogContext context, IAwaitable<object> result)
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(StateHelper.GetUserUiLanguage(context));
             var success = await result;

@@ -10,13 +10,13 @@ namespace FinancialAdvisor.Helpers
     public static class StateHelper
     {
         private static string _neutralLanguage;
-        public static async Task SetUserUiLanguageAsync(Activity activity, string UiCulture)
+        public static async Task SetUserUiLanguageAsync(Activity activity, string UiLanguage)
         {
             try
             {
                 StateClient stateClient = activity.GetStateClient();
                 BotData userData = stateClient.BotState.GetUserData(activity.ChannelId, activity.From.Id);
-                userData.SetProperty<string>("UiCulture", UiCulture);               
+                userData.SetProperty<string>("UiLanguage", UiLanguage);               
                 await stateClient.BotState.SetUserDataAsync(activity.ChannelId, activity.From.Id, userData);
             }
             catch (Exception ex)
@@ -32,15 +32,15 @@ namespace FinancialAdvisor.Helpers
             {
                 StateClient stateClient = activity.GetStateClient();
                 BotData userData = stateClient.BotState.GetUserData(activity.ChannelId, activity.From.Id);
-                var UiCulture = userData.GetProperty<string>("UiCulture");
-                if(UiCulture == null)
+                var UiLanguage = userData.GetProperty<string>("UiLanguage");
+                if(UiLanguage == null)
                 {
                     _neutralLanguage =
                         Assembly.GetExecutingAssembly().GetCustomAttribute<NeutralResourcesLanguageAttribute>().CultureName.Substring(0, 2);
-                    UiCulture = _neutralLanguage;
+                    UiLanguage = _neutralLanguage;
                 }
                 
-                return UiCulture;
+                return UiLanguage;
             }
             catch (Exception ex)
             {
@@ -48,11 +48,11 @@ namespace FinancialAdvisor.Helpers
             }
         }
 
-        public static void SetUserUiLanguage(IDialogContext context, string UiCulture)
+        public static void SetUserUiLanguage(IDialogContext context, string UiLanguage)
         {
             try
             {
-                context.UserData.SetValue("UiCulture", UiCulture);
+                context.UserData.SetValue("UiLanguage", UiLanguage);
             }
             catch (Exception ex)
             {
@@ -71,7 +71,7 @@ namespace FinancialAdvisor.Helpers
         {
             try
             {
-                context.UserData.TryGetValue("UiCulture", out string result);
+                context.UserData.TryGetValue("UiLanguage", out string result);
                 if (result == null)
                 {
                     _neutralLanguage =

@@ -132,6 +132,9 @@
   <data name="HiString" xml:space="preserve">
     <value>Salut</value>
   </data>
+  <data name="LanguageUnaivalable" xml:space="preserve">
+    <value>{0} n'est pas une langue possible</value>
+  </data>
   <data name="MeanString" xml:space="preserve">
     <value>Vouliez-vous dire :</value>
   </data>
@@ -148,7 +151,7 @@
     <value>Désolé, je ne comprends pas, s’il vous plaît dites « Aide » pour voir des exemples</value>
   </data>
   <data name="UsageFifthLine" xml:space="preserve">
-    <value>Dites moi: "parle langue"  pour changer de langue</value>
+    <value>Dites moi: "parle ..."  pour changer de langue</value>
   </data>
   <data name="UsageFirstLine" xml:space="preserve">
     <value>Je peux faire des conversions ou calculs entre monnaies.</value>

@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web;
 using FinancialAdvisor.Helpers;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
@@ -18,10 +16,13 @@ namespace FinancialAdvisor.Dialogs
             List<string> culturesName = new List<string>();
             CultureHelper.LoadCultures();
 
+            var UiLanguage = StateHelper.GetUserUiLanguage(context);
             foreach (var item in CultureHelper.CulturesAvailable)
             {
-                var languageName = await TranslationHelper.DoTranslation(item.DisplayName, StateHelper.GetUserUiLanguage(context), item.TwoLetterISOLanguageName);
-                culturesName.Add(item.DisplayName);
+                string languageName = item.EnglishName.Split(' ')[0]; 
+                if(UiLanguage != "en")
+                    languageName = await TranslationHelper.DoTranslation(languageName , "en", UiLanguage);
+                culturesName.Add(languageName);               
             }
             return String.Join(", ", culturesName.ToArray());
         }
@@ -31,13 +32,12 @@ namespace FinancialAdvisor.Dialogs
             List<string> culturesName = new List<string>();
             CultureHelper.LoadCultures();
 
-            var UiLanguage = StateHelper.GetUserUiLanguage(message);
+            var UiLanguage = StateHelper.GetUserUiLanguage(message);           
             foreach (var item in CultureHelper.CulturesAvailable)
             {
-                string inputLanguage = Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
-                string languageName = item.DisplayName;
-                if (inputLanguage != UiLanguage)
-                   languageName = await TranslationHelper.DoTranslation(item.DisplayName, inputLanguage, UiLanguage);
+                string languageName = item.EnglishName.Split(' ')[0];
+                if (UiLanguage != "en")
+                    languageName = await TranslationHelper.DoTranslation(languageName, "en", UiLanguage);
                 culturesName.Add(languageName);
             }
             return String.Join(", ", culturesName.ToArray());

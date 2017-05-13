@@ -1,20 +1,13 @@
-﻿using System.Net.Http;
+﻿using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
-using Microsoft.Bot.Builder.Dialogs;
-using Microsoft.Bot.Connector;
-using System;
-using System.Linq;
-using FinancialAdvisor.Helpers;
-using System.Globalization;
-using System.Resources;
-using System.Collections.Generic;
-using System.Threading;
-using FinancialAdvisor.Dialogs;
-using Microsoft.Bot.Builder.Dialogs.Internals;
 using Autofac;
-using System.Diagnostics;
-using System.Reflection;
+using FinancialAdvisor.Dialogs;
+using FinancialAdvisor.Helpers;
+using Microsoft.Bot.Builder.Dialogs;
+using Microsoft.Bot.Builder.Dialogs.Internals;
+using Microsoft.Bot.Connector;
 
 namespace FinancialAdvisor
 {

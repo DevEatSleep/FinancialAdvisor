@@ -26,7 +26,7 @@ namespace FinancialAdvisor.Services
             IRequestLimiter _requestLimiter = ServiceResolver.Get<IRequestLimiter>();
             
             RequestLimitEntity wolframEntity = _requestLimiter.Read("Wolfram", "FinancialAdvisor");
-            RequestLimitEntity translatorEntity = _requestLimiter.Read("CognitiveServices", "TextTranslator");
+            //RequestLimitEntity translatorEntity = _requestLimiter.Read("CognitiveServices", "TextTranslator");
 
             if (wolframEntity.LastQueryDate.Month == DateTime.Now.Month && wolframEntity.QueriesNumber == 2000)
                 return Resources.Resource.NoMoreQueriesString;
@@ -34,11 +34,11 @@ namespace FinancialAdvisor.Services
             if (DateTime.Now.Month > wolframEntity.LastQueryDate.Month)
                 _requestLimiter.Update(wolframEntity, DateTime.Now, 1);
 
-            if (translatorEntity.LastQueryDate.Month == DateTime.Now.Month && translatorEntity.QueriesNumber == 2000000)
-                return Resources.Resource.NoMoreQueriesString;
+            //if (translatorEntity.LastQueryDate.Month == DateTime.Now.Month && translatorEntity.QueriesNumber == 2000000)
+            //    return Resources.Resource.NoMoreQueriesString;
 
-            if (DateTime.Now.Month > translatorEntity.LastQueryDate.Month)
-                _requestLimiter.Update(translatorEntity, DateTime.Now, query.Length);
+            //if (DateTime.Now.Month > translatorEntity.LastQueryDate.Month)
+            //    _requestLimiter.Update(translatorEntity, DateTime.Now, query.Length);
 
             if (string.IsNullOrEmpty(query))
                 return Resources.Resource.EmptyQueryString;
@@ -51,7 +51,7 @@ namespace FinancialAdvisor.Services
             wolfram.Scanners.Add(scanner);          
 
             _requestLimiter.Update(wolframEntity, DateTime.Now, wolframEntity.QueriesNumber + 1);
-            _requestLimiter.Update(translatorEntity, DateTime.Now, translatorEntity.QueriesNumber + query.Length);
+            //_requestLimiter.Update(translatorEntity, DateTime.Now, translatorEntity.QueriesNumber + query.Length);
 
             QueryResult results = wolfram.Query(query);
 
