@@ -1,3 +1,3 @@
 # FinancialAdvisor
 
-Financial chatbot using Microsoft bot framework and Wolfram financial API
+Financial chatbot using Microsoft bot framework and WolframAlpha financial API
